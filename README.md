@@ -8,4 +8,10 @@
 - php artisan serve
 
 
-nb: masih belum migrate
+## Migrate
+buat db 'hmjadmin'
+setting nama_database di .env
+npm install 
+php artisan migrate
+php artisan db:seed --class UserSeeder
+php artisan serve
