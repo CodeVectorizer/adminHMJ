@@ -20,10 +20,10 @@
 
 
 ## Todo
-[] Design Form
-[] Model Eloquent Relationship
-[] ...
-[] ...
+[]Design Form
+[]Model Eloquent Relationship
+[]...
+[]...
 
 
 kalo ada error segera lapor gi grup :v
