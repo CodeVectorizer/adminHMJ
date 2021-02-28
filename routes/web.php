@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BiroController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,22 +17,62 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+// Auth::routes();
+// Replace Default Login Route
+Route::get('admin/login', [LoginController::class ,'showLoginForm'])->name('login');
+Route::get('admin/logout', [LoginController::class ,'logout'])->name('logout');
+Route::post('admin/login',  [LoginController::class ,'login'])->name('admin.login');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
-//Route Admin
-Route::view('/admin', 'admin.pages.dashboard');
-Route::get('/admin/login', function () {
-    return view('auth.login');
+
+
+// ROUTES ADMIN
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
+    //Dashboard
+    Route::get('/', [DashboardController::class, 'index']);
+
+
+    //Angkatan
+    
+
+    //Artikel
+    
+
+    //Biro
+    Route::get('biro', [BiroController::class, 'index']);
+    
+
+    //Departemen
+    
+
+    //Form
+
+
+    //Jabatan
+
+
+    //Kategori
+
+
+    //Komentar
+
+
+    //KritikSaran
+
+
+    //Pengurus
+
+
+    //Prodi    
+    
 });
 
 
 
-//Route User 
+
+//ROUTE USER 
 Route::view('/', 'user.pages.home');
 Route::view('beranda', 'user.pages.home');
 Route::view('blog', 'user.pages.blog');
