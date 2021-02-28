@@ -15,3 +15,5 @@
 - php artisan migrate
 - php artisan db:seed --class UserSeeder
 - php artisan serve
+- localhost:8000/admin/login
+- admin@admin:admin
