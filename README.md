@@ -26,4 +26,5 @@
 - [ ] ...
 
 
-kalo ada error segera lapor gi grup :v
+
+kalo ada error, share di grup biro _
