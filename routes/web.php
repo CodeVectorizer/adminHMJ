@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BiroController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 
@@ -73,9 +74,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
 //ROUTE USER 
-Route::view('/', 'user.pages.home');
-Route::view('beranda', 'user.pages.home');
-Route::view('blog', 'user.pages.blog');
+Route::get('/', [UserController::class, 'index']);
+Route::get('/beranda', [UserController::class, 'index']);
+Route::get('blog', [UserController::class, 'blog']);
+// Route::view('blog', 'user.pages.blog');
 Route::view('profile', 'user.pages.profile');
 
 
