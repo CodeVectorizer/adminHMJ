@@ -18,4 +18,13 @@
 - localhost:8000/admin/login
 - admin@admin.com:admin
 
-### kalo ada error segera lapor gi grup :v
+
+## Todo
+- [ ] Design Form
+- [ ] Model Eloquent Relationship
+- [ ] ...
+- [ ] ...
+
+
+
+kalo ada error, share di grup biro _
