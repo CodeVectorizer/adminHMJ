@@ -9,11 +9,9 @@
 
 
 ## Migrate
-- import db_hmjti
+- import db_hmjti 
 - setting nama_database di .env
 - npm install 
-- php artisan migrate
-- php artisan db:seed --class UserSeeder
 - php artisan serve
 - localhost:8000/admin/login
 - admin@admin.com:admin
