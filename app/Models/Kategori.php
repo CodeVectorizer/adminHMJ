@@ -12,10 +12,9 @@ class Kategori extends Model
 
     protected $table = 'tb_kategori';
     protected $primaryKey = 'id_kategori';
+    public $timestamps = false;
 
-    /**
-     * Get all of the artikel for the Kategori
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */   
+    protected $fillable = [
+      'name'
+    ];
 }

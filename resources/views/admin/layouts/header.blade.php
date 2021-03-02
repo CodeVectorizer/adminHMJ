@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- CSS Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap4.min.css" integrity="sha512-PT0RvABaDhDQugEbpNMwgYBCnGCiTZMh9yOzUsJHDgl/dMhD9yjHAwoumnUk3JydV3QTcIkNDuN40CJxik5+WQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.jqueryui.min.css" integrity="sha512-x2AeaPQ8YOMtmWeicVYULhggwMf73vuodGL7GwzRyrPDjOUSABKU7Rw9c3WNFRua9/BvX/ED1IK3VTSsISF6TQ==" crossorigin="anonymous" />
+
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ asset('dist/assets/css/style.css') }}">
@@ -39,11 +42,11 @@
               </li>
               <li class="menu-header">Starter</li>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Kategori</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
-                  <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
-                  <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
+                  <li><a class="nav-link" href="{{route('list.kategori')}}">List Kategori</a></li>
+                  <li><a class="nav-link" href="Kategori-transparent.html">Transparent Sidebar</a></li>
+                  <li><a class="nav-link" href="Kategori-top-navigation.html">Top Navigation</a></li>
                 </ul>
               </li>
               <li class="active"><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
