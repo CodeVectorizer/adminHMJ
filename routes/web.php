@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BiroController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -36,17 +37,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
     //Angkatan
-    
+
 
     //Artikel
-    
+
 
     //Biro
     Route::get('biro', [BiroController::class, 'index']);
-    
+
 
     //Departemen
-    
+
 
     //Form
 
@@ -55,7 +56,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
     //Kategori
-
+    Route::get('kategori', [KategoriController::class, 'index'])->name('list.kategori');
+    Route::post('kategori/store', [KategoriController::class, 'store'])->name('add.kategori');
+    Route::post('kategori/update/{id}', [KategoriController::class, 'update'])->name('update.kategori');
+    Route::get('/kategori/delete/{id}', [KategoriController::class, 'delete'])->name('delete.kategori');
 
     //Komentar
 
@@ -66,14 +70,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
     //Pengurus
 
 
-    //Prodi    
-    
+    //Prodi
+
 });
 
 
 
 
-//ROUTE USER 
+//ROUTE USER
 Route::get('/', [UserController::class, 'index']);
 Route::get('/beranda', [UserController::class, 'index']);
 Route::get('blog', [UserController::class, 'blog']);

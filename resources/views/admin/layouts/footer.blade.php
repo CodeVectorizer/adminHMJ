@@ -18,13 +18,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="{{ asset('dist/assets/js/stisla.js') }}"></script>
 
-
   <!-- JS Libraies -->
+  <script src="{{ asset('dist/assets/js/page/modules-datatables.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/dataTables.bootstrap4.min.js" integrity="sha512-OQlawZneA7zzfI6B1n1tjUuo3C5mtYuAWpQdg+iI9mkDoo7iFzTqnQHf+K5ThOWNJ9AbXL4+ZDwH7ykySPQc+A==" crossorigin="anonymous"></script>
+
 
   <!-- Template JS File -->
   <script src="{{ asset('dist/assets/js/scripts.js') }}"></script>
   <script src="{{ asset('dist/assets/js/custom.js') }}"></script>
 
   <!-- Page Specific JS File -->
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('#table-2').DataTable();
+  });
+  </script>
+  <!-- <script type="text/javascript" src="{{ asset('dist/assets/js/page/bootstrap-modal.js')}}"> -->
+
+  </script>
 </body>
 </html>
