@@ -19,7 +19,11 @@
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
+
+      {{-- NAVBAR / TOP BAR --}}
       @include('admin.layouts.navbar')
+
+      {{-- SIDEBAR --}}
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
@@ -37,7 +41,8 @@
                   <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
                 </ul>
               </li>
-              <li class="menu-header">Starter</li>
+              <li class="menu-header">Main</li>
+              <li class="active"><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
                 <ul class="dropdown-menu">
@@ -72,7 +77,7 @@
                   <li><a class="nav-link" href="bootstrap-typography.html">Typography</a></li>
                 </ul>
               </li>
-              <li class="menu-header">Stisla</li>
+              {{-- <li class="menu-header">Stisla</li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Components</span></a>
                 <ul class="dropdown-menu">
@@ -170,7 +175,7 @@
                 </ul>
               </li>
               <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
-            </ul>
+            </ul> --}}
 
             <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
               <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
