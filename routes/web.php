@@ -10,6 +10,7 @@ use App\Http\Controllers\AngkatanController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\GolonganController;
 use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -87,6 +88,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
     //Pengurus
+    Route::get('pengurus', [PengurusController::class, 'index'])->name('list.pengurus');
+    Route::get('pengurus/tambah', [PengurusController::class, 'create'])->name('tambah.pengurus');
+    Route::get('pengurus/edit/{id}', [PengurusController::class, 'edit'])->name('edit.pengurus');
+    Route::post('pengurus/store', [PengurusController::class, 'store'])->name('add.pengurus');
+    Route::post('pengurus/update/{id}', [PengurusController::class, 'update'])->name('update.pengurus');
+    Route::get('/pengurus/delete/{id}', [PengurusController::class, 'delete'])->name('delete.pengurus');
 
 
     //Prodi

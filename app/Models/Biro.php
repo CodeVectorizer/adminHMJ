@@ -21,4 +21,9 @@ class Biro extends Model
     {
       return $this->belongsTo('App\Models\Departemen', 'id_departemen');
     }
+
+    public function pengurus()
+    {
+      return $this->hasMany('App\Models\Pengurus');
+    }
 }

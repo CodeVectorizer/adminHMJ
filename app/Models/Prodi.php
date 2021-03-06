@@ -25,4 +25,8 @@ class Prodi extends Model
     {
       return $this->belongsTo('App\Models\Angkatan', 'id_angkatan');
     }
+    public function pengurus()
+    {
+      return $this->hasMany('App\Models\Pengurus');
+    }
 }

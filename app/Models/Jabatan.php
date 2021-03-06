@@ -17,4 +17,9 @@ class Jabatan extends Model
     protected $fillable = [
       'jabatan', 'periode'
     ];
+
+    public function pengurus()
+    {
+      return $this->hasMany('App\Models\Pengurus');
+    }
 }

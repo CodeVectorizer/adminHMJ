@@ -50,7 +50,7 @@
                 </ul>
               </li>
               <li class="">
-                <a class="nav-link" href=""><i class="fas fa-users"></i><span>Pengurus</span></a>
+                <a class="nav-link" href="{{route('list.pengurus')}}"><i class="fas fa-users"></i><span>Pengurus</span></a>
               </li>
               <li class="">
                 <a class="nav-link" href=""><i class="fas fa-comment-alt"></i><span>Kritik dan Saran</span></a>
