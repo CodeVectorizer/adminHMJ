@@ -11,4 +11,10 @@ class Departemen extends Model
 
     protected $table = 'tb_departemen';
     protected $primaryKey = 'id_departemen';
+
+    public $timestamps = false;
+
+    protected $fillable = [
+      'departemen'
+    ];
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\BiroController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\DepartemenController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -47,7 +48,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
     //Departemen
-
+    Route::get('departemen', [DepartemenController::class, 'index'])->name('list.departemen');
+    Route::post('departemen/store', [DepartemenController::class, 'store'])->name('add.departemen');
+    Route::post('departemen/update/{id}', [DepartemenController::class, 'update'])->name('update.departemen');
+    Route::get('/departemen/delete/{id}', [DepartemenController::class, 'delete'])->name('delete.departemen');
 
     //Form
 

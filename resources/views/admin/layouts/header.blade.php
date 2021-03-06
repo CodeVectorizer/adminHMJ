@@ -61,7 +61,7 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Data Master</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="">Departemen</a></li>
+                  <li><a class="nav-link" href="{{route('list.departemen')}}">Departemen</a></li>
                   <li><a class="nav-link" href="">Biro</a></li>
                   <li><a class="nav-link" href="">Jabatan</a></li>
                   <li><a class="nav-link" href="">Prodi</a></li>
