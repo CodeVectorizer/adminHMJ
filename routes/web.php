@@ -8,6 +8,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DepartemenController;
 use App\Http\Controllers\AngkatanController;
 use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\GolonganController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -88,6 +89,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
     //Prodi
+
+    //Golongan
+    Route::get('golongan', [GolonganController::class, 'index'])->name('list.golongan');
+    Route::post('golongan/store', [GolonganController::class, 'store'])->name('add.golongan');
+    Route::post('golongan/update/{id}', [GolonganController::class, 'update'])->name('update.golongan');
+    Route::get('/golongan/delete/{id}', [GolonganController::class, 'delete'])->name('delete.golongan');
 
 });
 
