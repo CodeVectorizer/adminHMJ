@@ -1,5 +1,6 @@
 @extends('admin.layouts.master')
 
+@section('title', 'Admin - List Kategori')
 @section('content')
 <div class="main-content">
   <section class="section">
@@ -20,15 +21,9 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-striped" id="table-2">
+                <table class="table table-striped" id="tabel-kategori">
                   <thead>
                     <tr>
-                      <th class="text-center">
-                        <div class="custom-checkbox custom-control">
-                          <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad" class="custom-control-input" id="checkbox-all">
-                          <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
-                        </div>
-                      </th>
                       <th>ID Kategori</th>
                       <th>Nama Kategori</th>
                       <th>Aksi</th>
@@ -37,12 +32,6 @@
                   <tbody>
                     @foreach($data as $kategori)
                     <tr>
-                      <td>
-                        <div class="custom-checkbox custom-control">
-                          <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input" id="checkbox-1{{ $loop->iteration }}">
-                          <label for="checkbox-1{{ $loop->iteration }}" class="custom-control-label">&nbsp;</label>
-                        </div>
-                      </td>
                       <td>{{$kategori->id_kategori}}</td>
                       <td>{{$kategori->kategori}}</td>
                       <td>
@@ -142,4 +131,11 @@
   </div>
 </div>
 @endforeach
+@endsection
+@section('js-pages')
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#tabel-kategori').DataTable();
+  });
+  </script>
 @endsection

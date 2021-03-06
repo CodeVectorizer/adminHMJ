@@ -29,11 +29,7 @@
   <script src="{{ asset('dist/assets/js/custom.js') }}"></script>
 
   <!-- Page Specific JS File -->
-  <script type="text/javascript">
-  $(document).ready(function() {
-    $('#table-2').DataTable();
-  });
-  </script>
+  @yield('js-pages')
   <!-- <script type="text/javascript" src="{{ asset('dist/assets/js/page/bootstrap-modal.js')}}"> -->
 
   </script>
