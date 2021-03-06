@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Departemen;
-use Illuminate\Database\QueryException;
 
 class DepartemenController extends Controller
 {

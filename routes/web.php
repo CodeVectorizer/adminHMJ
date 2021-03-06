@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DepartemenController;
+use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -60,6 +61,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
     //Jabatan
+    Route::get('jabatan', [JabatanController::class, 'index'])->name('list.jabatan');
+    Route::post('jabatan/store', [JabatanController::class, 'store'])->name('add.jabatan');
+    Route::post('jabatan/update/{id}', [JabatanController::class, 'update'])->name('update.jabatan');
+    Route::get('/jabatan/delete/{id}', [JabatanController::class, 'delete'])->name('delete.jabatan');
 
 
     //Kategori

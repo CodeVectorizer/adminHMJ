@@ -63,7 +63,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="{{route('list.departemen')}}">Departemen</a></li>
                   <li><a class="nav-link" href="{{route('list.biro')}}">Biro</a></li>
-                  <li><a class="nav-link" href="">Jabatan</a></li>
+                  <li><a class="nav-link" href="{{route('list.jabatan')}}">Jabatan</a></li>
                   <li><a class="nav-link" href="">Prodi</a></li>
                   <li><a class="nav-link" href="">Golongan</a></li>
                   <li><a class="nav-link" href="">Angkatan</a></li>
