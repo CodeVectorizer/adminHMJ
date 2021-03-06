@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DepartemenController;
+use App\Http\Controllers\AngkatanController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\Auth\LoginController;
 
@@ -39,6 +40,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
     //Angkatan
+    Route::get('angkatan', [AngkatanController::class, 'index'])->name('list.angkatan');
+    Route::post('angkatan/store', [AngkatanController::class, 'store'])->name('add.angkatan');
+    Route::post('angkatan/update/{id}', [AngkatanController::class, 'update'])->name('update.angkatan');
+    Route::get('/angkatan/delete/{id}', [AngkatanController::class, 'delete'])->name('delete.angkatan');
 
 
     //Artikel

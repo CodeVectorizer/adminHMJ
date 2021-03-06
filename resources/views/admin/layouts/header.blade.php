@@ -66,7 +66,7 @@
                   <li><a class="nav-link" href="{{route('list.jabatan')}}">Jabatan</a></li>
                   <li><a class="nav-link" href="">Prodi</a></li>
                   <li><a class="nav-link" href="">Golongan</a></li>
-                  <li><a class="nav-link" href="">Angkatan</a></li>
+                  <li><a class="nav-link" href="{{route('list.angkatan')}}">Angkatan</a></li>
                 </ul>
               </li>
               <li class="">
