@@ -10,7 +10,7 @@ class DepartemenController extends Controller
 {
   public function index()
   {
-    $data = Departemen::All()->sortDesc();
+    $data = Departemen::All();
 
     return view('admin.pages.departemen.index', compact('data'));
   }

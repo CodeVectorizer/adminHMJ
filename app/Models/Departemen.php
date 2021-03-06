@@ -17,4 +17,9 @@ class Departemen extends Model
     protected $fillable = [
       'departemen'
     ];
+
+    public function biro()
+    {
+      return $this->hasMany('App\Models\Biro');
+    }
 }

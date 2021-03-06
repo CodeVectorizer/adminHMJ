@@ -44,7 +44,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
     //Biro
-    Route::get('biro', [BiroController::class, 'index']);
+    Route::get('biro', [BiroController::class, 'index'])->name('list.biro');
+    Route::post('biro/store', [BiroController::class, 'store'])->name('add.biro');
+    Route::post('biro/update/{id}', [BiroController::class, 'update'])->name('update.biro');
+    Route::get('/biro/delete/{id}', [BiroController::class, 'delete'])->name('delete.biro');
 
 
     //Departemen
