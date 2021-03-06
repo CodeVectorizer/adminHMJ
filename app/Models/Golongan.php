@@ -16,4 +16,9 @@ class Golongan extends Model
   protected $fillable = [
     'golongan'
   ];
+
+  public function prodi()
+  {
+    return $this->hasMany('App\Models\Prodi');
+  }
 }

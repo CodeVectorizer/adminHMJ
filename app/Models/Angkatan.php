@@ -17,4 +17,9 @@ class Angkatan extends Model
     protected $fillable = [
       'angkatan'
     ];
+
+    public function prodi()
+    {
+      return $this->hasMany('App\Models\Prodi');
+    }
 }

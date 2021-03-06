@@ -9,6 +9,7 @@ use App\Http\Controllers\DepartemenController;
 use App\Http\Controllers\AngkatanController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\GolonganController;
+use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -89,6 +90,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
     //Prodi
+    Route::get('prodi', [ProdiController::class, 'index'])->name('list.prodi');
+    Route::post('prodi/store', [ProdiController::class, 'store'])->name('add.prodi');
+    Route::post('prodi/update/{id}', [ProdiController::class, 'update'])->name('update.prodi');
+    Route::get('/prodi/delete/{id}', [ProdiController::class, 'delete'])->name('delete.prodi');
 
     //Golongan
     Route::get('golongan', [GolonganController::class, 'index'])->name('list.golongan');

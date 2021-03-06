@@ -64,7 +64,7 @@
                   <li><a class="nav-link" href="{{route('list.departemen')}}">Departemen</a></li>
                   <li><a class="nav-link" href="{{route('list.biro')}}">Biro</a></li>
                   <li><a class="nav-link" href="{{route('list.jabatan')}}">Jabatan</a></li>
-                  <li><a class="nav-link" href="">Prodi</a></li>
+                  <li><a class="nav-link" href="{{route('list.prodi')}}">Prodi</a></li>
                   <li><a class="nav-link" href="{{route('list.golongan')}}">Golongan</a></li>
                   <li><a class="nav-link" href="{{route('list.angkatan')}}">Angkatan</a></li>
                 </ul>
