@@ -11,6 +11,7 @@ use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\GolonganController;
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\PengurusController;
+use App\Http\Controllers\KritikSaranController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -85,7 +86,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
     //KritikSaran
-
+    Route::get('kritik-saran', [KritikSaranController::class, 'index'])->name('list.kritikSaran');
+    Route::post('kritik-saran/store', [KritikSaranController::class, 'store'])->name('add.kritikSaran');
+    // Route::post('kritik-saran/update/{id}', [KategoriController::class, 'update'])->name('update.kritikSaran');
+    Route::get('/kritik-saran/delete/{id}', [KritikSaranController::class, 'delete'])->name('delete.kritikSaran');
 
     //Pengurus
     Route::get('pengurus', [PengurusController::class, 'index'])->name('list.pengurus');

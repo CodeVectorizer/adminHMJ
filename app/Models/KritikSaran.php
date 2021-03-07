@@ -11,4 +11,10 @@ class KritikSaran extends Model
 
     protected $table = 'tb_kritiksaran';
     protected $primaryKey = 'id_kritiksaran';
+
+    public $timestamps = false;
+
+    protected $fillable = [
+      'nama', 'email', 'kritiksaran', 'tanggal'
+    ];
 }
