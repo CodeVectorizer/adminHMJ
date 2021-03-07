@@ -28,11 +28,13 @@
                       <th>Nama</th>
                       <th>Email</th>
                       <th>No HP</th>
-                      <th>Foto</th>
-                      <th>Angkatan</th>
-                      <th>Prodi</th>
                       <th>Jabatan</th>
                       <th>Biro</th>
+                      <th>Departemen</th>
+                      <th>Periode</th>
+                      <th>Foto</th>
+                      <th>Prodi</th>
+                      <th>Angkatan</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -44,11 +46,13 @@
                       <td>{{$pengurus->nama}}</td>
                       <td>{{$pengurus->email}}</td>
                       <td>{{$pengurus->no_hp}}</td>
-                      <td><img src="{{asset($pengurus->foto)}}" alt="foto" width="50px" height="50px"></td>
-                      <td>{{$pengurus->angkatan}}</td>
-                      <td>{{$pengurus->prodi->prodi}}</td>
                       <td>{{$pengurus->jabatan->jabatan}}</td>
                       <td>{{$pengurus->biro->biro}}</td>
+                      <td>{{$pengurus->biro->departemen->departemen}}</td>
+                      <td>{{$pengurus->jabatan->periode}}</td>
+                      <td><img src="{{asset($pengurus->foto)}}" alt="foto" width="50px" height="50px"></td>
+                      <td>{{$pengurus->prodi->prodi}}</td>
+                      <td>{{$pengurus->angkatan}}</td>
                       <td>
                         <a href="{{route('edit.pengurus', ['id' => $pengurus->id_pengurus])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> </a>
                         <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{ $loop->iteration }}"> <i class="fa fa-trash"></i> </a>
