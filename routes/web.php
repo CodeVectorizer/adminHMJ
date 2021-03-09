@@ -6,6 +6,13 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\DepartemenController;
+use App\Http\Controllers\AngkatanController;
+use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\GolonganController;
+use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\PengurusController;
+use App\Http\Controllers\KritikSaranController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -38,22 +45,36 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
     //Angkatan
+    Route::get('angkatan', [AngkatanController::class, 'index'])->name('list.angkatan');
+    Route::post('angkatan/store', [AngkatanController::class, 'store'])->name('add.angkatan');
+    Route::post('angkatan/update/{id}', [AngkatanController::class, 'update'])->name('update.angkatan');
+    Route::get('/angkatan/delete/{id}', [AngkatanController::class, 'delete'])->name('delete.angkatan');
 
 
     //Artikel
 
 
     //Biro
-    Route::get('biro', [BiroController::class, 'index']);
+    Route::get('biro', [BiroController::class, 'index'])->name('list.biro');
+    Route::post('biro/store', [BiroController::class, 'store'])->name('add.biro');
+    Route::post('biro/update/{id}', [BiroController::class, 'update'])->name('update.biro');
+    Route::get('/biro/delete/{id}', [BiroController::class, 'delete'])->name('delete.biro');
 
 
     //Departemen
-
+    Route::get('departemen', [DepartemenController::class, 'index'])->name('list.departemen');
+    Route::post('departemen/store', [DepartemenController::class, 'store'])->name('add.departemen');
+    Route::post('departemen/update/{id}', [DepartemenController::class, 'update'])->name('update.departemen');
+    Route::get('/departemen/delete/{id}', [DepartemenController::class, 'delete'])->name('delete.departemen');
 
     //Form
 
 
     //Jabatan
+    Route::get('jabatan', [JabatanController::class, 'index'])->name('list.jabatan');
+    Route::post('jabatan/store', [JabatanController::class, 'store'])->name('add.jabatan');
+    Route::post('jabatan/update/{id}', [JabatanController::class, 'update'])->name('update.jabatan');
+    Route::get('/jabatan/delete/{id}', [JabatanController::class, 'delete'])->name('delete.jabatan');
 
 
     //Kategori
@@ -66,12 +87,31 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 
 
     //KritikSaran
-
+    Route::get('kritik-saran', [KritikSaranController::class, 'index'])->name('list.kritikSaran');
+    Route::post('kritik-saran/store', [KritikSaranController::class, 'store'])->name('add.kritikSaran');
+    // Route::post('kritik-saran/update/{id}', [KategoriController::class, 'update'])->name('update.kritikSaran');
+    Route::get('/kritik-saran/delete/{id}', [KritikSaranController::class, 'delete'])->name('delete.kritikSaran');
 
     //Pengurus
+    Route::get('pengurus', [PengurusController::class, 'index'])->name('list.pengurus');
+    Route::get('pengurus/tambah', [PengurusController::class, 'create'])->name('tambah.pengurus');
+    Route::get('pengurus/edit/{id}', [PengurusController::class, 'edit'])->name('edit.pengurus');
+    Route::post('pengurus/store', [PengurusController::class, 'store'])->name('add.pengurus');
+    Route::post('pengurus/update/{id}', [PengurusController::class, 'update'])->name('update.pengurus');
+    Route::get('/pengurus/delete/{id}', [PengurusController::class, 'delete'])->name('delete.pengurus');
 
 
     //Prodi
+    Route::get('prodi', [ProdiController::class, 'index'])->name('list.prodi');
+    Route::post('prodi/store', [ProdiController::class, 'store'])->name('add.prodi');
+    Route::post('prodi/update/{id}', [ProdiController::class, 'update'])->name('update.prodi');
+    Route::get('/prodi/delete/{id}', [ProdiController::class, 'delete'])->name('delete.prodi');
+
+    //Golongan
+    Route::get('golongan', [GolonganController::class, 'index'])->name('list.golongan');
+    Route::post('golongan/store', [GolonganController::class, 'store'])->name('add.golongan');
+    Route::post('golongan/update/{id}', [GolonganController::class, 'update'])->name('update.golongan');
+    Route::get('/golongan/delete/{id}', [GolonganController::class, 'delete'])->name('delete.golongan');
 
 });
 
