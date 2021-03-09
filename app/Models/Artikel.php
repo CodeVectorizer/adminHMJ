@@ -11,9 +11,20 @@ class Artikel extends Model
 {
     use HasFactory;
 
+   
+
     protected $table = 'tb_artikel';
     protected $primaryKey = 'id_artikel';
 
+
+
+    const CREATED_AT = 'tanggal_penulisan';
+    const UPDATED_AT = 'tanggal_update';
+
+
+   
+
+    
     /**
      * Get the kategori that owns the Artikel
      *
@@ -23,5 +34,12 @@ class Artikel extends Model
     {
         return $this->belongsTo(Kategori::class, 'id_kategori');
     }
+
+    
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+    
 }
 

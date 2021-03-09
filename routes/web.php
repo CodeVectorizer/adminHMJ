@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BiroController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\Auth\LoginController;
 
@@ -80,8 +81,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 //ROUTE USER
 Route::get('/', [UserController::class, 'index']);
 Route::get('/beranda', [UserController::class, 'index']);
-Route::get('blog', [UserController::class, 'blog']);
-// Route::view('blog', 'user.pages.blog');
+
+Route::get('blog/{artikel}', [UserController::class, 'getBlog'])->name('blog.detail');
+
+Route::name('blog.')->prefix('blog')->group(function () {
+    Route::get('/', [UserController::class, 'blog'])->name('blogs');
+    Route::get('/tags/{kategori}', [UserController::class, 'getBlogWithCategory'])->name('kategori');
+});
+
 Route::view('profile', 'user.pages.profile');
 
 

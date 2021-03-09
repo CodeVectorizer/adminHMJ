@@ -120,7 +120,7 @@
                     </div>
                     @endforeach
                     <div class="col-md-12 d-flex justify-content-center bot-section3">
-                        <a href="blog.html" class="btn btn-load">Load More</a>
+                        <a href="/blog" class="btn btn-load">Load More</a>
                     </div>
                 </div>
             </div>

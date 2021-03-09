@@ -745,6 +745,28 @@ aside.sidebar {
 
 
 
+/* Blog Detail */
+.blog_detail > h1 {
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+
+.blog_detail > p {
+    line-height: 1.7;
+    word-spacing: 1.7;
+}
+.img-artikel {
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.blog_detail_img > img {
+    border-radius: 0.625rem;
+}
+.blog_detail_caption > span {
+    font-size: 0.75rem;
+}
+
 
 
 

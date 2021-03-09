@@ -17,4 +17,10 @@ class Kategori extends Model
     protected $fillable = [
       'name'
     ];
+
+
+    public function getRouteKeyName()
+    {
+        return 'kategori';
+    }
 }

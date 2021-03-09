@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeNamaToNameAtTbUsers extends Migration
+class AddColumnSlugToTableTbArtikel extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class ChangeNamaToNameAtTbUsers extends Migration
      */
     public function up()
     {
-        Schema::table('tb_users', function (Blueprint $table) {
-            $table->renameColumn('nama', 'name');
+        Schema::table('tb_artikel', function (Blueprint $table) {            
+        $table->string('slug')->after('id_artikel');                       
         });
     }
 
@@ -25,8 +25,8 @@ class ChangeNamaToNameAtTbUsers extends Migration
      */
     public function down()
     {
-        Schema::table('tb_users', function (Blueprint $table) {
-            $table->renameColumn('name', 'nama');            
+        Schema::table('tb_artikel', function (Blueprint $table) {
+            $table->dropColumn('slug');            
         });
     }
 }

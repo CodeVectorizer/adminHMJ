@@ -76,7 +76,7 @@
                                 <a class="nav-link   {{ request()->is('/') || request()->is('beranda') ? 'active' : '' }}" href="/beranda">Beranda</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link  {{ request()->is('blog') ? 'active' : '' }}" href="/blog">Blog</a>
+                                <a class="nav-link  {{ request()->is('blog*') ? 'active' : '' }}" href="/blog">Blog</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link  {{ request()->is('profile') ? 'active' : '' }}" href="/profile">Profil HMJTI</a>

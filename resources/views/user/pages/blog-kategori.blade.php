@@ -7,9 +7,8 @@
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
                     <h1 class="mx-0">Berita HMJTI</h1>
-                    <ol>
-                        <li><a href="">Home</a></li>
-                        <li>Artikel</li>
+                    <ol>                        
+                        <li>Kategori: {{$data['kategori']}}</li>
                     </ol>
                 </div>
             </div>
@@ -21,8 +20,7 @@
         <div class="row py-3">
             <!-- <div class="col-md-12"> -->
             <div class="col-md-8 col-sm-12">
-                @foreach ($data['blogs'] as $artikel)
-                    
+                @foreach ($data['blogs'] as $artikel)                    
                 <div class="achieve col-md-10 my-2 ">
                     <div class="card">
                         <img src=" {{ asset('user/img/articles/'.$artikel->gambar) }}" class="card-img-top" alt="...">
@@ -37,7 +35,7 @@
                             <a href="blog/{{ $artikel->id_artikel }}" class="card-foot">Read More</a>
                         </div>
                     </div>
-                </div>
+                </div>                
                 @endforeach
 
 
@@ -51,15 +49,16 @@
                 <div class="col-md-12 sidebar-link">
                     <h4 class="sidebar title-section">Berita Terbaru</h4>
                     @foreach ($data['blogsTab'] as $artikel)                        
-                        <a href="blog/{{ $artikel->slug }}" class="subtitle-section article-link">{{ $artikel->judul }}</a>                   
+                    <a href="{{ route('blog.detail',['artikel' => $artikel->slug]) }}" class="subtitle-section article-link">{{ $artikel->judul }}</a>                   
+
                     @endforeach
                 </div>
                 <div class="col-md-12 sidebar-link">
                     <h4 class="sidebar title-section">Kategori</h4>
                     <ul>
-                        <li><a href="blog/tags/artikel" class="subtitle-section">Artikel</a></li>
+                        <li> <a href="{{ route('blog.kategori',['kategori' => 'artikel']) }}" class="subtitle-section">Artikel</a></li>
 
-                        <li><a href="blog/tags/event" class="subtitle-section">Event</a></li>
+                        <li> <a href="{{ route('blog.kategori',['kategori' => 'event']) }}" class="subtitle-section">Event</a></li>
                     </ul>
                 </div>
                 <div class="col-md-12 sidebar-link">
