@@ -34,7 +34,7 @@
                             </div>
                             <h5 class="card-title pt-3">{{ $artikel->judul}}</a></h5>                                
                             <p class="card-text pt-1">{{ $artikel->isi}}</p>
-                            <a href="blog/{{ $artikel->id_artikel }}" class="card-foot">Read More</a>
+                            <a href="blog/{{ $artikel->slug }}" class="card-foot">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                     <ul>
                         <li><a href="blog/tags/artikel" class="subtitle-section">Artikel</a></li>
 
-                        <li><a href="blog/tags/event" class="subtitle-section">Event</a></li>
+                        <li><a href="blog/tags/berita" class="subtitle-section">Berita</a></li>
                     </ul>
                 </div>
                 <div class="col-md-12 sidebar-link">

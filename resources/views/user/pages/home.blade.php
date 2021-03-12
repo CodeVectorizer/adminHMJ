@@ -114,7 +114,7 @@
 
                                 <p class="card-text">{{ Str::substr($artikel->isi, 0, 280) }}</p>
                                 <p class="publisher">Posted by : <span>{{ $artikel->penulis}}</span></p>
-                                <a href="#" class="card-foot">Read More</a>
+                                <a href="blog/{{ $artikel->slug }}" class="card-foot">Read More</a>
                             </div>
                         </div>
                     </div>
