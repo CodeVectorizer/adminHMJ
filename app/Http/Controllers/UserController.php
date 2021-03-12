@@ -25,7 +25,7 @@ class UserController extends Controller
         return view('user.pages.blog', compact('data'));        
     }
 
-    public function getBlog(Artikel $artikel) {                       
+    public function getBlog(Artikel $artikel) {                               
         $blogsTab = Artikel::orderBy('id_artikel', 'desc')->limit(6)->get();        
         $data = [            
             'blog' => $artikel,
