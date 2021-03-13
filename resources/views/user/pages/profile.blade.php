@@ -10,7 +10,7 @@
                         <h1>profil HMJTI</h1>
                         <ol>
                             <li><a href="/">Home</a></li>
-                            <li>Profil</li>
+                            <li>{{ request()->segment(1) }}</li>
                         </ol>
                     </div>
                 </div>

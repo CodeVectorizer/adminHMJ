@@ -37,6 +37,7 @@ Route::post('admin/login',  [LoginController::class, 'login'])->name('admin.logi
 
 
 
+Route::get('autocomplete', [DashboardController::class, 'autocomplete'])->name('autocomplete');;
 
 // ROUTES ADMIN
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {

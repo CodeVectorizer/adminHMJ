@@ -27,14 +27,14 @@
         <div class="row">
           <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
             <div class="login-brand">
-              <img src="{{ asset('dist/assets/img/stisla-fill.svg') }}" alt="logo" width="100" class="shadow-light rounded-circle">
+              <img src="{{ asset('user/img/logo_hmjti2.png') }}" alt="logo" width="80" class="shadow-light rounded-circle">
             </div>
 
             <div class="card card-primary">
               <div class="card-header"><h4>Login</h4></div>
 
               <div class="card-body">
-              <form method="POST" action="{{ route('admin.login') }}" class="needs-validation" novalidate="">
+              <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
                   @csrf
 
 
@@ -95,9 +95,10 @@
                   <!-- End Custom -->
 
                   <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
-                      <label class="custom-control-label" for="remember-me">Remember Me</label>
+                    <div class="custom-control custom-checkbox">                      
+                      <input class="custom-control-input" type="checkbox" tabindex="3" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                      <label class="custom-control-label" for="remember">Remember Me</label>
+
                     </div>
                   </div>
 

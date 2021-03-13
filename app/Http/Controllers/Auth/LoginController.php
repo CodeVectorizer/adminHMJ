@@ -41,13 +41,14 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function login(Request $request) {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
+    public function login(Request $request)
+    {
+        $email = $request->email;
+        $password = $request->password;
+        $remember = $request->has('remember_me') ? true : false;
+        if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
             $request->session()->regenerate();
-
-            $data = User::where('email',$credentials['email'])->first();
+            $data = User::where('email', $email)->first();
             $request->session()->put('users', $data);
             $request->session()->put('time_logged', date('Y-m-d H:i:s'));
             return redirect()->intended('/admin');
@@ -58,7 +59,8 @@ class LoginController extends Controller
         ]);
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         $request->session()->flush();
         return redirect()->intended('/admin');
     }

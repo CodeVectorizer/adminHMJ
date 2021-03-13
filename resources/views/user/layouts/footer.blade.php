@@ -77,6 +77,7 @@
                 <h4 class="footer title-section">Link</h4>
                 <a href="https://www.polije.ac.id" class="subtitle-section">Politeknik Negeri Jember</a>
                 <a href="http://jti.polije.ac.id" class="subtitle-section">Jurusan Teknologi Informasi POLIJE</a>
+                <a href="https://www.instagram.com/bempolije" class="subtitle-section">BEM KM POLIJE</a>
             </div>
         </div>
         <div class="row justify-content-between text-center">
@@ -124,6 +125,7 @@
                 <hr>
                 <h5>Back End</h5>
                 <p>A. Saifur</p>
+                <p>Ahmad Dinofaldi</p>
                 <p>Lukman A.</p>
             </div>
             <div class="modal-footer">

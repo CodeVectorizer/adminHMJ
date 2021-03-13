@@ -9,7 +9,7 @@
                     <h1 class="mx-0">Berita HMJTI</h1>
                     <ol>
                         <li><a href="/">Home</a></li>
-                        <li>Artikel</li>
+                        <li>{{ request()->segment(1) }}</li>
                     </ol>
                 </div>
             </div>

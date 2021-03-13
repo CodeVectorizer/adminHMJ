@@ -9,9 +9,7 @@
         <h4 class="sidebar title-section">Kategori</h4>
         <ul>
             @foreach($data['blogKategori'] as $kategori)
-            <li> <a href="{{ route('blog.kategori',['kategori' => strtolower($kategori['kategori'])]) }}" class="subtitle-section">{{$kategori->kategori}}</a></li>
-
-            {{-- <li> <a href="{{ route('blog.kategori',['kategori' => 'event']) }}" class="subtitle-section">Event</a></li> --}}
+            <li> <a href="{{ route('blog.kategori',['kategori' => strtolower($kategori['kategori'])]) }}" class="subtitle-section">{{$kategori->kategori}}</a></li>            
             @endforeach
         </ul>
     </div>
@@ -20,7 +18,9 @@
         <ul>
             <li><a href="https://www.polije.ac.id" class="subtitle-section">Politeknik Negeri Jember</a></li>
             <li><a href="http://jti.polije.ac.id" class="subtitle-section">Jurusan Teknologi Informasi
-                    Polije</a></li>
+                    Polije</a></li>            
+            <li><a href="https://www.instagram.com/bempolije" class="subtitle-section">BEM KM POLIJE</a></li>
+                
         </ul>
     </div>
 </aside>

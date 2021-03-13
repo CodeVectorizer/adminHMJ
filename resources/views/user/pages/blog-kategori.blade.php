@@ -20,7 +20,7 @@
         <div class="row py-3">
             <!-- <div class="col-md-12"> -->
             <div class="col-md-8 col-sm-12">
-                @foreach ($data['blogs'] as $artikel)                    
+                @forelse ($data['blogs'] as $artikel)                    
                 <div class="achieve col-md-10 my-2 ">
                     <div class="card">
                         <img src=" {{ asset('user/img/articles/'.$artikel->gambar) }}" class="card-img-top" alt="...">
@@ -35,19 +35,12 @@
                             <a href="blog/{{ $artikel->id_artikel }}" class="card-foot">Read More</a>
                         </div>
                     </div>
-                </div>                
-                @endforeach
-
-
-
-                
-            </div>
-          
-    
-
+                </div>     
+                @empty
+                    <p>No Post</p>
+                @endforelse                
+            </div>          
             @include('user.layouts.blog-sidebar')
-
-
             {{-- Pagination --}}
             <div class=" mt-5 d-flex justify-content-center">
                 {{ $data['blogs']->links() }}

@@ -32,6 +32,137 @@
   @yield('js-pages')
   <!-- <script type="text/javascript" src="{{ asset('dist/assets/js/page/bootstrap-modal.js')}}"> -->
 
+  {{-- </script> --}}
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> --}}
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script> --}}
+<script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+
+{{-- <script type="text/javascript">
+  var path = "{{ route('autocomplete') }}";
+  let hasil = "";
+  let jancok;
+  const search = document.querySelector('#search');
+  const searchItem = document.querySelectorAll(".search-item");
+  const searchResult = document.querySelector('.search-result');
+  const result = (data) => {
+    const items = data;    
+    const listItem = items.map(i => {
+      return (
+        `<div class='search-item'><a href='#''>${i.biro}s</a><a href='#' class='search-close'><i class='fas fa-times'></i></a></div>`        
+      );
+    });
+    console.log(listItem);
+    return listItem;    
+  };
+function resetSearch(){
+  searchResult.innerHTML = "";
+  console.log('halo');
+}
+const fetchData = async (query) => {
+  jancok = await fetch(`${path}?querys=${query}`, {
+    mode: 'cors'
+  }).then(res => {    
+    return res.json();
+  });
+  console.log(jancok);
+}
+
+
+  const getData = async () => {    
+    await fetchData();
+    console.log(jancok);
+    jancok.slice(0,10).forEach((i) => {
+     hasil += `<div class='search-item'><a href='#'>${i.biro}s</a><a href='#' class='search-close'><i class='fas fa-times'></i></a></div>`;                              
+    });
+    searchResult.innerHTML =Ke hasil;
+  }
+  
+  
+  getData();
+  
+  
+  
+  search.addEventListener('input', (e) => {    
+      fetchData(e.target.value);     
+      getData();
+  })   --}}
+  
+ 
+{{-- </script> --}}
+{{-- <script type="text/javascript">
+  var path = "{{ route('autocomplete') }}";
+  let hasil = "";
+  const search = document.querySelector('#search');
+  const searchItem = document.querySelectorAll(".search-item");
+  const searchResult = document.querySelector('.search-result');
+  const result = (data) => {
+    const items = data;    
+    const listItem = items.map(i => {
+      return (
+        `<div class='search-item'><a href='#''>${i.biro}s</a><a href='#' class='search-close'><i class='fas fa-times'></i></a></div>`        
+      );
+    });
+    console.log(listItem);
+    return listItem;    
+  };
+function resetSearch(){
+  searchResult.innerHTML = "";
+  console.log('halo');
+}
+  function getData(query){
+    resetSearch();
+    fetch(`${path}?querys=${query}`, {
+    mode: 'cors'
+  })
+  .then(response => response.json())
+  .then((data) => {
+console.log(data);
+    data.slice(0,10).forEach((i) => {
+     hasil += `<div class='search-item'><a href='#'>${i.biro}s</a><a href='#' class='search-close'><i class='fas fa-times'></i></a></div>`;                              
+    });
+  });
+  searchResult.innerHTML = "";
+
+  searchResult.innerHTML = hasil;
+  }
+  
+  
+  
+  search.addEventListener('keypress', (e) => {   
+    const resetCok = document.querySelector('.search-result');
+    resetCok.innerHTML = "";
+    resetCok.insertAdjacentHTML("afterbegin","")
+
+      getData(e.target.value);     
+  })   --}}
+  
+ 
+{{-- </script> --}}
+
+<script type="text/javascript">
+  var path = "{{ route('autocomplete') }}";
+
+  $('#search').on('keyup',function(e){
+    
+  $value=$(this).val();
+  $.ajax({
+  type : 'get',
+  url : path,
+  data:{'search':$value},
+  success:function(data){    
+  if(!e.target.value) {
+      $('.search-biro').html('');
+    }else {
+  $('.search-biro').html(data);
+
+    }
+  }
+  });
+  })
+  </script>
+  <script type="text/javascript">
+  $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
   </script>
 </body>
 </html>
