@@ -9,7 +9,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <h1>profil HMJTI</h1>
                         <ol>
-                            <li><a href="">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li>Profil</li>
                         </ol>
                     </div>
@@ -19,8 +19,8 @@
         <div class="container-fluid py-5 daftar-pengurus">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="img-wrapper"><img class="struktur-img" src="http://jti.polije.ac.id/hmjti/assets/images/struktur.jpg"
-                        alt="image">
+                    <div class="img-wrapper"><img class="struktur-img" src="{{asset('user/img/struktur.png')}}"
+                        alt="image">                       
                 </div>
                 <div class="col-md-12 ">
                     <div class="container">

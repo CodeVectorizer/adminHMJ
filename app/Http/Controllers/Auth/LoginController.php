@@ -50,11 +50,16 @@ class LoginController extends Controller
             $data = User::where('email',$credentials['email'])->first();
             $request->session()->put('users', $data);
             $request->session()->put('time_logged', date('Y-m-d H:i:s'));
-            return redirect()->intended('/');
+            return redirect()->intended('/admin');
         }
 
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
+    }
+
+    public function logout(Request $request) {
+        $request->session()->flush();
+        return redirect()->intended('/admin');
     }
 }

@@ -8,7 +8,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h1 class="mx-0">Berita HMJTI</h1>
                     <ol>
-                        <li><a href="">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li>Artikel</li>
                     </ol>
                 </div>
@@ -47,30 +47,8 @@
           
     
 
-            <aside class="sidebar col-md-4 col-sm-12">              
-                <div class="col-md-12 sidebar-link">
-                    <h4 class="sidebar title-section">Berita Terbaru</h4>
-                    @foreach ($data['blogsTab'] as $artikel)                        
-                        <a href="blog/{{ $artikel->slug }}" class="subtitle-section article-link">{{ $artikel->judul }}</a>                   
-                    @endforeach
-                </div>
-                <div class="col-md-12 sidebar-link">
-                    <h4 class="sidebar title-section">Kategori</h4>
-                    <ul>
-                        <li><a href="blog/tags/artikel" class="subtitle-section">Artikel</a></li>
+            @include('user.layouts.blog-sidebar')
 
-                        <li><a href="blog/tags/berita" class="subtitle-section">Berita</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-12 sidebar-link">
-                    <h4 class="sidebar title-section">Link</h4>
-                    <ul>
-                        <li><a class="subtitle-section">Politeknik Negeri Jember</a></li>
-                        <li><a class="subtitle-section">Jurusan Teknologi Informasi
-                                Polije</a></li>
-                    </ul>
-                </div>
-            </aside>
 
             {{-- Pagination --}}
             <div class=" mt-5 d-flex justify-content-center">

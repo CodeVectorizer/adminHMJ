@@ -29,6 +29,7 @@
           <li class="{{ request()->is('admin/google-form') ? 'active' : '' }}">
             <a class="nav-link" href=""><i class="fas fa-share-alt-square"></i><span>Google Form</span></a>
           </li>
+          @if(auth()->user()->role == 'admin')
           <li class="nav-item dropdown 
           {{ 
           request()->is('admin/departemen') || 
@@ -51,6 +52,7 @@
           <li class="">
             <a class="nav-link" href=""><i class="fas fa-user"></i><span>Users / Admin</span></a>
           </li>
+          @endif
           <li class="">
             <a class="nav-link" href=""><i class="fas fa-address-card"></i><span>Edit Profile</span></a>
           </li>

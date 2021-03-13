@@ -17,25 +17,33 @@ class UserController extends Controller
     public function blog()
     {         
         $blogs = Artikel::orderBy('id_artikel', 'desc')->paginate(3);
-        $blogsTab = Artikel::orderBy('id_artikel', 'desc')->limit(6)->get();        
+        $blogsTab = Artikel::orderBy('id_artikel', 'desc')->limit(6)->get();   
+        $blogKategori = Kategori::all();
+ 
         $data = [            
             'blogs' => $blogs,
-            'blogsTab' => $blogsTab,            
+            'blogsTab' => $blogsTab,    
+            'blogKategori' => $blogKategori
+
         ];        
         return view('user.pages.blog', compact('data'));        
     }
 
     public function getBlog(Artikel $artikel) {                               
         $blogsTab = Artikel::orderBy('id_artikel', 'desc')->limit(6)->get();        
+        $blogKategori = Kategori::all();
         $data = [            
             'blog' => $artikel,
             'blogsTab' => $blogsTab,            
-        ];          
+            'blogKategori' => $blogKategori
+        ];                  
         return view('user.pages.blog-detail', compact('data'));                
     }
 
     public function getBlogWithCategory(Kategori $kategori) {        
-        $getKategori = $kategori['kategori'];               
+        $getKategori = $kategori['kategori'];  
+        $blogKategori = Kategori::all();
+                     
         $blogsTab = Artikel::orderBy('id_artikel', 'desc')->limit(6)->get();        
         $blogWithCategory = Artikel::whereHas('kategori', function ($q) use ($getKategori){                        
              return $q->where('kategori','=',$getKategori);
@@ -43,7 +51,8 @@ class UserController extends Controller
         $data = [            
             'kategori' => $getKategori,
             'blogs' => $blogWithCategory,
-            'blogsTab' => $blogsTab,            
+            'blogsTab' => $blogsTab,     
+            'blogKategori' => $blogKategori
         ];    
         return view('user.pages.blog-kategori', compact('data'));                        
     }

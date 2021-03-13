@@ -68,15 +68,15 @@
                 <a class="subtitle-section">Profil HMJ TI</a>
                 <a class="subtitle-section">Kontak</a>
             </div>
-            <div class="col-md-2 footer-link">
+            {{-- <div class="col-md-2 footer-link">
                 <h4 class="footer title-section">Berita</h4>
                 <a class="subtitle-section">Berita</a>
                 <a class="subtitle-section">Event</a>
-            </div>
+            </div> --}}
             <div class="col-md-2 footer-link">
                 <h4 class="footer title-section">Link</h4>
-                <a class="subtitle-section">Politeknik Negeri Jember</a>
-                <a class="subtitle-section">Jurusan Teknologi Informasi POLIJE</a>
+                <a href="https://www.polije.ac.id" class="subtitle-section">Politeknik Negeri Jember</a>
+                <a href="http://jti.polije.ac.id" class="subtitle-section">Jurusan Teknologi Informasi POLIJE</a>
             </div>
         </div>
         <div class="row justify-content-between text-center">
