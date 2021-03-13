@@ -12,12 +12,10 @@
 - admin@admin.com:admin
 
 
-## Todo
-- [ ] Design Form
-- [ ] Model Eloquent Relationship
-- [ ] ...
-- [ ] ...
-
+## Tambahan
+- setting session driver di .env SESSION_DRIVER=database
+- php artisan migrate
+- php artisan db:seed
 
 
 kalo ada error, share di grup biro _
