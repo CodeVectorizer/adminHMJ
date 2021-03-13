@@ -1,3 +1,8 @@
+# Tambahan
+- setting session driver di .env SESSION_DRIVER=database
+- php artisan migrate
+- php artisan db:seed
+
 ## Instalasi
 - git clone https://github.com/CodeVectorizer/adminHMJ.git
 - cd adminHMJ
@@ -11,11 +16,6 @@
 - localhost:8000/admin/login
 - admin@admin.com:admin
 
-
-## Tambahan
-- setting session driver di .env SESSION_DRIVER=database
-- php artisan migrate
-- php artisan db:seed
 
 
 kalo ada error, share di grup biro _
