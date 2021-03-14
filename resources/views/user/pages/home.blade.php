@@ -35,7 +35,7 @@
                             <h2 class="title-section">
                                 VISI HMJ TEKNOLOGI INFORMASI
                             </h2>
-                            <p class="subtitle-section">
+                            <p class="subtitle-section-2">
                                 Mewujudkan mahasiswa yang bla bla bla bla bla bla bla bla bla bla bla bla
                                 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
                                 bla bla
@@ -98,11 +98,11 @@
                         <h2 class="center title-section px-5">BERITA TERBARU</h2>
                     </div>
                 </div>
-                
+
                 <div class="row py-3 justify-content-center">
                     @foreach ($data as $artikel)
                     <div class="col-md-4 col-sm-10 my-3">
-                        <div class="card">
+                        <div class="card border-0 shadow">
                             <a href="blog.html"><img src=" {{asset('user/img/articles/article.png')}}" class="card-img-top"
                                     alt="..."></a>
                             <div class="card-body">
@@ -112,9 +112,12 @@
                                 </div>
                                 <h5 class="card-title"><a href="blog.html">{{ $artikel->judul}}</a></h5>
 
-                                <p class="card-text">{{ Str::substr($artikel->isi, 0, 280) }}</p>
-                                <p class="publisher">Posted by : <span>{{ $artikel->penulis}}</span></p>
-                                <a href="blog/{{ $artikel->slug }}" class="card-foot">Read More</a>
+                                <p class="card-text">{{ Str::substr($artikel->isi, 0, 100) }}....</p>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <p class="publisher"><i class="fas fa-user fa-sm"></i>&nbsp<span>{{ $artikel->penulis}}</span></p>
+                                    <a href="blog/{{ $artikel->slug }}" class="card-foot">Read More</a>
+                                </div>
                             </div>
                         </div>
                     </div>

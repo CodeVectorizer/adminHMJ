@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
                     <h1 class="mx-0">Berita HMJTI</h1>
-                    <ol>                        
+                    <ol>
                         <li>Kategori: {{$data['kategori']}}</li>
                     </ol>
                 </div>
@@ -20,7 +20,7 @@
         <div class="row py-3">
             <!-- <div class="col-md-12"> -->
             <div class="col-md-8 col-sm-12">
-                @forelse ($data['blogs'] as $artikel)                    
+                @forelse ($data['blogs'] as $artikel)
                 <div class="achieve col-md-10 my-2 ">
                     <div class="card">
                         <img src=" {{ asset('user/img/articles/'.$artikel->gambar) }}" class="card-img-top" alt="...">
@@ -30,16 +30,16 @@
                                 <a class="news-tag" href="#">{{ $artikel->kategori->kategori }}</a>
                                 <p class="news-date">{{ \Carbon\Carbon::parse($artikel->tanggal_update)->diffForHumans() }}</p>
                             </div>
-                            <h5 class="card-title pt-3">{{ $artikel->judul}}</a></h5>                                
-                            <p class="card-text pt-1">{{ $artikel->isi}}</p>
+                            <h5 class="card-title pt-3">{{ $artikel->judul}}</a></h5>
+                            <p class="card-text pt-1">{{ Str::substr($artikel->isi, 0, 250) }}........</p>
                             <a href="blog/{{ $artikel->id_artikel }}" class="card-foot">Read More</a>
                         </div>
                     </div>
-                </div>     
+                </div>
                 @empty
                     <p>No Post</p>
-                @endforelse                
-            </div>          
+                @endforelse
+            </div>
             @include('user.layouts.blog-sidebar')
             {{-- Pagination --}}
             <div class=" mt-5 d-flex justify-content-center">

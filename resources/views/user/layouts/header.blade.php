@@ -42,29 +42,6 @@
     </div>
     </div>
     {{-- <div class="loader">
-        <div class="preload-image"><img src="{{asset('user/img/logo.png')}}" alt=""></div>
-        <div class="animation">
-          <div class="animation-loader">
-            <div class="dot"></div>
-          </div>
-          <div class="animation-loader">
-            <div class="dot"></div>
-          </div>
-          <div class="animation-loader">
-            <div class="dot"></div>
-          </div>
-          <div class="animation-loader">
-            <div class="dot"></div>
-          </div>
-          <div class="animation-loader">
-            <div class="dot"></div>
-          </div>
-          <div class="animation-loader">
-            <div class="dot"></div>
-          </div>
-        </div>
-      </div> --}}
-    {{-- <div class="loader">
         <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" width="320px" height="87px" viewBox="0 0 108 40"
             xml:space="preserve">
@@ -94,8 +71,7 @@
                 <div class="container-fluid">
                     <div class="d-flex">
                         <img src="{{asset('user/img/logo.png')}}" class="navbar-logo" alt="" width="36" height="50">
-                        <a class="navbar-brand" href="#">HIMPUNAN MAHASISWA <br> JURUSAN TEKNOLOGI
-                            INFORMASI</a>
+                        <a class="navbar-brand" href="#">Himpunan Mahasiswa <br> Jurusan Teknologi Informasi</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

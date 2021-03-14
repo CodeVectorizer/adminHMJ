@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="img-wrapper"><img class="struktur-img" src="{{asset('user/img/struktur.png')}}"
-                        alt="image">                       
+                        alt="image">
                 </div>
                 <div class="col-md-12 ">
                     <div class="container">
@@ -537,7 +537,6 @@
                     </div>
                 </div>
             </div>
-            <hr>
         </div>
     </div>
 </main>
