@@ -34,6 +34,37 @@
 
 <body id="home">
     <div class="loader">
+    <div class="preload-animation">
+        <div class="preload-image"><center><img src="{{asset('user/img/logo.png')}}" alt=""></center></div>
+        <div class="loading-bar">
+            <div class="blue-bar"></div>
+        </div>
+    </div>
+    </div>
+    {{-- <div class="loader">
+        <div class="preload-image"><img src="{{asset('user/img/logo.png')}}" alt=""></div>
+        <div class="animation">
+          <div class="animation-loader">
+            <div class="dot"></div>
+          </div>
+          <div class="animation-loader">
+            <div class="dot"></div>
+          </div>
+          <div class="animation-loader">
+            <div class="dot"></div>
+          </div>
+          <div class="animation-loader">
+            <div class="dot"></div>
+          </div>
+          <div class="animation-loader">
+            <div class="dot"></div>
+          </div>
+          <div class="animation-loader">
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div> --}}
+    {{-- <div class="loader">
         <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" width="320px" height="87px" viewBox="0 0 108 40"
             xml:space="preserve">
@@ -45,7 +76,7 @@
                     dur="1210ms" repeatCount="indefinite" />
             </g>
         </svg>
-    </div>
+    </div> --}}
     <div id="scrollUp" title="Scroll To Top" style="display: block;">
         <a href="#home">
             <svg class="svg-inline--fa fa-arrow-up fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas"
