@@ -103,7 +103,7 @@
                                     <a class="dropdown-item" href="#">Program Kerja HMJ TI</a>
                                     <a class="dropdown-item" href="#">AD/ART HMJ TI</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Kritik dan Saran</a>
+                                    <a class="dropdown-item" href="#">Kritik dan Sarann</a>
                                 </div>
                             </li>
                         </ul>
