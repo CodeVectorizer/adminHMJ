@@ -92,9 +92,19 @@
                                 <a class="nav-link  {{ request()->is('profile') ? 'active' : '' }}"
                                     href="/profile">Profil HMJTI</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link  {{ request()->is('about-us') ? 'active' : '' }}" href="#">tentang
-                                    kami</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle  {{ request()->is('about-us') ? 'active' : '' }}"
+                                    href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">tentang
+                                    kami
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Sejarah</a>
+                                    <a class="dropdown-item" href="#">Program Kerja HMJ TI</a>
+                                    <a class="dropdown-item" href="#">AD/ART HMJ TI</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Kritik dan Saran</a>
+                                </div>
                             </li>
                         </ul>
                     </div>
