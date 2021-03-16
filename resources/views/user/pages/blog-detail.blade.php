@@ -18,13 +18,13 @@
 
     <div class="container mt-4">
 
-        <div class="row py-3 ">            
+        <div class="row py-3 ">
             <div class="col-md-8 col-sm-12 ">
                <div class="blog_detail">
                    <h1>{{$data['blog']['judul']}}</h1>
                </div>
 
-                <div class="d-flex justify-content-start align-items-center my-3">
+                <div class="d-flex justify-content-start align-items-center my-2">
                     <img src="{{ asset('user/img/user-default.png') }}" class="img-artikel" alt="">
                     <div class="ms-2 blog_detail_caption">
                         <span class="d-block fw-bold">{{$data['blog']['penulis']}}</span>
@@ -35,17 +35,17 @@
                 <div class="blog_detail_img">
                     <img src=" {{ asset('user/img/articles/'.$data['blog']['gambar']) }}" class="card-img-top" alt="...">
                 </div>
-                
-                
+
+
                 <div class="mt-4 mb-5 text-left blog_detail ">
                     <p>{{$data['blog']['isi']}}</p>
                 </div>
             </div>
-          
-    
+
+
 
             @include('user.layouts.blog-sidebar')
-                       
+
         </div>
 
     </div>

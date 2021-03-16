@@ -3,6 +3,7 @@
         <h4 class="sidebar title-section">Berita Terbaru</h4>
         @foreach ($data['blogsTab'] as $artikel)
             <a href="{{ route('blog.detail',['artikel' => $artikel->slug]) }}" class="subtitle-section article-link">{{ $artikel->judul }}</a>
+            <hr>
             @endforeach
         </div>
         <div class="col-md-12 sidebar-link">

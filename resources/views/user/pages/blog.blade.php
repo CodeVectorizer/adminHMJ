@@ -32,7 +32,7 @@
                                 <a class="news-tag" href="#">{{ $artikel->kategori->kategori }}</a>
                                 <p class="news-date">{{ \Carbon\Carbon::parse($artikel->tanggal_update)->diffForHumans() }}</p>
                             </div>
-                            <h5 class="card-title pt-3">{{ $artikel->judul}}</a></h5>
+                            <h5 class="card-title">{{ $artikel->judul}}</a></h5>
                             <p class="card-text pt-1">{{ Str::substr($artikel->isi, 0, 250) }}........</p>
                             <a href="blog/{{ $artikel->slug }}" class="card-foot">Read More</a>
                         </div>

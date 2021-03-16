@@ -9,7 +9,7 @@
     <!-- Montserrat -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <!-- Poppins -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -34,12 +34,14 @@
 
 <body id="home">
     <div class="loader">
-    <div class="preload-animation">
-        <div class="preload-image"><center><img src="{{asset('user/img/logo.png')}}" alt=""></center></div>
-        <div class="loading-bar">
-            <div class="blue-bar"></div>
+        <div class="preload-animation">
+            <div class="preload-image">
+                <center><img src="{{asset('user/img/logo.png')}}" alt=""></center>
+            </div>
+            <div class="loading-bar">
+                <div class="blue-bar"></div>
+            </div>
         </div>
-    </div>
     </div>
     {{-- <div class="loader">
         <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"
@@ -80,16 +82,19 @@
                     <div class="collapse navbar-collapse " id="navbarNav">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link   {{ request()->is('/') || request()->is('beranda') ? 'active' : '' }}" href="/beranda">Beranda</a>
+                                <a class="nav-link   {{ request()->is('/') || request()->is('beranda') ? 'active' : '' }}"
+                                    href="/beranda">Beranda</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link  {{ request()->is('blog*') ? 'active' : '' }}" href="/blog">Blog</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link  {{ request()->is('profile') ? 'active' : '' }}" href="/profile">Profil HMJTI</a>
+                                <a class="nav-link  {{ request()->is('profile') ? 'active' : '' }}"
+                                    href="/profile">Profil HMJTI</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link  {{ request()->is('about-us') ? 'active' : '' }}" href="/about-us">tentang kami</a>
+                                <a class="nav-link  {{ request()->is('about-us') ? 'active' : '' }}" href="#">tentang
+                                    kami</a>
                             </li>
                         </ul>
                     </div>

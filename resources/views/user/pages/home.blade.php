@@ -22,7 +22,7 @@
                 <div class="row justify-content-center text-center">
                     <div class="col-md-6">
                         <h2 class="center title-section px-5">HMJ TEKNOLOGI INFORMASI POLITEKNIK NEGERI JEMBER</h2>
-                        <p class="subtitle-section px-2">Himpunan Mahasiswa Jurusan Teknologi Informasi adalah
+                        <p class="subtitle-section">Himpunan Mahasiswa Jurusan Teknologi Informasi adalah
                             organisasi
                             mahasiswa yang berada di jurusan teknologi informasi</p>
                     </div>
