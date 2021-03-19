@@ -18,7 +18,7 @@
                 <div class="search-biro">
 
                 </div>                
-                <div class="search-header">
+                {{-- <div class="search-header">
                     Result
                 </div>
                 <div class="search-item">
@@ -60,7 +60,7 @@
                         </div>
                         Create a new Homepage Design
                     </a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -194,7 +194,7 @@
         </li> --}}
         <li class="dropdown"><a href="#" data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <img alt="image" src="{{ asset('dist//img/avatar/avatar-1.png') }}" class="rounded-circle mr-1">
+                <img alt="image" src="{{ asset('user/img/user-default.png') }}" class="rounded-circle mr-1">
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">

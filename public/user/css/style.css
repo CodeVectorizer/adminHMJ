@@ -74,6 +74,13 @@ nav {
 }
 
 
+.dropdown-item {
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: capitalize;
+}
+
+
 /* Main */
 
 /* SECTION 1 */

@@ -30,7 +30,13 @@
                         <div class="card-body lg">
                             <div class="card-head d-flex justify-content-between">
                                 <a class="news-tag" href="#">{{ $artikel->kategori->kategori }}</a>
-                                <p class="news-date">{{ \Carbon\Carbon::parse($artikel->tanggal_update)->diffForHumans() }}</p>
+                                <p class="news-date">
+                                    @if (Carbon::now()->diffInDays($artikel->tanggal_update) > 14)
+                                        {{ Carbon::parse($artikel->tanggal_update)->format('d-m-Y') }}                                    
+                                        @else
+                                        {{ Carbon::parse($artikel->tanggal_update)->diffForHumans() }}
+                                        @endif       
+                                </p>
                             </div>
                             <h5 class="card-title">{{ $artikel->judul}}</a></h5>
                             <p class="card-text pt-1">{{ Str::substr($artikel->isi, 0, 250) }}........</p>

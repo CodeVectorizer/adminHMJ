@@ -12,7 +12,7 @@
                 @foreach($data['blogKategori'] as $kategori)
                 <li> <a href="{{ route('blog.kategori',['kategori' => strtolower($kategori['kategori'])]) }}" class="subtitle-section">{{$kategori->kategori}}</a></li>
                 @endforeach
-                <li><a href="/blog" class="subtitle-section">Semua</a></li>
+                <li><a href="/blog" class="subtitle-section"> Semua</a></li>
         </ul>
     </div>
     <div class="col-md-12 sidebar-link">

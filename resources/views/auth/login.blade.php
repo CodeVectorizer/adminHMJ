@@ -108,7 +108,7 @@
                     </button>
                   </div>
                 </form>
-                <div class="text-center mt-4 mb-3">
+                {{-- <div class="text-center mt-4 mb-3">
                   <div class="text-job text-muted">Login With Social</div>
                 </div>
                 <div class="row sm-gutters">
@@ -122,15 +122,15 @@
                       <span class="fab fa-twitter"></span> Twitter
                     </a>
                   </div>
-                </div>
+                </div> --}}
 
               </div>
             </div>
-            <div class="mt-5 text-muted text-center">
+            {{-- <div class="mt-5 text-muted text-center">
               Don't have an account? <a href="auth-register.html">Create One</a>
-            </div>
+            </div> --}}
             <div class="simple-footer">
-              Copyright &copy; Stisla 2018
+              Copyright &copy; Biro Sistem Informasi {{date("Y")}}
             </div>
           </div>
         </div>

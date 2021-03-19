@@ -16,6 +16,7 @@ class KritikSaranController extends Controller
   //store kritikSaran
   public function store(Request $request)
   {
+
     //validasi form
     $this->validate($request, [
       'nama' => 'required',

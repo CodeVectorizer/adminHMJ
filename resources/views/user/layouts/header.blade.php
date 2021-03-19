@@ -1,9 +1,17 @@
 <html lang="en">
 
 <head>
+
+    <link rel="shortcut icon" href="{{asset('user/favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('user/favicon.ico')}}" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HMJTI POLIJE</title>
+
+
+
+
+
 
     <!-- Fonts -->
     <!-- Montserrat -->
@@ -18,7 +26,7 @@
 
 
     <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/0ebb324bc0.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://kit.fontawesome.com/0ebb324bc0.js" crossorigin="anonymous"></script> --}}
 
     <!-- BootstrapCSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -73,7 +81,7 @@
                 <div class="container-fluid">
                     <div class="d-flex">
                         <img src="{{asset('user/img/logo.png')}}" class="navbar-logo" alt="" width="36" height="50">
-                        <a class="navbar-brand" href="#">Himpunan Mahasiswa <br> Jurusan Teknologi Informasi</a>
+                        <a class="navbar-brand" href="/">Himpunan Mahasiswa <br> Jurusan Teknologi Informasi</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,7 +101,7 @@
                                     href="/profile">Profil HMJTI</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle  {{ request()->is('about-us') ? 'active' : '' }}"
+                                <a class="nav-link  {{ request()->is('about-us') ? 'active' : '' }}"
                                     href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">tentang
                                     kami
