@@ -910,9 +910,57 @@ aside.sidebar {
     font-size: 0.75rem;
 }
 
+/* search */
+.searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 40px;
+    background-color: #0096FF;
+    border-radius: 40px;
+    padding: 10px;
+    }
 
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 1.2;
+    caret-color:transparent;
+    line-height: auto;
+    transition: all 0.4s ease-in-out;
+    }
 
+    .search_input::placeholder {
+        color: #f5f5f5;
+    }
 
+    .searchbar:hover > .search_input{
+    padding: 0px 10px;
+    width: 150px;
+    caret-color: #FFFFFF;
+    transition: all 0.4s ease-in-out;
+    }
+
+    .searchbar:hover > .search_icon{
+    color: #ffffff;
+    }
+
+    .search_icon {
+    height: 20px;
+    width: 20px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
 
 
 

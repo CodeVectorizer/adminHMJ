@@ -26,7 +26,7 @@
 
 
     <!-- Fontawesome -->
-    {{-- <script src="https://kit.fontawesome.com/0ebb324bc0.js" crossorigin="anonymous"></script> --}}
+    <script src="https://kit.fontawesome.com/0ebb324bc0.js" crossorigin="anonymous"></script>
 
     <!-- BootstrapCSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -101,9 +101,9 @@
                                     href="/profile">Profil HMJTI</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link  {{ request()->is('about-us') ? 'active' : '' }}"
-                                    href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">tentang
+                                <a class="nav-link  {{ request()->is('about-us') ? 'active' : '' }}" href="#"
+                                    id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">tentang
                                     kami
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -114,9 +114,16 @@
                                     <a class="dropdown-item" href="#">Kritik dan Sarann</a>
                                 </div>
                             </li>
+                            <li class="nav-item">
+                                <div class="searchbar">
+                                    <input class="search_input" type="text" name="" placeholder="Search...">
+                                    <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
+
