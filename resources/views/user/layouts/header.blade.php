@@ -114,11 +114,14 @@
                                     <a class="dropdown-item" href="#">Kritik dan Sarann</a>
                                 </div>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item">              
+                                <form id="form_cari" action="{{route('blog.cari')}}" method="GET">
+                                    {{-- @csrf --}}
                                 <div class="searchbar">
-                                    <input class="search_input" type="text" name="" placeholder="Search...">
-                                    <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-                                </div>
+                                    <input class="search_input" type="text" name="q" placeholder="Search...">
+                                    <a href="javascript:{}" onclick="document.getElementById('form_cari').submit();" class="search_icon"><i class="fas fa-search"></i></a>
+                                </div>      
+                            </form>                  
                             </li>
                         </ul>
                     </div>

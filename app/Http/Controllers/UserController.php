@@ -61,8 +61,10 @@ class UserController extends Controller
 
     public function cariBlog(Request $request)
     {
-        $data = Artikel::orderBy('judul', 'desc')->where("judul", "LIKE", "%" . $request->q . "%")->limit(5)->get();
-        $blogs = Artikel::orderBy('id_artikel', 'desc')->paginate(3);
+        // dd($request->q);
+
+        $data = Artikel::orderBy('judul', 'desc')->where("judul", "LIKE", "%" . $request->q . "%")->get();
+        if (!$request->q) $data = [];
         $blogsTab = Artikel::orderBy('id_artikel', 'desc')->limit(6)->get();
         $blogKategori = Kategori::all();
 
@@ -74,24 +76,5 @@ class UserController extends Controller
 
         ];
         return view('user.pages.blog-cari', compact('data'));
-    }
-
-    public function autocomplete(Request $request)
-    {
-
-        if ($request->ajax()) {
-            $output = "";
-            $data = Artikel::select('judul')->where("judul", "LIKE", "%" . $request->search . "%")->limit(5)->get();
-            if ($data) {
-                foreach ($data as $key => $item) {
-                    $output .= "
-                    <div class='search-item'><a href='#'>" . $item->biro . "</a></a></div>
-                    ";
-                }
-            } else {
-                $output = "";
-            }
-        }
-        return Response($output);
     }
 }

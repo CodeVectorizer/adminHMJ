@@ -27,7 +27,7 @@
 
                         <div class="card-body lg">
                             <div class="card-head d-flex justify-content-between">
-                                <a class="news-tag" href="#">{{ $artikel->kategori->kategori }}</a>
+                                <a class="news-tag" href="{{route('blog.kategori', ['kategori' => Str::lower($artikel->kategori->kategori)])}}">{{ $artikel->kategori->kategori }}</a>
                                 <p class="news-date">{{ \Carbon\Carbon::parse($artikel->tanggal_update)->diffForHumans() }}</p>
                             </div>
                             <h5 class="card-title">{{ $artikel->judul}}</a></h5>
