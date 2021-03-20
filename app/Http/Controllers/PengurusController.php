@@ -62,11 +62,11 @@ class PengurusController extends Controller
 
     //store foto
     $imagePath = "";
-    if ($request-> hasFile('foto')) {
+    if ($request->hasFile('foto')) {
       $image = $request->foto;
-      $imageName = time().$image->getClientOriginalName();
+      $imageName = time() . $image->getClientOriginalName();
       $image->move('foto/', $imageName);
-      $imagePath = 'foto/'.$imageName;
+      $imagePath = 'foto/' . $imageName;
     }
     $pengurus->foto = $imagePath;
 
@@ -101,17 +101,17 @@ class PengurusController extends Controller
     $pengurus->id_biro = $request->id_biro;
 
     //store foto
-    if ($request-> hasFile('foto')) {
+    if ($request->hasFile('foto')) {
       if (file_exists($pengurus->foto)) {
         unlink($pengurus->foto);
       }
       $image = $request->foto;
-      $imageName = time().$image->getClientOriginalName();
+      $imageName = time() . $image->getClientOriginalName();
       $image->move('foto/', $imageName);
-      $imagePath = 'foto/'.$imageName;
-      $pengurus->foto = 'foto/'.$imageName;
+      $imagePath = 'foto/' . $imageName;
+      $pengurus->foto = 'foto/' . $imageName;
     }
-    
+
     $pengurus->save();
 
     return redirect()->route('list.pengurus');

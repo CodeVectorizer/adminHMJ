@@ -128,9 +128,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 Route::get('/', [UserController::class, 'index']);
 Route::get('/beranda', [UserController::class, 'index']);
 
-Route::get('blog/{artikel}', [UserController::class, 'getBlog'])->name('blog.detail');
+// Route::get('blog/{cari}', [UserController::class, 'getBlog'])->name('blog.detail');
 
 Route::name('blog.')->prefix('blog')->group(function () {
+    Route::get('/cari', [UserController::class, 'cariBlog'])->name('cari');
+    Route::get('/{artikel}', [UserController::class, 'getBlog'])->name('detail');
     Route::get('/', [UserController::class, 'blog'])->name('blogs');
     Route::get('/tags/{kategori}', [UserController::class, 'getBlogWithCategory'])->name('kategori');
 });
