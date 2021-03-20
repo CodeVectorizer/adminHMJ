@@ -32,7 +32,7 @@
                             </div>
                             <h5 class="card-title">{{ $artikel->judul}}</a></h5>
                             <p class="card-text pt-1">{{ Str::substr($artikel->isi, 0, 250) }}........</p>
-                            <a href="blog/{{ $artikel->id_artikel }}" class="card-foot">Read More</a>
+                            <a href="blog/{{ $artikel->slug }}" class="card-foot">Read More</a>
                         </div>
                     </div>
                 </div>
