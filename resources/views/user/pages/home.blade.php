@@ -107,7 +107,7 @@
                                     alt="..."></a>
                             <div class="card-body">
                                 <div class="card-head d-flex justify-content-between">
-                                    <a class="news-tag" href="#">{{ $artikel->kategori->kategori }}</a>
+                                    <a class="news-tag" href="{{route('blog.kategori', ['kategori' => Str::lower($artikel->kategori->kategori)])}}">{{ $artikel->kategori->kategori }}</a>
                                     <p class="news-date">
                                         @if (Carbon::now()->diffInDays($artikel->tanggal_update) > 14)
                                         {{ Carbon::parse($artikel->tanggal_update)->format('d-m-Y') }}                                    
