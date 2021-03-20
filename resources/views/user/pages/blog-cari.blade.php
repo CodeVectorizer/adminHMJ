@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                @empty
+                @empty                
                 <p>Pencarian tidak ditemukan : <b>{{ $data['keywords'] }}</b></p>
                 @endforelse
             </div>
