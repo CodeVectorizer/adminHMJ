@@ -47,11 +47,21 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
 
 
-    //Artikel
 
 
     // Auth Admin
     Route::middleware(['admin'])->group(function () {
+        //Artikels
+        Route::get('artikel', [ArtikelController::class, 'index'])->name('list.artikel');
+        Route::get('artikel/tambah', [ArtikelController::class, 'create'])->name('tambah.artikel');
+        Route::get('artikel/edit/{id}', [ArtikelController::class, 'edit'])->name('edit.artikel');
+        Route::post('artikel/store', [ArtikelController::class, 'store'])->name('add.artikel');
+        Route::post('artikel/update/{id}', [ArtikelController::class, 'update'])->name('update.artikel');
+        Route::get('artikel/delete/{id}', [ArtikelController::class, 'delete'])->name('delete.artikel');
+
+
+
+
         //Departemen
         Route::get('departemen', [DepartemenController::class, 'index'])->name('list.departemen');
         Route::post('departemen/store', [DepartemenController::class, 'store'])->name('add.departemen');

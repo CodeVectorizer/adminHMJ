@@ -18,6 +18,16 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ asset('dist/assets/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('dist/assets/css/components.css') }}">
+
+
+
+
+  {{-- Summernote --}}
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+
 </head>
 
 <body>

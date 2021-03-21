@@ -28,6 +28,7 @@ class PengurusController extends Controller
   public function edit($id)
   {
     $data = Pengurus::find($id);
+    if (!$data) return view('error-404');
     $prodi = Prodi::All();
     $jabatan = Jabatan::All();
     $biro = Biro::All();
