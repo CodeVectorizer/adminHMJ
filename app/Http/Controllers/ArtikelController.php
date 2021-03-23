@@ -6,6 +6,7 @@ use App\Models\Artikel;
 use App\Models\Kategori;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArtikelController extends Controller
 {
@@ -36,7 +37,6 @@ class ArtikelController extends Controller
     {
         // dd($request);
         $this->validate($request, [
-            'penulis' => 'required',
             'judul' => 'required',
             'tanggal_penulisan' => 'required',
             'gambar' => 'required',
@@ -46,7 +46,7 @@ class ArtikelController extends Controller
         ]);
 
         $artikel = new Artikel();
-        $artikel->penulis = $request->penulis;
+        $artikel->penulis = Auth::user()->name;
         $artikel->judul = $request->judul;
         $artikel->slug = Str::slug($request->judul);
         $artikel->tanggal_penulisan = $request->tanggal_penulisan;
