@@ -103,22 +103,22 @@
                     @foreach ($data as $artikel)
                     <div class="col-md-4 col-sm-10 my-3">
                         <div class="card border-0 shadow">
-                            <a href="blog.html"><img src=" {{asset('user/img/articles/article.png')}}" class="card-img-top"
-                                    alt="..."></a>
+                            <a href="blog/{{ $artikel->slug }}"><img src=" {{asset($artikel->gambar)}}" class="card-img-top"
+                                    alt="..." style="width: 100%;height: 300px; object-fit: cover; object-position: center"></a>
                             <div class="card-body">
                                 <div class="card-head d-flex justify-content-between">
                                     <a class="news-tag" href="{{route('blog.kategori', ['kategori' => Str::lower($artikel->kategori->kategori)])}}">{{ $artikel->kategori->kategori }}</a>
                                     <p class="news-date">
                                         @if (Carbon::now()->diffInDays($artikel->tanggal_update) > 14)
-                                        {{ Carbon::parse($artikel->tanggal_update)->format('d-m-Y') }}                                    
+                                        {{ Carbon::parse($artikel->tanggal_update)->format('d-m-Y') }}
                                         @else
                                         {{ Carbon::parse($artikel->tanggal_update)->diffForHumans() }}
-                                        @endif                                        
+                                        @endif
                                     </p>
                                 </div>
-                                <h5 class="card-title"><a href="blog.html">{{ $artikel->judul}}</a></h5>
+                                <h5 class="card-title"><a href="blog/{{ $artikel->slug }}">{{ $artikel->judul}}</a></h5>
 
-                                <p class="card-text">{{ Str::substr($artikel->isi, 0, 100) }}....</p>
+                                <p class="card-text">{{ Str::substr(strip_tags($artikel->isi), 0, 100) }}....</p>
                                 <hr>
                                 <div class="d-flex justify-content-between">
                                     <p class="publisher"><i class="fas fa-user fa-sm"></i>&nbsp<span>{{ $artikel->penulis}}</span></p>

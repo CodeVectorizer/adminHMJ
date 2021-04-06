@@ -23,7 +23,8 @@
                 @forelse ($data['blogs'] as $artikel)
                 <div class="achieve col-md-10 my-2 ">
                     <div class="card">
-                        <img src=" {{ asset('user/img/articles/'.$artikel->gambar) }}" class="card-img-top" alt="...">
+                        <a href="blog/{{ $artikel->slug }}"><img src=" {{asset($artikel->gambar)}}" class="card-img-top"
+                            alt="..." style="width: 100%;height: 400px; object-fit: cover; object-position: center"></a>
 
                         <div class="card-body lg">
                             <div class="card-head d-flex justify-content-between">
@@ -31,7 +32,7 @@
                                 <p class="news-date">{{ \Carbon\Carbon::parse($artikel->tanggal_update)->diffForHumans() }}</p>
                             </div>
                             <h5 class="card-title">{{ $artikel->judul}}</a></h5>
-                            <p class="card-text pt-1">{{ Str::substr($artikel->isi, 0, 250) }}........</p>
+                            <p class="card-text pt-1">{{ Str::substr(strip_tags($artikel->isi), 0, 100) }}.....</p>
                             <a href="{{ route('blog.detail',['artikel' => $artikel->slug]) }}" class="card-foot">Read More</a>
                         </div>
                     </div>

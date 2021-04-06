@@ -1,7 +1,7 @@
 @extends('user.layouts.master')
 
 @section('content')
-<main>
+<main class="blog-detail">
     <div class="section">
         <div class="title-heading">
             <div class="container">
@@ -33,12 +33,13 @@
                 </div>
 
                 <div class="blog_detail_img">
-                    <img src=" {{ asset('user/img/articles/'.$data['blog']['gambar']) }}" class="card-img-top" alt="...">
+                <img src=" {{ asset($data['blog']['gambar']) }}" class="card-img-top" style="width: 100%; height: 400px; object-position: center; object-fit: cover" alt="...">
                 </div>
 
 
                 <div class="mt-4 mb-5 text-left blog_detail ">
-                    <p>{{$data['blog']['isi']}}</p>
+                    <p>{!!$data['blog']['isi']!!}</p>
+
                 </div>
             </div>
 

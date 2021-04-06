@@ -29,7 +29,7 @@
                       <th>Kategori</th>
                       <th>Penulis</th>
                       <th>Tanggal Penulisan</th>
-                      <th>Gambar</th>                      
+                      <th>Gambar</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -40,10 +40,10 @@
                       {{-- <td>{!! $artikel->isi !!}</td> --}}
                       <td>{{$artikel->kategori->kategori}}</td>
                       <td>{{$artikel->penulis}}</td>
-                      <td>{{Carbon::parse($artikel->tanggal_penulisan)->format('d-m-y')}}</td>                                         
-                      <td><img src="{{asset($artikel->gambar)}}" alt="foto" width="50px" height="50px"></td>               
+                      <td>{{Carbon::parse($artikel->tanggal_penulisan)->format('d-m-y')}}</td>
+                      <td><img src="{{asset($artikel->gambar)}}" alt="foto" width="50px" height="50px"></td>
                       <td>
-                        {{-- <a href="{{route('edit.pengurus', ['id' => $pengurus->id_pengurus])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> </a> --}}
+                        <a href="{{route('edit.artikel', ['id' => $artikel->id_artikel])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> </a>
                         <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{ $loop->iteration }}"> <i class="fa fa-trash"></i> </a>
                       </td>
                     </tr>

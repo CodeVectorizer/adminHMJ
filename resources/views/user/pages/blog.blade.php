@@ -21,30 +21,32 @@
         <div class="row py-3">
             <!-- <div class="col-md-12"> -->
             <div class="col-md-8 col-sm-12">
-                @foreach ($data['blogs'] as $artikel)
-
+                @forelse ($data['blogs'] as $artikel)
                 <div class="achieve col-md-10 my-2 ">
                     <div class="card">
-                        <img src=" {{ asset('user/img/articles/'.$artikel->gambar) }}" class="card-img-top" alt="...">
+                        <a href="blog/{{ $artikel->slug }}"><img src=" {{asset($artikel->gambar)}}" class="card-img-top"
+                            alt="..." style="width: 100%;height: 400px; object-fit: cover; object-position: center"></a>
 
                         <div class="card-body lg">
                             <div class="card-head d-flex justify-content-between">
                                 <a class="news-tag" href="{{route('blog.kategori', ['kategori' => Str::lower($artikel->kategori->kategori)])}}">{{ $artikel->kategori->kategori }}</a>
                                 <p class="news-date">
                                     @if (Carbon::now()->diffInDays($artikel->tanggal_update) > 14)
-                                        {{ Carbon::parse($artikel->tanggal_update)->format('d-m-Y') }}                                    
+                                        {{ Carbon::parse($artikel->tanggal_update)->format('d-m-Y') }}
                                         @else
                                         {{ Carbon::parse($artikel->tanggal_update)->diffForHumans() }}
-                                        @endif       
+                                        @endif
                                 </p>
                             </div>
                             <h5 class="card-title">{{ $artikel->judul}}</a></h5>
-                            <p class="card-text pt-1">{{ Str::substr($artikel->isi, 0, 250) }}........</p>
+                            <p class="card-text pt-1">{{ Str::substr(strip_tags($artikel->isi), 0, 100) }}.......</p>
                             <a href="blog/{{ $artikel->slug }}" class="card-foot">Read More</a>
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @empty
+                Data Artikel Kosong
+                @endforelse
 
 
 

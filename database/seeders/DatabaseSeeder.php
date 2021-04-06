@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
         DB::table('tb_artikel')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        \App\Models\Artikel::factory(10)->create();
         $this->call([UserSeeder::class]);
     }
 }

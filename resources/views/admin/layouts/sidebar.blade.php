@@ -15,7 +15,7 @@
           <li class="{{ request()->is('admin/kategori') || request()->is('admin/komentar') || request()->is('admin/artikel')? 'active' : '' }} nav-item dropdown">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Blog</span></a>
             <ul class="dropdown-menu">
-              <li class={{ request()->is('admin/artikel') ? 'active' : '' }}><a class="nav-link" href="">Artikel</a></li>
+              <li class={{ request()->is('admin/artikel') ? 'active' : '' }}><a class="nav-link" href="{{route('list.artikel')}}">Artikel</a></li>
               <li class={{ request()->is('admin/komentar') ? 'active' : '' }}><a class="nav-link" href="">Komentar</a></li>
               <li class={{ request()->is('admin/kategori') ? 'active' : '' }}><a class="nav-link" href="{{route('list.kategori')}}">Kategori</a></li>
             </ul>
@@ -30,21 +30,21 @@
             <a class="nav-link" href=""><i class="fas fa-share-alt-square"></i><span>Google Form</span></a>
           </li>
           @if(auth()->user()->role == 'admin')
-          <li class="nav-item dropdown 
-          {{ 
-          request()->is('admin/departemen') || 
+          <li class="nav-item dropdown
+          {{
+          request()->is('admin/departemen') ||
           request()->is('admin/biro') ||
-          request()->is('admin/jabatan') || 
+          request()->is('admin/jabatan') ||
           request()->is('admin/prodi') ||
-          request()->is('admin/golongan') || 
-          request()->is('admin/angkatan') 
+          request()->is('admin/golongan') ||
+          request()->is('admin/angkatan')
           ? 'active' : '' }}">
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Data Master</span></a>
             <ul class="dropdown-menu">
               <li class={{ request()->is('admin/departemen') ? 'active' : '' }}><a class="nav-link" href="{{route('list.departemen')}}">Departemen</a></li>
               <li class={{ request()->is('admin/biro') ? 'active' : '' }}><a class="nav-link" href="{{route('list.biro')}}">Biro</a></li>
               <li class={{ request()->is('admin/jabatan') ? 'active' : '' }}><a class="nav-link" href="{{route('list.jabatan')}}">Jabatan</a></li>
-              <li class={{ request()->is('admin/prodi') ? 'active' : '' }}><a class="nav-link" href="{{route('list.prodi')}}">Prodi</a></li>
+        <li class={{ request()->is('admin/prodi') ? 'active' : '' }}><a class="nav-l]ink" href="{{route('list.prodi')}}">Prodi</a></li>
               <li class={{ request()->is('admin/golongan') ? 'active' : '' }}><a class="nav-link" href="{{route('list.golongan')}}">Golongan</a></li>
               <li class={{ request()->is('admin/angkatan') ? 'active' : '' }}><a class="nav-link" href="{{route('list.angkatan')}}">Angkatan</a></li>
             </ul>

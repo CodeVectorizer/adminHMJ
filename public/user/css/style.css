@@ -458,6 +458,10 @@ footer {
         text-align: center;
     }
 
+    main.blog-detail {
+        text-align: left;
+    }
+
     .navbar-brand {
         display: none;
     }
@@ -916,7 +920,7 @@ aside.sidebar {
     height: 40px;
     background-color: #0096FF;
     border-radius: 40px;
-    padding: 10px;    
+    padding: 10px;
     }
 
     .search_input{
@@ -941,14 +945,14 @@ aside.sidebar {
     .searchbar:hover > .search_input{
     padding: 0px 10px;
 width: 200px;
-    caret-color: #FFFFFF;    
+    caret-color: #FFFFFF;
     transition: all 0.4s ease-in-out;
     }
 
     /* .searchbar:hover:not(:focus) {
         color: magenta;
     } */
-      
+
 
     .searchbar:hover > .search_icon{
     color: #ffffff;

@@ -3,18 +3,17 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BiroController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ArtikelController;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\DepartemenController;
-use App\Http\Controllers\AngkatanController;
-use App\Http\Controllers\JabatanController;
-use App\Http\Controllers\GolonganController;
 use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\AngkatanController;
+use App\Http\Controllers\GolonganController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PengurusController;
-use App\Http\Controllers\KritikSaranController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
-
+use App\Http\Controllers\DepartemenController;
+use App\Http\Controllers\KritikSaranController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
