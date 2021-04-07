@@ -12,10 +12,8 @@ class ProdiController extends Controller
   public function index()
   {
     $data = Prodi::All();
-    $angkatan = Angkatan::All();
-    $golongan = Golongan::All();
 
-    return view('admin.pages.prodi.index', compact('data', 'angkatan', 'golongan'));
+    return view('admin.pages.prodi.index', compact('data'));
   }
   //store prodi
   public function store(Request $request)
@@ -23,15 +21,12 @@ class ProdiController extends Controller
     //validasi form
     $this->validate($request, [
       'prodi' => 'required',
-      'id_angkatan' => 'required',
-      'id_golongan' => 'required',
     ]);
 
     //store prodi
     $prodi = new Prodi();
     $prodi->prodi = $request->prodi;
-    $prodi->id_angkatan = $request->id_angkatan;
-    $prodi->id_golongan = $request->id_golongan;
+
     $prodi->save();
     return redirect()->route('list.prodi');
   }
@@ -40,8 +35,7 @@ class ProdiController extends Controller
   {
     $prodi = Prodi::find($id);
     $prodi->prodi = $request->prodi;
-    $prodi->id_angkatan = $request->id_angkatan;
-    $prodi->id_golongan = $request->id_golongan;
+
     $prodi->save();
     return redirect()->route('list.prodi');
   }

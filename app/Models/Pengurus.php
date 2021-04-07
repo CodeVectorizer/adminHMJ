@@ -13,12 +13,20 @@ class Pengurus extends Model
   public $timestamps = false;
 
   protected $fillable = [
-    'nim', 'nama', 'email', 'no_hp', 'foto', 'angkatan', 'id_prodi', 'id_jabatan', 'id_biro'
+    'nim', 'nama', 'email', 'no_hp', 'foto', 'id_angkatan', 'id_prodi', 'id_golongan', 'id_jabatan', 'id_biro'
   ];
 
   public function prodi()
   {
     return $this->belongsTo('App\Models\Prodi', 'id_prodi');
+  }
+  public function angkatan()
+  {
+    return $this->belongsTo('App\Models\Angkatan', 'id_angkatan');
+  }
+  public function golongan()
+  {
+    return $this->belongsTo('App\Models\Golongan', 'id_golongan');
   }
   public function jabatan()
   {

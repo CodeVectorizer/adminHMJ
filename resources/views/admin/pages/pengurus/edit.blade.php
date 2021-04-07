@@ -56,7 +56,15 @@
                 </div>
                 <div class="form-group">
                   <label>Angkatan</label>
-                  <input type="text" class="form-control @error('angkatan') is-invalid @enderror" name="angkatan" value="{{ $data->angkatan }}" required>
+                  <select class="form-control @error('angkatan') is-invalid @enderror" name="id_angkatan" value="{{ $data->id_angkatan }}">
+                    @foreach($angkatan as $angkatans)
+                      @if($data->id_angkatan == $angkatans->id_angkatan)
+                        <option value="{{$angkatans->id_angkatan}}" selected>{{$angkatans->angkatan}}</option>
+                      @else
+                        <option value="{{$angkatans->id_angkatan}}">{{$angkatans->angkatan}}</option>
+                      @endif
+                    @endforeach
+                  </select>
                   @error('angkatan')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -80,6 +88,23 @@
                     </span>
                   @enderror
                 </div>
+                <div class="form-group">
+                    <label>Golongan</label>
+                    <select class="form-control @error('golongan') is-invalid @enderror" name="id_golongan" value="{{ $data->id_golongan }}">
+                      @foreach($golongan as $golongans)
+                        @if($data->id_golongan == $golongans->id_golongan)
+                          <option value="{{$golongans->id_golongan}}" selected>{{$golongans->golongan}}</option>
+                        @else
+                          <option value="{{$golongans->id_golongan}}">{{$golongans->golongan}}</option>
+                        @endif
+                      @endforeach
+                    </select>
+                    @error('angkatan')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                  </div>
                 <div class="form-group">
                   <label>Jabatan</label>
                   <select class="form-control @error('jabatan') is-invalid @enderror" name="id_jabatan" value="{{ $data->id_jabatan }}">

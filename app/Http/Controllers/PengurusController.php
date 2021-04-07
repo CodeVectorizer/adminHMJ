@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Angkatan;
 use Illuminate\Http\Request;
 use App\Models\Pengurus;
 use App\Models\Prodi;
 use App\Models\Jabatan;
 use App\Models\Biro;
+use App\Models\Golongan;
 
 class PengurusController extends Controller
 {
@@ -21,8 +23,10 @@ class PengurusController extends Controller
     $prodi = Prodi::All();
     $jabatan = Jabatan::All();
     $biro = Biro::All();
+    $angkatan = Angkatan::All();
+    $golongan = Golongan::All();
 
-    return view('admin.pages.pengurus.create', compact('prodi', 'jabatan', 'biro'));
+    return view('admin.pages.pengurus.create', compact('prodi', 'jabatan', 'biro', 'angkatan', 'golongan'));
   }
   //view edit
   public function edit($id)
@@ -32,8 +36,10 @@ class PengurusController extends Controller
     $prodi = Prodi::All();
     $jabatan = Jabatan::All();
     $biro = Biro::All();
+    $angkatan = Angkatan::All();
+    $golongan = Golongan::All();
 
-    return view('admin.pages.pengurus.edit', compact('prodi', 'jabatan', 'biro', 'data'));
+    return view('admin.pages.pengurus.edit', compact('prodi', 'jabatan', 'biro','data', 'angkatan', 'golongan'));
   }
   //store pengurus
   public function store(Request $request)
@@ -44,8 +50,9 @@ class PengurusController extends Controller
       'nama' => 'required',
       'email' => 'required',
       'no_hp' => 'required',
-      'angkatan' => 'required',
+      'id_angkatan' => 'required',
       'id_prodi' => 'required',
+      'id_golongan' => 'required',
       'id_jabatan' => 'required',
       'id_biro' => 'required',
     ]);
@@ -56,8 +63,9 @@ class PengurusController extends Controller
     $pengurus->nama = $request->nama;
     $pengurus->email = $request->email;
     $pengurus->no_hp = $request->no_hp;
-    $pengurus->angkatan = $request->angkatan;
+    $pengurus->id_angkatan = $request->id_angkatan;
     $pengurus->id_prodi = $request->id_prodi;
+    $pengurus->id_golongan = $request->id_golongan;
     $pengurus->id_jabatan = $request->id_jabatan;
     $pengurus->id_biro = $request->id_biro;
 
@@ -84,8 +92,9 @@ class PengurusController extends Controller
       'nama' => 'required',
       'email' => 'required',
       'no_hp' => 'required',
-      'angkatan' => 'required',
+      'id_angkatan' => 'required',
       'id_prodi' => 'required',
+      'id_golongan' => 'required',
       'id_jabatan' => 'required',
       'id_biro' => 'required',
     ]);
@@ -96,8 +105,9 @@ class PengurusController extends Controller
     $pengurus->nama = $request->nama;
     $pengurus->email = $request->email;
     $pengurus->no_hp = $request->no_hp;
-    $pengurus->angkatan = $request->angkatan;
+    $pengurus->id_angkatan = $request->id_angkatan;
     $pengurus->id_prodi = $request->id_prodi;
+    $pengurus->id_golongan = $request->id_golongan;
     $pengurus->id_jabatan = $request->id_jabatan;
     $pengurus->id_biro = $request->id_biro;
 

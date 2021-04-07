@@ -25,8 +25,6 @@
                     <tr>
                       <th>ID Prodi</th>
                       <th>Nama Prodi</th>
-                      <th>Golongan</th>
-                      <th>Angkatan</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -35,8 +33,6 @@
                     <tr>
                       <td>{{$prodi->id_prodi}}</td>
                       <td>{{$prodi->prodi}}</td>
-                      <td>{{$prodi->golongan->golongan}}</td>
-                      <td>{{$prodi->angkatan->angkatan}}</td>
                       <td>
                         <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModaledit{{ $loop->iteration }}"> <i class="fa fa-edit"></i> </a>
                         <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{ $loop->iteration }}"> <i class="fa fa-trash"></i> </a>
@@ -74,32 +70,6 @@
                   <strong>{{ $message }}</strong>
               </span>
           @enderror
-          <div class="form-group">
-            <label>Golongan</label>
-            <select class="form-control @error('id_golongan') is-invalid @enderror" name="id_golongan" value="{{ old('id_golongan') }}">
-              @foreach($golongan as $golongans)
-              <option value="{{$golongans->id_golongan}}">{{$golongans->golongan}}</option>
-              @endforeach
-            </select>
-            @error('id_golongan')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-          </div>
-          <div class="form-group">
-            <label>Angkatan</label>
-            <select class="form-control @error('id_angkatan') is-invalid @enderror" name="id_angkatan" value="{{ old('id_angkatan') }}">
-              @foreach($angkatan as $angkatans)
-              <option value="{{$angkatans->id_angkatan}}">{{$angkatans->angkatan}}</option>
-              @endforeach
-            </select>
-            @error('id_angkatan')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -150,32 +120,6 @@
                   <strong>{{ $message }}</strong>
               </span>
           @enderror
-          <div class="form-group">
-            <label>golongan</label>
-            <select class="form-control @error('id_golongan') is-invalid @enderror" name="id_golongan" value="{{ old('id_golongan') }}">
-              @foreach($golongan as $golongans2)
-              <option value="{{$golongans2->id_golongan}}">{{$golongans2->golongan}}</option>
-              @endforeach
-            </select>
-            @error('id_golongan')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-            @enderror
-          </div>
-          <div class="form-group">
-            <label>Angkatan</label>
-            <select class="form-control @error('id_angkatan') is-invalid @enderror" name="id_angkatan" value="{{ old('id_angkatan') }}">
-              @foreach($angkatan as $angkatans)
-              <option value="{{$angkatans->id_angkatan}}">{{$angkatans->angkatan}}</option>
-              @endforeach
-            </select>
-            @error('id_angkatan')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-            @enderror
-          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

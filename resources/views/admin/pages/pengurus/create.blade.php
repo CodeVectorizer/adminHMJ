@@ -56,7 +56,12 @@
                 </div>
                 <div class="form-group">
                   <label>Angkatan</label>
-                  <input type="text" class="form-control @error('angkatan') is-invalid @enderror" name="angkatan" value="{{ old('angkatan') }}" required>
+                  <select class="form-control @error('angkatan') is-invalid @enderror" name="id_angkatan" value="{{ old('angkatan') }}">
+                    @foreach($angkatan as $angkatans)
+                    <option value="{{$angkatans->id_angkatan}}">{{$angkatans->angkatan}}</option>
+                    @endforeach
+                  </select>
+                  {{-- <input type="text" class="form-control @error('angkatan') is-invalid @enderror" name="angkatan" value="{{ old('angkatan') }}" required> --}}
                   @error('angkatan')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -76,6 +81,20 @@
                     </span>
                   @enderror
                 </div>
+                <div class="form-group">
+                    <label>Golongan</label>
+                    <select class="form-control @error('golongan') is-invalid @enderror" name="id_golongan" value="{{ old('golongan') }}">
+                      @foreach($golongan as $golongans)
+                      <option value="{{$golongans->id_golongan}}">{{$golongans->golongan}}</option>
+                      @endforeach
+                    </select>
+                    {{-- <input type="text" class="form-control @error('angkatan') is-invalid @enderror" name="angkatan" value="{{ old('angkatan') }}" required> --}}
+                    @error('angkatan')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                  </div>
                 <div class="form-group">
                   <label>Jabatan</label>
                   <select class="form-control @error('jabatan') is-invalid @enderror" name="id_jabatan" value="{{ old('jabatan') }}">

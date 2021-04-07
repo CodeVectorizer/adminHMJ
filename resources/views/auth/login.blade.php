@@ -13,7 +13,7 @@
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  
+
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ asset('dist/assets/css/style.css') }}">
@@ -53,7 +53,7 @@
                   <!-- Custom -->
                   <div class="form-group">
                       <label for="email">{{ __('E-Mail Address') }}</label>
-                      
+
                           <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                           @error('email')
@@ -83,19 +83,19 @@
 
                   <!-- Custom -->
                   <div class="form-group">
-                    <label for="password">{{ __('Password') }}</label>                    
+                    <label for="password">{{ __('Password') }}</label>
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                     @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                    @enderror                            
+                    @enderror
                   </div>
                   <!-- End Custom -->
 
                   <div class="form-group">
-                    <div class="custom-control custom-checkbox">                      
+                    <div class="custom-control custom-checkbox">
                       <input class="custom-control-input" type="checkbox" tabindex="3" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                       <label class="custom-control-label" for="remember">Remember Me</label>
 
@@ -149,8 +149,8 @@
   <!-- JS Libraies -->
 
   <!-- Template JS File -->
-  <script src="{{ asset('dist/assets/js/scripts.js') }}"></script>
-  <script src="{{ asset('dist/assets/js/custom.js') }}"></script>
+  <scrip src="{{ asset('dist/assets/js/scripts.js') }}"></scrip t>
+  <scrip src="{{ asset('dist/assets/js/custom.js') }}"></scrip>
 
   <!-- Page Specific JS File -->
 </body>
