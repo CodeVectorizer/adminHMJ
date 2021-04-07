@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\PeriodeController;
 use App\Http\Controllers\AngkatanController;
 use App\Http\Controllers\GolonganController;
 use App\Http\Controllers\KategoriController;
@@ -85,6 +86,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::post('prodi/store', [ProdiController::class, 'store'])->name('add.prodi');
         Route::post('prodi/update/{id}', [ProdiController::class, 'update'])->name('update.prodi');
         Route::get('/prodi/delete/{id}', [ProdiController::class, 'delete'])->name('delete.prodi');
+
+
+        //Periode
+        Route::get('periode', [PeriodeController::class, 'index'])->name('list.periode');
+        Route::post('periode/store', [PeriodeController::class, 'store'])->name('add.periode');
+        Route::post('periode/update/{id}', [PeriodeController::class, 'update'])->name('update.periode');
+        Route::get('/periode/delete/{id}', [PeriodeController::class, 'delete'])->name('delete.periode');
 
         //Golongan
         Route::get('golongan', [GolonganController::class, 'index'])->name('list.golongan');
