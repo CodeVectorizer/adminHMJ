@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="{{asset('user/favicon.ico')}}" type="image/x-icon">
     <link rel="icon" href="{{asset('user/favicon.ico')}}" type="image/x-icon">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-phscale=1.0">
     <title>HMJTI POLIJE</title>
 
 
@@ -26,7 +26,7 @@
 
 
     <!-- Fontawesome -->
-    {{-- <script src="https://kit.fontawesome.com/0ebb324bc0.js" crossorigin="anonymous"></script> --}}
+    <script src="https://kit.fontawesome.com/0ebb324bc0.js" crossorigin="anonymous"></script>
 
     <!-- BootstrapCSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -107,21 +107,21 @@
                                     kami
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Sejarah</a>
+                                    <a class="dropdown-item" href="/sejarah">Sejarah</a>
                                     <a class="dropdown-item" href="#">Program Kerja HMJ TI</a>
                                     <a class="dropdown-item" href="#">AD/ART HMJ TI</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Kritik dan Sarann</a>
+                                    <a class="dropdown-item" href="/kritik-saran">Kritik dan Sarann</a>
                                 </div>
                             </li>
-                            <li class="nav-item">              
+                            <li class="nav-item">
                                 <form id="form_cari" action="{{route('blog.cari')}}" method="GET">
                                     {{-- @csrf --}}
                                 <div class="searchbar">
                                     <input class="search_input" type="text" name="q" placeholder="Search...">
                                     <a href="javascript:{}" onclick="document.getElementById('form_cari').submit();" class="search_icon"><?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><circle cx="10.5" cy="10.5" r="7.5"/><line x1="21" x2="15.8" y1="21" y2="15.8"/></svg></a>
-                                </div>      
-                            </form>                  
+                                </div>
+                            </form>
                             </li>
                         </ul>
                     </div>

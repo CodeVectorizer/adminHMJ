@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artikel;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Echo_;
 
 class UserController extends Controller
 {
@@ -76,5 +77,15 @@ class UserController extends Controller
 
         ];
         return view('user.pages.blog-cari', compact('data'));
+    }
+
+    public function sejarah()
+    {
+        return view('user.pages.sejarah');
+    }
+
+    public function kritiksaran()
+    {
+        return view('user.pages.kritiksaran');
     }
 }
