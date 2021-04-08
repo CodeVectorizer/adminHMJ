@@ -36,6 +36,7 @@
                       <th>Prodi</th>
                       <th>Angkatan</th>
                       <th>Golongan</th>
+                      <th>Status</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -50,11 +51,12 @@
                       <td>{{$pengurus->jabatan->jabatan}}</td>
                       <td>{{$pengurus->biro->biro}}</td>
                       <td>{{$pengurus->biro->departemen->departemen}}</td>
-                      <td>{{$pengurus->jabatan->periode}}</td>
+                      <td>{{$pengurus->periode->periode}}</td>
                       <td><img src="{{asset($pengurus->foto)}}" alt="foto" width="50px" height="50px"></td>
                       <td>{{$pengurus->prodi->prodi}}</td>
                       <td>{{$pengurus->angkatan->angkatan}}</td>
                       <td>{{$pengurus->golongan->golongan}}</td>
+                      <td>{{ucwords($pengurus->periode->status)}}</td>
                       <td>
                         <a href="{{route('edit.pengurus', ['id' => $pengurus->id_pengurus])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> </a>
                         <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{ $loop->iteration }}"> <i class="fa fa-trash"></i> </a>

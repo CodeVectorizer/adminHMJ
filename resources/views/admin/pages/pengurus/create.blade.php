@@ -96,6 +96,20 @@
                     @enderror
                   </div>
                 <div class="form-group">
+                    <label>Periode</label>
+                    <select class="form-control @error('periode') is-invalid @enderror" name="id_periode" value="{{ old('periode') }}">
+                      @foreach($periode as $periodes)
+                      <option value="{{$periodes->id_periode}}">{{$periodes->periode}}</option>
+                      @endforeach
+                    </select>
+                    {{-- <input type="text" class="form-control @error('angkatan') is-invalid @enderror" name="angkatan" value="{{ old('angkatan') }}" required> --}}
+                    @error('angkatan')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                  </div>
+                <div class="form-group">
                   <label>Jabatan</label>
                   <select class="form-control @error('jabatan') is-invalid @enderror" name="id_jabatan" value="{{ old('jabatan') }}">
                     @foreach($jabatan as $jabatans)

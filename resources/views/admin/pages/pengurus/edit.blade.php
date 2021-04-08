@@ -106,6 +106,23 @@
                     @enderror
                   </div>
                 <div class="form-group">
+                    <label>Periode</label>
+                    <select class="form-control @error('periode') is-invalid @enderror" name="id_periode" value="{{ $data->id_periode }}">
+                      @foreach($periode as $periodes)
+                        @if($data->id_periode == $periodes->id_periode)
+                          <option value="{{$periodes->id_periode}}" selected>{{$periodes->periode}}</option>
+                        @else
+                          <option value="{{$periodes->id_periode}}">{{$periodes->periode}}</option>
+                        @endif
+                      @endforeach
+                    </select>
+                    @error('angkatan')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                  </div>
+                <div class="form-group">
                   <label>Jabatan</label>
                   <select class="form-control @error('jabatan') is-invalid @enderror" name="id_jabatan" value="{{ $data->id_jabatan }}">
                     @foreach($jabatan as $jabatans)
