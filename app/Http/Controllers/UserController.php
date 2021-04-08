@@ -81,7 +81,7 @@ class UserController extends Controller
 
     public function sejarah()
     {
-        return view('user.pages.sejarah');
+        return view('user.pages.form');
     }
 
     public function kritiksaran()
