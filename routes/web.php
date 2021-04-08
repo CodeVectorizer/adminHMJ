@@ -145,7 +145,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 Route::get('/', [UserController::class, 'index']);
 Route::get('/beranda', [UserController::class, 'index']);
 
-// ROUTE TENTANG KAMIU
+// ROUTE TENTANG KAMI
 Route::get('/sejarah', [UserController::class, 'sejarah']);
 Route::get('/kritik-saran', [UserController::class, 'kritiksaran']);
 
