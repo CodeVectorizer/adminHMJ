@@ -14,6 +14,7 @@ use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DepartemenController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\KritikSaranController;
 /*
 |--------------------------------------------------------------------------
@@ -110,7 +111,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
 
     //Form
-
+    Route::get('google-form', [FormController::class, 'index'])->name('list.google-form');
 
 
 
