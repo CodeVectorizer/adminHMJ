@@ -15,6 +15,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DepartemenController;
 use App\Http\Controllers\KritikSaranController;
+use App\Http\Controllers\KomentarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -121,7 +122,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/kategori/delete/{id}', [KategoriController::class, 'delete'])->name('delete.kategori');
 
     //Komentar
-
+    Route::get('komentar', [KomentarController::class, 'index'])->name('list.komentar');
+    Route::post('komentar/store', [KomentarController::class, 'store'])->name('add.komentar');
+    Route::post('komentar/update/{id}', [KomentarController::class, 'update'])->name('update.komentar');
+    Route::get('/komentar/delete/{id}', [KomentarController::class, 'delete'])->name('delete.komentar');
 
     //KritikSaran
     Route::get('kritik-saran', [KritikSaranController::class, 'index'])->name('list.kritikSaran');

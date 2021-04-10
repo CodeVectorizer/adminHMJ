@@ -20,7 +20,7 @@
                     <li class={{ request()->is('admin/artikel') ? 'active' : '' }}><a class="nav-link"
                             href="{{route('list.artikel')}}">Artikel</a></li>
                     <li class={{ request()->is('admin/komentar') ? 'active' : '' }}><a class="nav-link"
-                            href="">Komentar</a></li>
+                            href="{{route('list.komentar')}}">Komentar</a></li>
                     <li class={{ request()->is('admin/kategori') ? 'active' : '' }}><a class="nav-link"
                             href="{{route('list.kategori')}}">Kategori</a></li>
                 </ul>

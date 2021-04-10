@@ -45,4 +45,9 @@ class Artikel extends Model
     {
         return 'slug';
     }
+
+    public function komentar()
+    {
+      return $this->hasMany('App\Models\Komentar');
+    }
 }
