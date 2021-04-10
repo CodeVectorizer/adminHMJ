@@ -20,7 +20,7 @@
                     <li class={{ request()->is('admin/artikel') ? 'active' : '' }}><a class="nav-link"
                             href="{{route('list.artikel')}}">Artikel</a></li>
                     <li class={{ request()->is('admin/komentar') ? 'active' : '' }}><a class="nav-link"
-                            href="">Komentar</a></li>
+                            href="{{route('list.komentar')}}">Komentar</a></li>
                     <li class={{ request()->is('admin/kategori') ? 'active' : '' }}><a class="nav-link"
                             href="{{route('list.kategori')}}">Kategori</a></li>
                 </ul>
@@ -34,7 +34,7 @@
                         dan Saran</span></a>
             </li>
             <li class="{{ request()->is('admin/google-form') ? 'active' : '' }}">
-                <a class="nav-link" href=""><i class="fas fa-share-alt-square"></i><span>Google Form</span></a>
+                <a class="nav-link" href="{{route('list.google-form')}}"><i class="fas fa-share-alt-square"></i><span>Google Form</span></a>
             </li>
             @if(auth()->user()->role == 'admin')
             <li class="nav-item dropdown
@@ -71,6 +71,11 @@
             @endif
             <li class="">
                 <a class="nav-link" href=""><i class="fas fa-address-card"></i><span>Edit Profile</span></a>
+            </li>
+            <hr>
+            <li class="menu-header">info</li>
+            <li class="">
+                <a class="nav-link" href=""><i class="fas fa-sitemap"></i><span>Informasi</span></a>
             </li>
             {{-- <li class="menu-header">Stisla</li>
           <li class="nav-item dropdown">

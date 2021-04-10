@@ -40,7 +40,8 @@
                             </div>
                         </div>
                         <div class="col-12 col-lg-8">
-                            <form action="#" method="post" role="form" class="php-email-form">
+                            <form action="{{route('add.kritikSaran')}}" method="post" role="form" class="php-email-form">
+                              {{csrf_field()}}
                                 <div class="row">
                                     <div class="col-md-6 form-group mt-3 mt-md-3">
                                         <input type="text" name="name" class="form-control" id="name"
@@ -57,7 +58,7 @@
                                 </div>
                                 <div class="form-group mt-3">
                                     <textarea class="form-control" name="message" rows="7" placeholder="Message"
-                                        required></textarea>
+                                        required name="message"></textarea>
                                 </div>
                                 <div class="text-center mt-3"><button type="submit">Kirim</button></div>
                             </form>

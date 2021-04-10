@@ -15,7 +15,9 @@ use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DepartemenController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\KritikSaranController;
+use App\Http\Controllers\KomentarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -111,7 +113,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
 
     //Form
-
+    Route::get('google-form', [FormController::class, 'index'])->name('list.google-form');
 
 
 
@@ -122,11 +124,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/kategori/delete/{id}', [KategoriController::class, 'delete'])->name('delete.kategori');
 
     //Komentar
-
+    Route::get('komentar', [KomentarController::class, 'index'])->name('list.komentar');
+    Route::post('komentar/store', [KomentarController::class, 'store'])->name('add.komentar');
+    Route::post('komentar/update/{id}', [KomentarController::class, 'update'])->name('update.komentar');
+    Route::get('/komentar/delete/{id}', [KomentarController::class, 'delete'])->name('delete.komentar');
 
     //KritikSaran
     Route::get('kritik-saran', [KritikSaranController::class, 'index'])->name('list.kritikSaran');
-    Route::post('kritik-saran/store', [KritikSaranController::class, 'store'])->name('add.kritikSaran');
     // Route::post('kritik-saran/update/{id}', [KategoriController::class, 'update'])->name('update.kritikSaran');
     Route::get('/kritik-saran/delete/{id}', [KritikSaranController::class, 'delete'])->name('delete.kritikSaran');
 
@@ -155,7 +159,8 @@ Route::get('/beranda', [UserController::class, 'index']);
 
 // ROUTE TENTANG KAMI
 Route::get('/sejarah', [UserController::class, 'sejarah']);
-Route::get('/kritik-saran', [UserController::class, 'kritiksaran']);
+Route::get('/kritik-saran', [UserController::class, 'kritiksaran'])->name('kritiksaran');
+Route::post('kritik-saran/store', [KritikSaranController::class, 'store'])->name('add.kritikSaran');
 
 // Route::get('blog/{cari}', [UserController::class, 'getBlog'])->name('blog.detail');
 
