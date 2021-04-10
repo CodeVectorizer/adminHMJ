@@ -125,7 +125,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     //KritikSaran
     Route::get('kritik-saran', [KritikSaranController::class, 'index'])->name('list.kritikSaran');
-    Route::post('kritik-saran/store', [KritikSaranController::class, 'store'])->name('add.kritikSaran');
     // Route::post('kritik-saran/update/{id}', [KategoriController::class, 'update'])->name('update.kritikSaran');
     Route::get('/kritik-saran/delete/{id}', [KritikSaranController::class, 'delete'])->name('delete.kritikSaran');
 
@@ -147,7 +146,8 @@ Route::get('/beranda', [UserController::class, 'index']);
 
 // ROUTE TENTANG KAMI
 Route::get('/sejarah', [UserController::class, 'sejarah']);
-Route::get('/kritik-saran', [UserController::class, 'kritiksaran']);
+Route::get('/kritik-saran', [UserController::class, 'kritiksaran'])->name('kritiksaran');
+Route::post('kritik-saran/store', [KritikSaranController::class, 'store'])->name('add.kritikSaran');
 
 // Route::get('blog/{cari}', [UserController::class, 'getBlog'])->name('blog.detail');
 
