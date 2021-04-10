@@ -72,6 +72,11 @@
             <li class="">
                 <a class="nav-link" href=""><i class="fas fa-address-card"></i><span>Edit Profile</span></a>
             </li>
+            <hr>
+            <li class="menu-header">info</li>
+            <li class="">
+                <a class="nav-link" href=""><i class="fas fa-sitemap"></i><span>Informasi</span></a>
+            </li>
             {{-- <li class="menu-header">Stisla</li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Components</span></a>
