@@ -19,20 +19,20 @@ class KritikSaranController extends Controller
 
     //validasi form
     $this->validate($request, [
-      'nama' => 'required',
+      'name' => 'required',
       'email' => 'required',
-      'kritikSaran' => 'required',
-      'tanggal' => 'required',
+      'subject' => 'required',
+      'message' => 'required',
     ]);
 
     //store kritikSaran
     $kritikSaran = new KritikSaran();
-    $kritikSaran->nama = $request->nama;
+    $kritikSaran->nama = $request->name;
     $kritikSaran->email = $request->email;
-    $kritikSaran->kritikSaran = $request->kritikSaran;
-    $kritikSaran->tanggal = $request->time();
+    $kritikSaran->subject = $request->subject;
+    $kritikSaran->kritikSaran = $request->message;
     $kritikSaran->save();
-    return redirect()->route('list.kritikSaran');
+    return redirect()->route('kritiksaran');
   }
   //edit kritikSaran
   // public function update(Request $request, $id)
