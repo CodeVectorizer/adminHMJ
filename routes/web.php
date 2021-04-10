@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BiroController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\JabatanController;
@@ -136,6 +137,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::post('pengurus/store', [PengurusController::class, 'store'])->name('add.pengurus');
     Route::post('pengurus/update/{id}', [PengurusController::class, 'update'])->name('update.pengurus');
     Route::get('/pengurus/delete/{id}', [PengurusController::class, 'delete'])->name('delete.pengurus');
+
+    Route::get('user', [AdminController::class, 'index'])->name('list.user');
+    Route::get('user/tambah', [AdminController::class, 'create'])->name('tambah.user');
+    Route::get('user/edit/{id}', [AdminController::class, 'edit'])->name('edit.user');
+    Route::post('user/store', [AdminController::class, 'store'])->name('add.user');
+    Route::post('user/update/{id}', [AdminController::class, 'update'])->name('update.user');
+    Route::get('/user/delete/{id}', [AdminController::class, 'delete'])->name('delete.user');
 });
 
 

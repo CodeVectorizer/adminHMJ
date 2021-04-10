@@ -102,8 +102,7 @@
                       <option value="{{$periodes->id_periode}}">{{$periodes->periode}}</option>
                       @endforeach
                     </select>
-                    {{-- <input type="text" class="form-control @error('angkatan') is-invalid @enderror" name="angkatan" value="{{ old('angkatan') }}" required> --}}
-                    @error('angkatan')
+                    @error('periode')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
