@@ -113,7 +113,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
 
     //Form
-    Route::get('google-form', [FormController::class, 'index'])->name('list.google-form');
+    Route::get('google-form', [FormController::class, 'index'])->name('list.form');
+    Route::post('google-form/store', [FormController::class, 'store'])->name('add.form');
+    Route::post('google-form/update/{id}', [FormController::class, 'update'])->name('update.form');
+    Route::get('/google-form/delete/{id}', [FormController::class, 'delete'])->name('delete.form');
 
 
 
@@ -163,6 +166,8 @@ Route::get('/kritik-saran', [UserController::class, 'kritiksaran'])->name('kriti
 Route::post('kritik-saran/store', [KritikSaranController::class, 'store'])->name('add.kritikSaran');
 
 // Route::get('blog/{cari}', [UserController::class, 'getBlog'])->name('blog.detail');
+
+Route::get('/form/{slug}', [UserController::class, 'form'])->name('google.form');
 
 Route::name('blog.')->prefix('blog')->group(function () {
     Route::get('/cari', [UserController::class, 'cariBlog'])->name('cari');

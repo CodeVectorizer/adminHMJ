@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artikel;
 use App\Models\Kategori;
+use App\Models\Form;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Echo_;
 
@@ -79,9 +80,10 @@ class UserController extends Controller
         return view('user.pages.blog-cari', compact('data'));
     }
 
-    public function sejarah()
+    public function form($slug)
     {
-        return view('user.pages.form');
+      $data = Form::where('slug', $slug)->firstOrFail();
+      return view('user.pages.form', compact('data'));
     }
 
     public function kritiksaran()
