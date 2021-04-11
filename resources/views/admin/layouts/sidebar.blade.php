@@ -34,7 +34,7 @@
                         dan Saran</span></a>
             </li>
             <li class="{{ request()->is('admin/google-form') ? 'active' : '' }}">
-                <a class="nav-link" href="{{route('list.google-form')}}"><i class="fas fa-share-alt-square"></i><span>Google Form</span></a>
+                <a class="nav-link" href="{{route('list.form')}}"><i class="fas fa-share-alt-square"></i><span>Google Form</span></a>
             </li>
             @if(auth()->user()->role == 'admin')
             <li class="nav-item dropdown

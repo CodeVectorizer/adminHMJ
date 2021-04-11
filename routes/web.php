@@ -112,7 +112,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
 
     //Form
-    Route::get('google-form', [FormController::class, 'index'])->name('list.google-form');
+    Route::get('google-form', [FormController::class, 'index'])->name('list.form');
+    Route::post('google-form/store', [FormController::class, 'store'])->name('add.form');
+    Route::post('google-form/update/{id}', [FormController::class, 'update'])->name('update.form');
+    Route::get('/google-form/delete/{id}', [FormController::class, 'delete'])->name('delete.form');
 
 
 
@@ -150,7 +153,7 @@ Route::get('/', [UserController::class, 'index']);
 Route::get('/beranda', [UserController::class, 'index']);
 
 // ROUTE TENTANG KAMI
-Route::get('/sejarah', [UserController::class, 'sejarah']);
+Route::get('/form/{slug}', [UserController::class, 'form'])->name('google.form');
 Route::get('/kritik-saran', [UserController::class, 'kritiksaran'])->name('kritiksaran');
 Route::post('kritik-saran/store', [KritikSaranController::class, 'store'])->name('add.kritikSaran');
 
