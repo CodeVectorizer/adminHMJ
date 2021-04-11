@@ -33,8 +33,8 @@ class AdminController extends Controller
     //validasi form
     // dd($request);
     $this->validate($request, [
-        'name' => 'required',
-        'username' => 'required',
+      'name' => 'required',
+      'username' => 'required',
       'email' => 'required',
       'password' => 'required',
       'foto' => 'required',
@@ -71,16 +71,18 @@ class AdminController extends Controller
     $this->validate($request, [
         'name' => 'required',
         'username' => 'required',
-      'email' => 'required',
-    //   'foto' => 'required',
-      'role' => 'required',
+        'email' => 'required',
+
+        'password' => 'required|required_with:password|confirmed',
+        'password_confirmation' => 'required',
+        'role' => 'required',
     ]);
 
     //update admin
     $admin = User::find($id);
     $admin->name = $request->name;
     $admin->username = $request->username;
-    $admin->password = $admin->password;
+    $admin->password = Hash::make($request->password);
     $admin->email = $request->email;
     $admin->role = $request->role;
 
@@ -110,4 +112,28 @@ class AdminController extends Controller
     $user->delete();
     return redirect()->route('list.user');
   }
+
+
+
+
+    public function editProfile($id)
+    {
+    $data = User::find($id);
+    if (!$data) return view('error-404');
+
+    return view('admin.pages.editProfile.index', compact('data'));
+    }
+
+    public function updatePassword(Request $request, $id)
+    {
+        $this->validate($request, [
+            'password' => 'required|required_with:password_confirmation|confirmed',
+        ]);
+
+        $user = new User();
+        $user->password = $request->password;
+        $user->save();
+        return redirect()->route('editProfile.user');
+    }
+
 }

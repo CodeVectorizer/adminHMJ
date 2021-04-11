@@ -65,8 +65,8 @@
                             href="{{route('list.angkatan')}}">Angkatan</a></li>
                 </ul>
             </li>
-            <li class="">
-                <a class="nav-link" href=""><i class="fas fa-user"></i><span>Users / Admin</span></a>
+            <li class="{{ request()->is('admin/user') ? 'active' : '' }}">
+                <a class="nav-link" href="{{route('list.user')}}"><i class="fas fa-user"></i><span>Users / Admin</span></a>
             </li>
             @endif
             <li class="">

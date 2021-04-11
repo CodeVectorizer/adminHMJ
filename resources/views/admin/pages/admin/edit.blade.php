@@ -16,7 +16,6 @@
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-                {{ $data->id_users}}
               <form action="{{route('update.user', ['id' => $data->id_users])}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-group">
