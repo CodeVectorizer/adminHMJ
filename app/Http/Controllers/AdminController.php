@@ -1,0 +1,113 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
+
+class AdminController extends Controller
+{
+  public function index()
+  {
+    $data = User::All();
+    // dd($data);
+    return view('admin.pages.admin.index', compact('data'));
+  }
+  public function create()
+  {
+    return view('admin.pages.admin.create');
+  }
+  //view edit
+  public function edit($id)
+  {
+    $data = User::find($id);
+    if (!$data) return view('error-404');
+
+    return view('admin.pages.admin.edit', compact('data'));
+  }
+  //store admin
+  public function store(Request $request)
+  {
+    //validasi form
+    // dd($request);
+    $this->validate($request, [
+        'name' => 'required',
+        'username' => 'required',
+      'email' => 'required',
+      'password' => 'required',
+      'foto' => 'required',
+      'role' => 'required',
+    ]);
+
+    //store admin
+    $admin = new User();
+    $admin->name = $request->name;
+    $admin->username = $request->username;
+    $admin->email = $request->email;
+    $admin->password =  Hash::make($request->password);
+    $admin->role = $request->role;
+
+    //store foto
+    $imagePath = "";
+    if ($request->hasFile('foto')) {
+      $image = $request->foto;
+      $imageName = time() . $image->getClientOriginalName();
+      $image->move('foto/', $imageName);
+      $imagePath = 'foto/' . $imageName;
+    }
+    $admin->foto_user = $imagePath;
+
+    $admin->save();
+
+    return redirect()->route('list.user');
+  }
+  //edit admin
+  public function update(Request $request, $id)
+  {
+    //validasi form
+
+    $this->validate($request, [
+        'name' => 'required',
+        'username' => 'required',
+      'email' => 'required',
+    //   'foto' => 'required',
+      'role' => 'required',
+    ]);
+
+    //update admin
+    $admin = User::find($id);
+    $admin->name = $request->name;
+    $admin->username = $request->username;
+    $admin->password = $admin->password;
+    $admin->email = $request->email;
+    $admin->role = $request->role;
+
+    //update foto
+    if ($request->hasFile('foto')) {
+      if (file_exists($admin->foto_user)) {
+        unlink($admin->foto_user);
+      }
+      $image = $request->foto;
+      $imageName = time() . $image->getClientOriginalName();
+      $image->move('foto/', $imageName);
+      $imagePath = 'foto/' . $imageName;
+      $admin->foto_user = 'foto/' . $imageName;
+    }
+
+    $admin->save();
+
+    return redirect()->route('list.user');
+  }
+  //delete admin
+  public function delete($id)
+  {
+    $user = User::where('id_users', $id)->first();
+    if (file_exists($user->foto)) {
+      unlink($user->foto);
+    }
+    $user->delete();
+    return redirect()->route('list.user');
+  }
+}
