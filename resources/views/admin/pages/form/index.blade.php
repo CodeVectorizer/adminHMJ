@@ -70,6 +70,15 @@
         <div class="modal-body">
           {{csrf_field()}}
           <div class="form-group">
+            <label>Slug</label>
+            <input type="text" class="form-control @error('slug') is-invalid @enderror" name="slug" value="{{ old('slug') }}" required>
+          </div>
+          @error('slug')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+          @enderror
+          <div class="form-group">
             <label>Judul</label>
             <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ old('judul') }}" required>
           </div>
@@ -146,6 +155,15 @@
       <form action="{{route('update.form', ['id' => $form2->id_form])}}" method="post">
         <div class="modal-body">
           {{csrf_field()}}
+          <div class="form-group">
+            <label>Slug</label>
+            <input type="text" class="form-control @error('slug') is-invalid @enderror" name="slug" value="{{ $form2->slug }}" required>
+          </div>
+          @error('slug')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+          @enderror
           <div class="form-group">
             <label>Judul</label>
             <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ $form2->judul_form }}" required>

@@ -80,7 +80,7 @@ class UserController extends Controller
         return view('user.pages.blog-cari', compact('data'));
     }
 
-    public function sejarah($slug)
+    public function form($slug)
     {
       $data = Form::where('slug', $slug)->firstOrFail();
       return view('user.pages.form', compact('data'));
