@@ -162,7 +162,7 @@ Route::get('/', [UserController::class, 'index']);
 Route::get('/beranda', [UserController::class, 'index']);
 
 // ROUTE TENTANG KAMI
-Route::get('/sejarah', [UserController::class, 'sejarah']);
+Route::get('/form/{slug}', [UserController::class, 'form'])->name('google.form');
 Route::get('/kritik-saran', [UserController::class, 'kritiksaran'])->name('kritiksaran');
 Route::post('kritik-saran/store', [KritikSaranController::class, 'store'])->name('add.kritikSaran');
 

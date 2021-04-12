@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Form;
 use App\Models\Artikel;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
@@ -79,9 +80,10 @@ class UserController extends Controller
         return view('user.pages.blog-cari', compact('data'));
     }
 
-    public function sejarah()
+    public function sejarah($slug)
     {
-        return view('user.pages.form');
+      $data = Form::where('slug', $slug)->firstOrFail();
+      return view('user.pages.form', compact('data'));
     }
 
     public function kritiksaran()
