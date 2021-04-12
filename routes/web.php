@@ -113,8 +113,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
 
     //Form
-    Route::get('google-form', [FormController::class, 'index'])->name('list.google-form');
-
+    Route::get('google-form', [FormController::class, 'index'])->name('list.form');
+    Route::post('google-form/store', [FormController::class, 'store'])->name('add.form');
+    Route::post('google-form/update/{id}', [FormController::class, 'update'])->name('update.form');
+    Route::get('/google-form/delete/{id}', [FormController::class, 'delete'])->name('delete.form');
 
 
     //Kategori
