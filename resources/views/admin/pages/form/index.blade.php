@@ -24,6 +24,10 @@
                   <thead>
                     <tr>
                       <th>ID form</th>
+<<<<<<< HEAD
+=======
+                      <th>Slug</th>
+>>>>>>> 17fa5fc8032a3b91e460ccaa86ab95cb67cf7710
                       <th>Judul Form</th>
                       <th>Deskripsi (opsional)</th>
                       <th>Contact Person</th>
@@ -36,6 +40,10 @@
                     @foreach($data as $form)
                     <tr>
                       <td>{{$form->id_form}}</td>
+<<<<<<< HEAD
+=======
+                      <td>{{$form->slug}}</td>
+>>>>>>> 17fa5fc8032a3b91e460ccaa86ab95cb67cf7710
                       <td>{{$form->judul_form}}</td>
                       <td>{{$form->deskripsi}}</td>
                       <td>{{$form->contact_person}}</td>
@@ -70,6 +78,18 @@
         <div class="modal-body">
           {{csrf_field()}}
           <div class="form-group">
+<<<<<<< HEAD
+=======
+            <label>Slug</label>
+            <input type="text" class="form-control @error('slug') is-invalid @enderror" name="slug" value="{{ old('slug') }}" required>
+          </div>
+          @error('slug')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+          @enderror
+          <div class="form-group">
+>>>>>>> 17fa5fc8032a3b91e460ccaa86ab95cb67cf7710
             <label>Judul</label>
             <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ old('judul') }}" required>
           </div>
@@ -147,6 +167,18 @@
         <div class="modal-body">
           {{csrf_field()}}
           <div class="form-group">
+<<<<<<< HEAD
+=======
+            <label>Slug</label>
+            <input type="text" class="form-control @error('slug') is-invalid @enderror" name="slug" value="{{ $form2->slug }}" required>
+          </div>
+          @error('slug')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+          @enderror
+          <div class="form-group">
+>>>>>>> 17fa5fc8032a3b91e460ccaa86ab95cb67cf7710
             <label>Judul</label>
             <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ $form2->judul_form }}" required>
           </div>

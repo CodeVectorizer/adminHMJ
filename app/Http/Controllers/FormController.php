@@ -9,49 +9,50 @@ use Illuminate\Support\Str;
 
 class FormController extends Controller
 {
-  public function index()
-  {
-    $data = Form::All();
+    public function index()
+    {
+        $data = Form::All();
 
-    return view('admin.pages.form.index', compact('data'));
-  }
-  //store form
-  public function store(Request $request)
-  {
-    //validasi form
-    $this->validate($request, [
-      'judul' => 'required',
-      'deskripsi' => 'required',
-      'contact' => 'required',
-      'linkEmbed' => 'required',
-    ]);
-
+        return view('admin.pages.form.index', compact('data'));
+    }
     //store form
-    $form = new Form();
-    $form->slug = Str::slug($request->judul);
-    $form->judul_form = $request->judul;
-    $form->deskripsi = $request->deskripsi;
-    $form->contact_person = $request->contact;
-    $form->link_form = $request->linkEmbed;
-    $form->save();
-    return redirect()->route('list.form');
-  }
-  //edit form
-  public function update(Request $request, $id)
-  {
-    $form = Form::find($id);
-    $form->slug = Str::slug($request->judul);
-    $form->judul_form = $request->judul;
-    $form->deskripsi = $request->deskripsi;
-    $form->contact_person = $request->contact;
-    $form->link_form = $request->linkEmbed;
-    $form->save();
-    return redirect()->route('list.form');
-  }
-  //delete form
-  public function delete($id)
-  {
-    $form = Form::find($id)->delete();
-    return redirect()->route('list.form');
-  }
+    public function store(Request $request)
+    {
+        //validasi form
+        $this->validate($request, [
+            'slug' => 'required',
+            'judul' => 'required',
+            'deskripsi' => 'required',
+            'contact' => 'required',
+            'linkEmbed' => 'required',
+        ]);
+
+        //store form
+        $form = new Form();
+        $form->slug = Str::slug($request->slug);
+        $form->judul_form = $request->judul;
+        $form->deskripsi = $request->deskripsi;
+        $form->contact_person = $request->contact;
+        $form->link_form = $request->linkEmbed;
+        $form->save();
+        return redirect()->route('list.form');
+    }
+    //edit form
+    public function update(Request $request, $id)
+    {
+        $form = Form::find($id);
+        $form->slug = Str::slug($request->slug);
+        $form->judul_form = $request->judul;
+        $form->deskripsi = $request->deskripsi;
+        $form->contact_person = $request->contact;
+        $form->link_form = $request->linkEmbed;
+        $form->save();
+        return redirect()->route('list.form');
+    }
+    //delete form
+    public function delete($id)
+    {
+        $form = Form::find($id)->delete();
+        return redirect()->route('list.form');
+    }
 }

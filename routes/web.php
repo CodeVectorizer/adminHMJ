@@ -167,6 +167,8 @@ Route::post('kritik-saran/store', [KritikSaranController::class, 'store'])->name
 
 // Route::get('blog/{cari}', [UserController::class, 'getBlog'])->name('blog.detail');
 
+Route::get('/form/{slug}', [UserController::class, 'form'])->name('google.form');
+
 Route::name('blog.')->prefix('blog')->group(function () {
     Route::get('/cari', [UserController::class, 'cariBlog'])->name('cari');
     Route::get('/{artikel}', [UserController::class, 'getBlog'])->name('detail');

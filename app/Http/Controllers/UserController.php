@@ -82,8 +82,13 @@ class UserController extends Controller
 
     public function form($slug)
     {
+<<<<<<< HEAD
         $data = Form::where('slug', $slug)->firstOrFail();
         return view('user.pages.form', compact('data'));
+=======
+      $data = Form::where('slug', $slug)->firstOrFail();
+      return view('user.pages.form', compact('data'));
+>>>>>>> 17fa5fc8032a3b91e460ccaa86ab95cb67cf7710
     }
 
     public function kritiksaran()
