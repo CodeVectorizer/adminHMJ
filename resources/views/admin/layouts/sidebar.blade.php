@@ -69,8 +69,8 @@
                 <a class="nav-link" href="{{route('list.user')}}"><i class="fas fa-user"></i><span>Users / Admin</span></a>
             </li>
             @endif
-            <li class="">
-                <a class="nav-link" href=""><i class="fas fa-address-card"></i><span>Edit Profile</span></a>
+            <li class="{{ request()->is('admin/user/edit-profile') ? 'active' : '' }}">
+                <a class="nav-link"  href="{{route('editProfile.user', ['id' =>  Auth::user()->id_users])}}"><i class="fas fa-address-card"></i><span>Edit Profile</span></a>
             </li>
             <hr>
             <li class="menu-header">info</li>

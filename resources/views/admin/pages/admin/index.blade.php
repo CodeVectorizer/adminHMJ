@@ -44,6 +44,7 @@
                       <td>
                         <a href="{{route('edit.user', ['id' => $user->id_users])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> </a>
                         <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{ $loop->iteration }}"> <i class="fa fa-trash"></i> </a>
+                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal2{{ $loop->iteration }}"> <i class="fas fa-fire"></i> </a>
                       </td>
                     </tr>
                     @endforeach
@@ -73,6 +74,29 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
           <a href="{{ route('delete.user', ['id' => $user->id_users])}}" type="submit" class="btn btn-danger">Hapus</a>
+        </div>
+    </div>
+  </div>
+</div>
+@endforeach
+
+
+@foreach($data as $user)
+<div class="modal fade" id="exampleModal2{{ $loop->iteration }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Reset</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+          Apakah kamu yakin untuk mereset password ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+          <a href="{{ route('password.reset', ['id' => $user->id_users])}}" type="submit" class="btn btn-danger">Reset</a>
         </div>
     </div>
   </div>

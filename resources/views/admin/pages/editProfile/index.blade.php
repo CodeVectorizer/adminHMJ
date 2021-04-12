@@ -19,7 +19,7 @@
                 <div class="d-flex justify-content-center">
                     <img src="{{asset($data->foto_user)}}"  alt="foto" height="300px">
                 </div>
-              <form action="{{route('update.user', ['id' => $data->id_users])}}" method="post" enctype="multipart/form-data">
+              <form action="{{route('updateProfile.user', ['id' => $data->id_users])}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-group">
                   <label>Name</label>
@@ -53,13 +53,20 @@
                   <label>Foto</label>
                   <input type="file" name="foto" class="form-control">
                 </div>
-
+@if (Hash::check('admin12345', $data->password) || Hash::check('user12345', $data->password))
+                <p class="text-danger" role="alert">
+                    <strong>Password hanya dapat diubah satu kali</strong>
+                </p>
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
                             <label>Password</label>
                             <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"  value="{{ old('password') }}" required>
-
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                         </div>
 
                     </div>
@@ -75,6 +82,7 @@
                         </div>
                     </div>
                 </div>
+@endif
 
 
                 <div class="form-group">
@@ -93,7 +101,7 @@
 </div>
 
 
-<div class="modal fade" id="exampleModaledit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="exampleModaledit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -102,7 +110,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="{{route('update.password', ['id' => $data->id_users])}}" method="post">
+        <form action="{{route('edit.user', ['id' => $data->id_users])}}" method="post">
           <div class="modal-body">
             {{csrf_field()}}
             <div class="form-group">
@@ -131,6 +139,6 @@
         </form>
       </div>
     </div>
-  </div>
+  </div> --}}
 @endsection
 

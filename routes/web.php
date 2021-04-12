@@ -150,7 +150,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/user/delete/{id}', [AdminController::class, 'delete'])->name('delete.user');
 
     Route::get('user/edit-profile/{id}', [AdminController::class, 'editProfile'])->name('editProfile.user');
-    Route::post('user/update-password/{id}', [AdminController::class, 'updatePassword'])->name('update.password');
+    Route::post('user/update-profile/{id}', [AdminController::class, 'updateProfile'])->name('updateProfile.user');
+    Route::get('user/reset-pass/{id}', [AdminController::class, 'resetPassword'])->name('password.reset');
 });
 
 

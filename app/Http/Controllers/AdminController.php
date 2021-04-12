@@ -36,17 +36,18 @@ class AdminController extends Controller
       'name' => 'required',
       'username' => 'required',
       'email' => 'required',
-      'password' => 'required',
       'foto' => 'required',
       'role' => 'required',
     ]);
 
+    if($request->role == 'admin')$sandi = 'admin12345';
+    if($request->role == 'user')$sandi = 'user12345';
     //store admin
     $admin = new User();
     $admin->name = $request->name;
     $admin->username = $request->username;
     $admin->email = $request->email;
-    $admin->password =  Hash::make($request->password);
+    $admin->password =  Hash::make($sandi);
     $admin->role = $request->role;
 
     //store foto
@@ -67,6 +68,7 @@ class AdminController extends Controller
   public function update(Request $request, $id)
   {
     //validasi form
+    // dd($request->password);
 
     $this->validate($request, [
         'name' => 'required',
@@ -85,7 +87,6 @@ class AdminController extends Controller
     $admin->password = Hash::make($request->password);
     $admin->email = $request->email;
     $admin->role = $request->role;
-
     //update foto
     if ($request->hasFile('foto')) {
       if (file_exists($admin->foto_user)) {
@@ -102,7 +103,7 @@ class AdminController extends Controller
 
     return redirect()->route('list.user');
   }
-  //delete admin
+//delete admin
   public function delete($id)
   {
     $user = User::where('id_users', $id)->first();
@@ -124,16 +125,60 @@ class AdminController extends Controller
     return view('admin.pages.editProfile.index', compact('data'));
     }
 
-    public function updatePassword(Request $request, $id)
-    {
-        $this->validate($request, [
-            'password' => 'required|required_with:password_confirmation|confirmed',
-        ]);
 
-        $user = new User();
-        $user->password = $request->password;
+    public function updateProfile(Request $request, $id)
+    {
+        // dd($request);
+      //validasi form
+      // dd($request->password);
+
+      $isPasswordExist = false;
+      $this->validate($request, [
+          'name' => 'required',
+          'username' => 'required',
+          'email' => 'required',
+      ]);
+
+      if($request->password){
+          $this->validate($request, [
+            'password' => 'required|required_with:password|confirmed',
+            'password_confirmation' => 'required',
+            ]);
+            $isPasswordExist = true;
+      }
+
+
+      //update admin
+      $admin = User::find($id);
+      $admin->name = $request->name;
+      $admin->username = $request->username;
+      $admin->password = $isPasswordExist? Hash::make($request->password) :  $admin->password;
+      $admin->email = $request->email;
+      //update foto
+      if ($request->hasFile('foto')) {
+        if (file_exists($admin->foto_user)) {
+          unlink($admin->foto_user);
+        }
+        $image = $request->foto;
+        $imageName = time() . $image->getClientOriginalName();
+        $image->move('foto/', $imageName);
+        $imagePath = 'foto/' . $imageName;
+        $admin->foto_user = 'foto/' . $imageName;
+      }
+
+      $admin->save();
+
+      return redirect()->back();
+    }
+    public function resetPassword($id)
+    {
+        // dd($id);
+        $user = User::find($id);
+        if($user->role == 'admin')$sandi = 'admin12345';
+        if($user->role == 'user')$sandi = 'user12345';
+        $user->password = Hash::make($sandi);
         $user->save();
-        return redirect()->route('editProfile.user');
+        return redirect()->back();
     }
 
 }

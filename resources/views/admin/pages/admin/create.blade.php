@@ -46,15 +46,6 @@
                   @enderror
                 </div>
                 <div class="form-group">
-                  <label>Password</label>
-                  <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required>
-                  @error('password')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
-                </div>
-                <div class="form-group">
                   <label>Foto</label>
                   <input type="file" name="foto" class="form-control">
                 </div>
