@@ -21,9 +21,9 @@ class FormController extends Controller
         //validasi form
         $this->validate($request, [
             'slug' => 'required',
-            'judul' => 'required',
-            'deskripsi' => 'required',
-            'contact' => 'required',
+            'judul' => 'required|max:100',
+            'deskripsi' => 'required|max:255',
+            'contact' => 'required|max:255',
             'linkEmbed' => 'required',
         ]);
 

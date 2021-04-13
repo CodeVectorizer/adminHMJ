@@ -1,5 +1,27 @@
 @extends('user.layouts.master')
 
+@section('contentcss')
+<style media="screen">
+.section-1 {
+    position: relative;
+    height: 96vh;
+    margin: 0;
+    background-image: url("{{asset($info['0']->gambar_hero)}}");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1rem;
+    border-radius: 0 0 0 220px;
+    z-index: -10;
+}
+
+</style>
+@endsection
+
 @section('content')
     <main>
         <!-- <div class="container-fluid"> -->
@@ -9,7 +31,7 @@
                     <div class="col-md-5">
                         <div class="display">
                             <h1 class="title title-section-1">SELAMAT DATANG DI WEBSITE HMJTI POLIJE</h1>
-                            <p class="subtitle-section-1">“Bersinergi dari hati, berdedikasi untuk TI”</p>
+                            <p class="subtitle-section-1">“{{$info['0']->slogan}}”</p>
                         </div>
                     </div>
                 </div>
@@ -36,20 +58,14 @@
                                 VISI HMJ TEKNOLOGI INFORMASI
                             </h2>
                             <p class="subtitle-section-2">
-                                Mewujudkan mahasiswa yang bla bla bla bla bla bla bla bla bla bla bla bla
-                                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                                bla bla
-                                bla
-                                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                                bla bla
-                                bla
+                                {{$info['0']->slogan}}
                             </p>
                         </div>
                         <div class="col-md-6 img-caption">
-                            <img src="{{asset('user/img/pengurus/alvin 1.png')}}" class="foto-pengurus " data-aos="fade-left" alt="">
+                            <img src="{{asset($info['0']->foto_kahim)}}" class="foto-pengurus " data-aos="fade-left" alt="">
                             <div class="caption" data-aos="fade-up">
-                                <p class="title-caption">Alvin Eko</p>
-                                <p class="subtitle-caption">Ketua HMJTI 2021</p>
+                                <p class="title-caption">{{$info['0']->nama_kahim}}</p>
+                                <p class="subtitle-caption">Ketua HMJTI {{$info['0']->tahun}}</p>
                             </div>
                         </div>
                     </div>
@@ -59,33 +75,23 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 img-caption">
-                            <img src="{{asset('user/img/pengurus/bambang 1.png')}}" class="foto-pengurus " data-aos="fade-right"
+                            <img src="{{asset($info['0']->foto_wakahim)}}" class="foto-pengurus " data-aos="fade-right"
                                 alt="">
                             <div class="caption" data-aos="fade-up">
-                                <p class="title-caption">Bambang Suratno</p>
-                                <p class="subtitle-caption">Wakil Ketua HMJTI 2021</p>
+                                <p class="title-caption">{{$info['0']->nama_wakahim}}</p>
+                                <p class="subtitle-caption">Wakil Ketua HMJTI {{$info['0']->tahun}}</p>
                             </div>
                         </div>
                         <div class="col-md-6 pt-3">
                             <h2 class="title-section">
                                 MISI HMJ TEKNOLOGI INFORMASI
                             </h2>
+                            @foreach($misi as $misis)
                             <div class="subtitle-section">
-                                <span>1.</span>
-                                <div class="subtile-section-text">Membawa HMJTI menjadi yang terdepan</div>
+                                <span>{{$loop->iteration}}.</span>
+                                <div class="subtile-section-text">{{$misis}}</div>
                             </div>
-                            <div class="subtitle-section">
-                                <span>2.</span>
-                                <div class="subtile-section-text">Membawa HMJTI menjadi yang terdepan</div>
-                            </div>
-                            <div class="subtitle-section">
-                                <span>3.</span>
-                                <div class="subtile-section-text">Membawa HMJTI menjadi yang terdepan</div>
-                            </div>
-                            <div class="subtitle-section">
-                                <span>4.</span>
-                                <div class="subtile-section-text">Membawa HMJTI menjadi yang terdepan</div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

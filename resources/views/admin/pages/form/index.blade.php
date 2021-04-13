@@ -27,7 +27,7 @@
                       <th>Judul Form</th>
                       <th>Deskripsi (opsional)</th>
                       <th>Contact Person</th>
-                      <th>Link Form</th>
+                      <th>Link Embed</th>
                       <th>Tanggal</th>
                       <th>Aksi</th>
                     </tr>
@@ -36,7 +36,7 @@
                     @foreach($data as $form)
                     <tr>
                       <td>{{$form->id_form}}</td>
-                      <td>{{$form->judul_form}}</td>
+                      <td><a href="{{route('google.form', ['slug' => $form->slug])}}" target="_blank">Link form {{$form->judul_form}}</a></td>
                       <td>{{$form->deskripsi}}</td>
                       <td>{{$form->contact_person}}</td>
                       <td>{{$form->link_form}}</td>
@@ -72,48 +72,48 @@
           <div class="form-group">
             <label>Slug</label>
             <input type="text" class="form-control @error('slug') is-invalid @enderror" name="slug" value="{{ old('slug') }}" required>
+            @error('slug')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
-          @error('slug')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-            </span>
-          @enderror
           <div class="form-group">
             <label>Judul</label>
             <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ old('judul') }}" required>
+            @error('judul')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
-          @error('judul')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-            </span>
-          @enderror
           <div class="form-group">
             <label>Deskripsi</label>
-            <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" required></textarea>
+            <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" required>{{old('deskripsi')}}</textarea>
+            @error('deskripsi')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
-          @error('deskripsi')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-            </span>
-          @enderror
           <div class="form-group">
-            <label>Contact Person</label>
+            <label>Contact Person <span class="text-danger">*angka 0 diganti kode negara tanpa +. ex(6281222333)</span></label>
             <input type="text" class="form-control @error('contact') is-invalid @enderror" name="contact" value="{{ old('contact') }}" required>
+            @error('contact')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
-          @error('contact')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-            </span>
-          @enderror
           <div class="form-group">
             <label>Link Embed</label>
             <input type="text" class="form-control @error('linkEmbed') is-invalid @enderror" name="linkEmbed" value="{{ old('linkEmbed') }}" required>
+            @error('linkEmbed')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
-          @error('linkEmbed')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-            </span>
-          @enderror
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -158,48 +158,48 @@
           <div class="form-group">
             <label>Slug</label>
             <input type="text" class="form-control @error('slug') is-invalid @enderror" name="slug" value="{{ $form2->slug }}" required>
+            @error('slug')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
-          @error('slug')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-            </span>
-          @enderror
           <div class="form-group">
             <label>Judul</label>
             <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ $form2->judul_form }}" required>
+            @error('judul')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
-          @error('judul')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-            </span>
-          @enderror
           <div class="form-group">
             <label>Deskripsi</label>
             <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" required>{{$form2->deskripsi}}</textarea>
+            @error('deskripsi')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
-          @error('deskripsi')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-            </span>
-          @enderror
           <div class="form-group">
-            <label>Contact Person</label>
+            <label>Contact Person <span class="text-danger">*angka 0 diganti kode negara tanpa +. ex(6281222333)</span></label>
             <input type="text" class="form-control @error('contact') is-invalid @enderror" name="contact" value="{{ $form2->contact_person }}" required>
+            @error('contact')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
-          @error('contact')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-            </span>
-          @enderror
           <div class="form-group">
             <label>Link Embed</label>
             <input type="text" class="form-control @error('linkEmbed') is-invalid @enderror" name="linkEmbed" value="{{ $form2->link_form }}" required>
+            @error('linkEmbed')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
-          @error('linkEmbed')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-            </span>
-          @enderror
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

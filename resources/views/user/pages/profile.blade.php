@@ -19,7 +19,7 @@
         <div class="container-fluid py-5 daftar-pengurus">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="img-wrapper"><img class="struktur-img" src="{{asset('user/img/struktur.png')}}"
+                    <div class="img-wrapper"><img class="struktur-img" src="{{asset($info['0']->foto_struktur)}}"
                         alt="image">
                 </div>
                 <div class="col-md-12 ">
@@ -31,17 +31,7 @@
                                 </h2>
                                 <div class="subtitle-section">
                                     <p class="subtitle-section-text py-3">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima enim
-                                        praesentium unde commodi quia eos repellat error obcaecati. Alias ratione
-                                        velit impedit dicta voluptatum! Nesciunt cumque omnis iusto ut quibusdam
-                                        tenetur quos magnam dolorem a perferendis, aliquam pariatur, itaque
-                                        assumenda sed harum impedit, corrupti dicta blanditiis quo unde? Omnis hic
-                                        voluptatibus magnam sed accusamus mollitia sit non corporis vitae quis,
-                                        assumenda enim, deserunt aliquid inventore aspernatur itaque ratione facilis
-                                        temporibus consectetur saepe nobis? Quae consequuntur nostrum eaque qui,
-                                        iusto, repellat impedit in itaque rerum alias accusantium eos quaerat at
-                                        praesentium sunt enim eveniet quasi quia doloremque placeat perferendis ad
-                                        voluptates.
+                                      {{$info['0']->visi}}
                                     </p>
                                 </div>
                             </div>
@@ -55,22 +45,12 @@
                                 <h2 class="title-section center-line">
                                     MISI HMJ TEKNOLOGI INFORMASI
                                 </h2>
+                                @foreach($misi as $misis)
                                 <div class="subtitle-section">
-                                    <span>1.</span>
-                                    <div class="subtile-section-text">Membawa HMJTI menjadi yang terdepan</div>
+                                    <span>{{$loop->iteration}}.</span>
+                                    <div class="subtile-section-text">{{$misis}}</div>
                                 </div>
-                                <div class="subtitle-section">
-                                    <span>2.</span>
-                                    <div class="subtile-section-text">Membawa HMJTI menjadi yang terdepan</div>
-                                </div>
-                                <div class="subtitle-section">
-                                    <span>3.</span>
-                                    <div class="subtile-section-text">Membawa HMJTI menjadi yang terdepan</div>
-                                </div>
-                                <div class="subtitle-section">
-                                    <span>4.</span>
-                                    <div class="subtile-section-text">Membawa HMJTI menjadi yang terdepan</div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -83,8 +63,7 @@
                                     MOTO HMJ TEKNOLOGI INFORMASI 2021
                                 </h2>
                                 <div class="subtitle-section">
-                                    <p class="subtitle-section-text py-3">“Bersinergi dari hati, berdedikasi untuk
-                                        TI”
+                                    <p class="subtitle-section-text py-3">“{{$info['0']->slogan}}”
                                     </p>
                                 </div>
                             </div>

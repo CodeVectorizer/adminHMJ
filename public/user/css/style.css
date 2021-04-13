@@ -84,22 +84,6 @@ nav {
 /* Main */
 
 /* SECTION 1 */
-.section-1 {
-    position: relative;
-    height: 96vh;
-    margin: 0;
-    background-image: url("../img/background-section-1-min.png");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position-x: center;
-    text-align: center;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.1rem;
-    border-radius: 0 0 0 220px;
-    z-index: -10;
-}
 
 .section-1::after {
     content: "";
@@ -1276,4 +1260,3 @@ width: 200px;
     }
 
   }
-

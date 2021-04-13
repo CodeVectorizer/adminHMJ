@@ -18,6 +18,7 @@ use App\Http\Controllers\DepartemenController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\KritikSaranController;
 use App\Http\Controllers\KomentarController;
+use App\Http\Controllers\InfoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -131,6 +132,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::post('komentar/update/{id}', [KomentarController::class, 'update'])->name('update.komentar');
     Route::get('/komentar/delete/{id}', [KomentarController::class, 'delete'])->name('delete.komentar');
 
+    //Info
+    Route::get('info', [InfoController::class, 'index'])->name('list.info');
+    Route::post('info/store', [InfoController::class, 'store'])->name('add.info');
+    Route::get('info/edit/{id}', [InfoController::class, 'edit'])->name('edit.info');
+    Route::post('info/update/{id}', [InfoController::class, 'update'])->name('update.info');
+    Route::get('info/delete/{id}', [InfoController::class, 'delete'])->name('delete.info');
+    Route::view('info/create', 'admin.pages.info.create')->name('create.info');
+
     //KritikSaran
     Route::get('kritik-saran', [KritikSaranController::class, 'index'])->name('list.kritikSaran');
     // Route::post('kritik-saran/update/{id}', [KategoriController::class, 'update'])->name('update.kritikSaran');
@@ -177,7 +186,7 @@ Route::name('blog.')->prefix('blog')->group(function () {
     Route::get('/tags/{kategori}', [UserController::class, 'getBlogWithCategory'])->name('kategori');
 });
 
-Route::view('profile', 'user.pages.profile');
+Route::get('/profile', [UserController::class, 'profile']);
 
 
 

@@ -33,6 +33,7 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <!-- StyleCSS -->
+    @yield('contentcss')
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
 
     <!-- AnimateCSS -->
@@ -129,4 +130,3 @@
             </nav>
         </div>
     </header>
-

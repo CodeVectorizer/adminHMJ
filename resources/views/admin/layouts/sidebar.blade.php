@@ -75,7 +75,7 @@
             <hr>
             <li class="menu-header">info</li>
             <li class="">
-                <a class="nav-link" href=""><i class="fas fa-sitemap"></i><span>Informasi</span></a>
+                <a class="nav-link" href="{{route('list.info')}}"><i class="fas fa-sitemap"></i><span>Informasi</span></a>
             </li>
             {{-- <li class="menu-header">Stisla</li>
           <li class="nav-item dropdown">

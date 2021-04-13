@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Form;
+use App\Models\Info;
 use App\Models\Artikel;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
@@ -12,8 +13,10 @@ class UserController extends Controller
 {
     public function index()
     {
+        $info = Info::orderBy('id', 'desc')->limit(1)->get();
+        $misi = explode(", " , $info['0']->misi);
         $data = Artikel::orderBy('id_artikel', 'desc')->limit(6)->get();
-        return view('user.pages.home', compact('data'));
+        return view('user.pages.home', compact('data', 'info', 'misi'));
     }
 
     public function blog()
@@ -78,6 +81,13 @@ class UserController extends Controller
 
         ];
         return view('user.pages.blog-cari', compact('data'));
+    }
+
+    public function profile()
+    {
+      $info = Info::orderBy('id', 'desc')->limit(1)->get();
+      $misi = explode(", " , $info['0']->misi);
+      return view('user.pages.profile', compact('info', 'misi'));
     }
 
     public function form($slug)
