@@ -58,7 +58,7 @@
                                 VISI HMJ TEKNOLOGI INFORMASI
                             </h2>
                             <p class="subtitle-section-2">
-                                {{$info['0']->slogan}}
+                                {{$info['0']->visi}}
                             </p>
                         </div>
                         <div class="col-md-6 img-caption">
