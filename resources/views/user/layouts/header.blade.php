@@ -108,11 +108,11 @@
                                     kami
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/sejarah">Sejarah</a>
+                                    <a class="dropdown-item" href="#">Sejarah</a>
                                     <a class="dropdown-item" href="#">Program Kerja HMJ TI</a>
                                     <a class="dropdown-item" href="#">AD/ART HMJ TI</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/kritik-saran">Kritik dan Sarann</a>
+                                    <a class="dropdown-item" href="/kritik-saran">Kritik dan Saran</a>
                                 </div>
                             </li>
                             <li class="nav-item">
