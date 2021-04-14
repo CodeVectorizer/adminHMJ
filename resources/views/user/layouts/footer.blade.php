@@ -29,7 +29,7 @@
                 <a href="{{route('beranda')}}" class="subtitle-section">Beranda</a>
                 <a href="{{route('blog.blogs')}}" class="subtitle-section">Artikel</a>
                 <a href="{{route('profile')}}" class="subtitle-section">Profil HMJ TI</a>
-                <a href="{{route('kritiksaran')}}" class="subtitle-section">Kontak</a>
+                <a href="{{route('kritiksaran')}}" class="subtitle-section">Kritik dan Saran</a>
             </div>
             {{-- <div class="col-md-2 footer-link">
                 <h4 class="footer title-section">Berita</h4>

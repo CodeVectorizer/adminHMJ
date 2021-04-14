@@ -42,11 +42,9 @@
         <div class="section-2 ">
             <div class="container">
                 <div class="row justify-content-center text-center">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <h2 class="center title-section px-5">HMJ TEKNOLOGI INFORMASI POLITEKNIK NEGERI JEMBER</h2>
-                        <p class="subtitle-section">Himpunan Mahasiswa Jurusan Teknologi Informasi adalah
-                            organisasi
-                            mahasiswa yang berada di jurusan teknologi informasi</p>
+                        <p class="subtitle-section">Himpunan Mahasiswa Jurusan Teknologi Informasi adalah organisasi kemahasiswaan yang lahir dari kemauan yang kuat dan didasarkan pada persamaan persepsi, tanggung jawab serta rasa saling memiliki untuk mengembangkan Teknologi Informasi yang berada di bawah naungan Jurusan Teknologi Informasi Politeknik Negeri Jember</p>
                     </div>
                 </div>
             </div>
