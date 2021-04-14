@@ -437,7 +437,7 @@ footer {
 
 
 /* SMALL DEVICES */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     main {
         text-align: center;
     }
@@ -980,7 +980,7 @@ width: 200px;
 
 
 /* Library Order */
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .order-md-0 {
         -ms-flex-order: 0;
         order: 0 !important;
@@ -1048,7 +1048,7 @@ width: 200px;
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .order-sm-0 {
         -ms-flex-order: 0;
         order: 0 !important;
