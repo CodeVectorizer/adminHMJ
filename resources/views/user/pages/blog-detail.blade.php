@@ -28,7 +28,8 @@
                     <img src="{{ asset('user/img/user-default.png') }}" class="img-artikel" alt="">
                     <div class="ms-2 blog_detail_caption">
                         <span class="d-block fw-bold">{{$data['blog']['penulis']}}</span>
-                        <span class="d-block">{{$data['blog']['tanggal_penulisan']}}</span>
+                        <span class="d-block">Added at: {{  \Carbon::parse($data['blog']['tanggal_penulisan'])->format('d m Y')}}</span>
+                        <span class="d-block">Updated at: {{  \Carbon::parse($data['blog']['tanggal_update'])->format('d m Y')}}</span>
                     </div>
                 </div>
 

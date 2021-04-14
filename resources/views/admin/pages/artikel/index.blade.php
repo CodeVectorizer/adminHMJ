@@ -20,7 +20,7 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-striped" id="tabel-pengurus">
+                <table class="table table-striped" id="tabel-artikel">
                   <thead>
                     <tr>
                       <th>ID Artikel</th>
@@ -30,6 +30,7 @@
                       <th>Penulis</th>
                       <th>Tanggal Penulisan</th>
                       <th>Gambar</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -82,6 +83,8 @@
 @endsection
 @section('js-pages')
 <script type="text/javascript">
-
+  $(document).ready(function() {
+    $('#tabel-artikel').DataTable();
+  });
   </script>
 @endsection
