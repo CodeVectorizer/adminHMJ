@@ -170,7 +170,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
 //ROUTE USER
 Route::get('/', [UserController::class, 'index']);
-Route::get('/beranda', [UserController::class, 'index']);
+Route::get('/beranda', [UserController::class, 'index'])->name('beranda');
 
 // ROUTE TENTANG KAMI
 Route::get('/form/{slug}', [UserController::class, 'form'])->name('google.form');
@@ -186,7 +186,7 @@ Route::name('blog.')->prefix('blog')->group(function () {
     Route::get('/tags/{kategori}', [UserController::class, 'getBlogWithCategory'])->name('kategori');
 });
 
-Route::get('/profile', [UserController::class, 'profile']);
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 
 
 
