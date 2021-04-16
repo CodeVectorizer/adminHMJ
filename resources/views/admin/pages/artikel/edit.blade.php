@@ -5,7 +5,7 @@
 <div class="main-content">
   <section class="section">
     <div class="section-header">
-      <h1>Tambah Artikel</h1>
+      <h1>Edit Artikel</h1>
       <div class="section-header-breadcrumb">
         <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
         <div class="breadcrumb-item">Edit-Artikel</div>
@@ -16,7 +16,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-                <form action="{{route('add.artikel')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('update.artikel',['id' => $data->id_artikel])}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label>Judul</label>
@@ -59,7 +59,7 @@
                       </div>
                       <div class="form-group">
                         <label>Tanggal Penulisan</label>
-                        <input type="datetime-local" class="form-control @error('tanggal_penulisan') is-invalid @enderror" name="tanggal_penulisan" value="{{Carbon::parse($data->tanggal_penulisan)->format('Y-m-d')}}" required>
+                        <input type="datetime-local" class="form-control @error('tanggal_penulisan') is-invalid @enderror" name="tanggal_penulisan" value="{{ Carbon::parse($data->tanggal_penulisan)->format('Y-m-d\TH:i') }}" required>
                         @error('tanggal_penulisan')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

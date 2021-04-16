@@ -23,7 +23,7 @@
                 <table class="table table-striped" id="tabel-artikel">
                   <thead>
                     <tr>
-                      <th>ID Artikel</th>
+                      <th>#</th>
                       <th>Judul</th>
                       {{-- <th>Isi Artikel</th> --}}
                       <th>Kategori</th>
@@ -36,12 +36,12 @@
                   <tbody>
                     @foreach($data as $artikel)
                     <tr>
-                      <td>{{$artikel->id_artikel}}</td>
+                      <td>{{$loop->iteration}}</td>
                       <td>{{$artikel->judul}}</td>
                       {{-- <td>{!! $artikel->isi !!}</td> --}}
                       <td>{{$artikel->kategori->kategori}}</td>
                       <td>{{$artikel->penulis}}</td>
-                      <td>{{Carbon::parse($artikel->tanggal_penulisan)->format('d-m-y')}}</td>
+                      <td>{{Carbon::parse($artikel->tanggal_penulisan)->format('d-m-y H:i')}}</td>
                       <td><img src="{{asset($artikel->gambar)}}" alt="foto" width="50px" height="50px"></td>
                       <td>
                         <a href="{{route('edit.artikel', ['id' => $artikel->id_artikel])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> </a>

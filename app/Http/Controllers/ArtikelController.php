@@ -12,7 +12,7 @@ class ArtikelController extends Controller
 {
     public function index()
     {
-        $data = Artikel::All();
+        $data = Artikel::latest()->get();
 
         return view('admin.pages.artikel.index', compact('data'));
     }
@@ -73,7 +73,6 @@ class ArtikelController extends Controller
             'penulis' => 'required',
             'judul' => 'required',
             'tanggal_penulisan' => 'required',
-            'gambar' => 'required',
             'isi' => 'required',
             'id_kategori' => 'required'
         ]);
@@ -88,18 +87,17 @@ class ArtikelController extends Controller
         $artikel->isi = $request->isi;
         $artikel->id_kategori = $request->id_kategori;
 
-        $imagePath = "";
+        // $imagePath = "";
         if ($request->hasFile('gambar')) {
-            if (file_exists($request->gambar)) {
-                unlink($request->gambar);
+            if (file_exists($artikel->gambar)) {
+                unlink($artikel->gambar);
             }
             $image = $request->gambar;
             $imageName = time() . $image->getClientOriginalName();
             $image->move('img/artikel/', $imageName);
             $imagePath = 'img/artikel/' . $imageName;
+            $artikel->gambar = 'img/artikel/' . $imageName;
         }
-        $artikel->gambar = $imagePath;
-
         $artikel->save();
 
         return redirect()->route('list.artikel');
