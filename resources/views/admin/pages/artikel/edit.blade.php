@@ -39,11 +39,11 @@
                       <div class="form-group">
                         <label>Kategori</label>
                         <select class="form-control @error('kategori') is-invalid @enderror" name="id_kategori" >
-                          @foreach($kategori as $item)                          
+                          @foreach($kategori as $item)
                           @if ($item->id_kategori == $data->id_kategori)
-                            <option value="{{$item->id_kategori}}" selected>{{$item->kategori}}</option>                              
+                            <option value="{{$item->id_kategori}}" selected>{{$item->kategori}}</option>
                           @else
-                            <option value="{{$item->id_kategori}}">{{$item->kategori}}</option>                              
+                            <option value="{{$item->id_kategori}}">{{$item->kategori}}</option>
                           @endif
                           @endforeach
                         </select>
@@ -59,7 +59,7 @@
                       </div>
                       <div class="form-group">
                         <label>Tanggal Penulisan</label>
-                        <input type="date" class="form-control @error('tanggal_penulisan') is-invalid @enderror" name="tanggal_penulisan" value="{{Carbon::parse($data->tanggal_penulisan)->format('Y-m-d')}}" required>
+                        <input type="datetime" class="form-control @error('tanggal_penulisan') is-invalid @enderror" name="tanggal_penulisan" value="{{Carbon::parse($data->tanggal_penulisan)->format('Y-m-d')}}" required>
                         @error('tanggal_penulisan')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -75,14 +75,14 @@
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary">Tambah</button>
                       </div>
-                   
-                </form>             
+
+                </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>  
+  </section>
 </div>
 <script>
     $(document).ready(function() {

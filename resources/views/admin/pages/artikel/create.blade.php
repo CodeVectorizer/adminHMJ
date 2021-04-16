@@ -7,15 +7,16 @@
     <div class="section-header">
       <h1>Tambah Artikel</h1>
       <div class="section-header-breadcrumb">
-        <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+        <div class="breadcrumb-item active"><a href="{{route('list.artikel')}}">Dashboard</a></div>
         <div class="breadcrumb-item">Tambah-Artikel</div>
       </div>
     </div>
     <div class="section-body">
       <div class="row">
         <div class="col-12">
-          <div class="card">
-            <div class="card-body">
+            <div class="card">
+                <div class="card-body">
+                <a class="btn btn-outline-primary mb-3"><i class="fas fa-refresh"></i></a>
                 <form action="{{route('add.artikel')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
@@ -26,7 +27,7 @@
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
-                      </div>                    
+                      </div>
                       <div class="form-group">
                         <label>Kategori</label>
                         <select class="form-control @error('kategori') is-invalid @enderror" name="id_kategori" value="{{ old('kategori') }}">
@@ -46,7 +47,7 @@
                       </div>
                       <div class="form-group">
                         <label>Tanggal Penulisan</label>
-                        <input type="date" class="form-control @error('tanggal_penulisan') is-invalid @enderror" name="tanggal_penulisan" value="{{ old('tanggal_penulisan') }}" required>
+                        <input type="datetime" class="form-control @error('tanggal_penulisan') is-invalid @enderror" name="tanggal_penulisan" value="{{ old('tanggal_penulisan') }}" required>
                         @error('tanggal_penulisan')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -60,14 +61,14 @@
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary">Tambah</button>
                       </div>
-                   
-                </form>             
+
+                </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>  
+  </section>
 </div>
 <script>
     $(document).ready(function() {
