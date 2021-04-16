@@ -16,7 +16,6 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                <a class="btn btn-outline-primary mb-3"><i class="fas fa-refresh"></i></a>
                 <form action="{{route('add.artikel')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
@@ -47,7 +46,7 @@
                       </div>
                       <div class="form-group">
                         <label>Tanggal Penulisan</label>
-                        <input type="datetime" class="form-control @error('tanggal_penulisan') is-invalid @enderror" name="tanggal_penulisan" value="{{ old('tanggal_penulisan') }}" required>
+                        <input type="datetime-local" class="form-control @error('tanggal_penulisan') is-invalid @enderror" name="tanggal_penulisan" value="{{ old('tanggal_penulisan') }}" required>
                         @error('tanggal_penulisan')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

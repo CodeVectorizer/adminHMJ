@@ -8,7 +8,7 @@
       <h1>Tambah Artikel</h1>
       <div class="section-header-breadcrumb">
         <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-        <div class="breadcrumb-item">Tambah-Artikel</div>
+        <div class="breadcrumb-item">Edit-Artikel</div>
       </div>
     </div>
     <div class="section-body">
@@ -59,7 +59,7 @@
                       </div>
                       <div class="form-group">
                         <label>Tanggal Penulisan</label>
-                        <input type="datetime" class="form-control @error('tanggal_penulisan') is-invalid @enderror" name="tanggal_penulisan" value="{{Carbon::parse($data->tanggal_penulisan)->format('Y-m-d')}}" required>
+                        <input type="datetime-local" class="form-control @error('tanggal_penulisan') is-invalid @enderror" name="tanggal_penulisan" value="{{Carbon::parse($data->tanggal_penulisan)->format('Y-m-d')}}" required>
                         @error('tanggal_penulisan')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -73,7 +73,7 @@
                         </textarea>
                       </div>
                       <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Tambah</button>
+                        <button type="submit" class="btn btn-primary">Edit</button>
                       </div>
 
                 </form>
