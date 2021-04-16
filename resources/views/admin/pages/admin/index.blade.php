@@ -23,7 +23,7 @@
                 <table class="table table-striped" id="tabel-user">
                   <thead>
                     <tr>
-                      <th>ID User</th>
+                      <th>#</th>
                       <th>Name</th>
                       <th>User</th>
                       <th>Email</th>
@@ -35,7 +35,7 @@
                   <tbody>
                     @foreach($data as $user)
                     <tr>
-                      <td>{{$user->id_users}}</td>
+                      <td>{{$loop->iteration}}</td>
                       <td>{{$user->name}}</td>
                       <td>{{$user->username}}</td>
                       <td>{{$user->email}}</td>
