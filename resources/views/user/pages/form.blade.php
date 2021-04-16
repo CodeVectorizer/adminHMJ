@@ -18,7 +18,7 @@
 
     <div class="container">
         <center>
-            <h3 class="mt-5">F{{$data->judul}}</h3>
+            <h3 class="mt-5">{{$data->judul_form}}</h3>
             <p class="mt-3">{{$data->deskripsi}}</p>
             <div class="row">
                 <div class="col-md-12">
