@@ -24,10 +24,10 @@
                   <thead>
                     <tr>
                       <th>#</th>
+                      <th>Link Form</th>
                       <th>Judul Form</th>
                       <th>Deskripsi (opsional)</th>
                       <th>Contact Person</th>
-                      <th>Link Embed</th>
                       <th>Tanggal</th>
                       <th>Aksi</th>
                     </tr>
@@ -36,10 +36,10 @@
                     @foreach($data as $form)
                     <tr>
                       <td>{{$loop->iteration}}</td>
-                      <td><a href="{{route('google.form', ['slug' => $form->slug])}}" target="_blank">Link form {{$form->judul_form}}</a></td>
+                      <td><a href="{{route('google.form', ['slug' => $form->slug])}}" target="_blank">{{$form->slug}}</a></td>
+                      <td>{{$form->judul_form}}</td>
                       <td>{{$form->deskripsi}}</td>
                       <td>{{$form->contact_person}}</td>
-                      <td>{{$form->link_form}}</td>
                       <td>{{$form->date}}</td>
                       <td>
                         <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModaledit{{ $loop->iteration }}"> <i class="fa fa-edit"></i> </a>
