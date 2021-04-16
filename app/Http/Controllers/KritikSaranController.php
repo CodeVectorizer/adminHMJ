@@ -9,7 +9,7 @@ class KritikSaranController extends Controller
 {
     public function index()
     {
-        $data = KritikSaran::All();
+        $data = KritikSaran::orderBy('id_kritiksaran', 'desc')->get();
         // $data = KritikSaran::All()->sortDesc();
 
         return view('admin.pages.kritikSaran.index', compact('data'));
