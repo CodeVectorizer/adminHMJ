@@ -21,7 +21,7 @@
                 <table class="table table-striped" id="tabel-kritikSaran">
                   <thead>
                     <tr>
-                      <th>ID Kirik Saran</th>
+                      <th>#</th>
                       <th>Nama</th>
                       <th>Email</th>
                       <th>Isi Kritik dan Saran</th>
@@ -32,7 +32,7 @@
                   <tbody>
                     @foreach($data as $kritikSaran)
                     <tr>
-                      <td>{{$kritikSaran->id_kritiksaran}}</td>
+                      <td>{{$loop->iteration}}</td>
                       <td>{{$kritikSaran->nama}}</td>
                       <td>{{$kritikSaran->email}}</td>
                       <td>{{$kritikSaran->kritiksaran}}</td>

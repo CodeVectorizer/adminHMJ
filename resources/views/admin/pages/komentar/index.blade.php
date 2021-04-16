@@ -21,7 +21,7 @@
                 <table class="table table-striped" id="tabel-komentar">
                   <thead>
                     <tr>
-                      <th>ID Komentar</th>
+                      <th>#</th>
                       <th>Judul Artikel</th>
                       <th>Nama</th>
                       <th>Email</th>
@@ -34,7 +34,7 @@
                   <tbody>
                     @foreach($data as $komentar)
                     <tr>
-                      <td>{{$komentar->id_komentar}}</td>
+                      <td>{{$loop->iteration}}</td>
                       <td>{{$komentar->judul}}</td>
                       <td>{{$komentar->nama}}</td>
                       <td>{{$komentar->email}}</td>

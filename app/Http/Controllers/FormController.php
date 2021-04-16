@@ -11,7 +11,7 @@ class FormController extends Controller
 {
     public function index()
     {
-        $data = Form::All();
+        $data = Form::All()->sortDesc();
 
         return view('admin.pages.form.index', compact('data'));
     }

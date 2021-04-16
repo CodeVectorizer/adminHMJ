@@ -23,7 +23,7 @@
                 <table class="table table-striped" id="tabel-form">
                   <thead>
                     <tr>
-                      <th>ID form</th>
+                      <th>#</th>
                       <th>Judul Form</th>
                       <th>Deskripsi (opsional)</th>
                       <th>Contact Person</th>
@@ -35,7 +35,7 @@
                   <tbody>
                     @foreach($data as $form)
                     <tr>
-                      <td>{{$form->id_form}}</td>
+                      <td>{{$loop->iteration}}</td>
                       <td><a href="{{route('google.form', ['slug' => $form->slug])}}" target="_blank">Link form {{$form->judul_form}}</a></td>
                       <td>{{$form->deskripsi}}</td>
                       <td>{{$form->contact_person}}</td>

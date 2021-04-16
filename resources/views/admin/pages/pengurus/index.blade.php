@@ -23,7 +23,7 @@
                 <table class="table table-striped" id="tabel-pengurus">
                   <thead>
                     <tr>
-                      <th>ID pengurus</th>
+                      <th>#</th>
                       <th>NIM</th>
                       <th>Nama</th>
                       <th>Email</th>
@@ -43,7 +43,7 @@
                   <tbody>
                     @foreach($data as $pengurus)
                     <tr>
-                      <td>{{$pengurus->id_pengurus}}</td>
+                      <td>{{$loop->iteration}}</td>
                       <td>{{$pengurus->nim}}</td>
                       <td>{{$pengurus->nama}}</td>
                       <td>{{$pengurus->email}}</td>

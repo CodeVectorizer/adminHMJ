@@ -23,7 +23,7 @@
                 <table class="table table-striped" id="tabel-golongan">
                   <thead>
                     <tr>
-                      <th>ID Golongan</th>
+                      <th>#</th>
                       <th>Golongan</th>
                       <th>Aksi</th>
                     </tr>
@@ -31,7 +31,7 @@
                   <tbody>
                     @foreach($data as $golongan)
                     <tr>
-                      <td>{{$golongan->id_golongan}}</td>
+                      <td>{{$loop->iteration}}</td>
                       <td>{{$golongan->golongan}}</td>
                       <td>
                         <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModaledit{{ $loop->iteration }}"> <i class="fa fa-edit"></i> </a>

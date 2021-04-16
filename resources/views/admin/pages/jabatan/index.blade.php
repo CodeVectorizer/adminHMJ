@@ -23,7 +23,7 @@
                 <table class="table table-striped" id="tabel-jabatan">
                   <thead>
                     <tr>
-                      <th>ID Jabatan</th>
+                      <th>#</th>
                       <th>Nama Jabatan</th>
                       <th>Periode</th>
                       <th>Aksi</th>
@@ -32,7 +32,7 @@
                   <tbody>
                     @foreach($data as $jabatan)
                     <tr>
-                      <td>{{$jabatan->id_jabatan}}</td>
+                      <td>{{$loop->iteration}}</td>
                       <td>{{$jabatan->jabatan}}</td>
                       <td>{{$jabatan->periode}}</td>
                       <td>
