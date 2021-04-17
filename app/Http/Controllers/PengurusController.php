@@ -119,9 +119,11 @@ class PengurusController extends Controller
     $pengurus->id_biro = $request->id_biro;
 
     //store foto
-    if ($request->hasFile('foto')) {
-      if (file_exists($pengurus->foto)) {
-        unlink($pengurus->foto);
+    if (!$request->hasFile('foto')) {
+        $pengurus->foto = $pengurus->foto;
+      }else{
+        if (file_exists($pengurus->foto)) {
+            unlink($pengurus->foto);
       }
       $image = $request->foto;
       $imageName = time() . $image->getClientOriginalName();

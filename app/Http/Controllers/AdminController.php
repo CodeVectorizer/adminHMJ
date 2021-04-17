@@ -68,15 +68,12 @@ class AdminController extends Controller
   public function update(Request $request, $id)
   {
     //validasi form
-    // dd($request->password);
+    // dd($request);
 
     $this->validate($request, [
         'name' => 'required',
         'username' => 'required',
         'email' => 'required',
-
-        'password' => 'required|required_with:password|confirmed',
-        'password_confirmation' => 'required',
         'role' => 'required',
     ]);
 
@@ -88,16 +85,19 @@ class AdminController extends Controller
     $admin->email = $request->email;
     $admin->role = $request->role;
     //update foto
-    if ($request->hasFile('foto')) {
-      if (file_exists($admin->foto_user)) {
-        unlink($admin->foto_user);
-      }
-      $image = $request->foto;
-      $imageName = time() . $image->getClientOriginalName();
-      $image->move('foto/', $imageName);
-      $imagePath = 'foto/' . $imageName;
-      $admin->foto_user = 'foto/' . $imageName;
+    if (!$request->hasFile('foto')) {
+        $admin->foto_user = $admin->foto_user;
+    }else{
+        if (file_exists($admin->foto_user)) {
+            unlink($admin->foto_user);
+          }
+          $image = $request->foto;
+          $imageName = time() . $image->getClientOriginalName();
+          $image->move('foto/', $imageName);
+          $imagePath = 'foto/' . $imageName;
+          $admin->foto_user = 'foto/' . $imageName;
     }
+
 
     $admin->save();
 
@@ -164,7 +164,11 @@ class AdminController extends Controller
         $imageName = time() . $image->getClientOriginalName();
         $image->move('foto/', $imageName);
         $imagePath = 'foto/' . $imageName;
-        $admin->foto_user = 'foto/' . $imageName;
+        if($request->hasFile('foto')){
+            $admin->foto_user = $admin->foto_user;
+        }else{
+            $admin->foto_user = 'foto/' . $imageName;
+        }
       }
 
       $admin->save();

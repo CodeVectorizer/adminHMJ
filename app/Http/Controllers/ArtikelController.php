@@ -93,7 +93,9 @@ class ArtikelController extends Controller
         $artikel->id_kategori = $request->id_kategori;
 
         // $imagePath = "";
-        if ($request->hasFile('gambar')) {
+        if (!$request->hasFile('gambar')) {
+            $artikel->gambar = $artikel->gambar;
+        }else{
             if (file_exists($artikel->gambar)) {
                 unlink($artikel->gambar);
             }
