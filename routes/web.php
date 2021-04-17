@@ -104,6 +104,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::post('angkatan/store', [AngkatanController::class, 'store'])->name('add.angkatan');
         Route::post('angkatan/update/{id}', [AngkatanController::class, 'update'])->name('update.angkatan');
         Route::get('/angkatan/delete/{id}', [AngkatanController::class, 'delete'])->name('delete.angkatan');
+
+        //Info
+        Route::get('info', [InfoController::class, 'index'])->name('list.info');
+        Route::post('info/store', [InfoController::class, 'store'])->name('add.info');
+        Route::get('info/edit/{id}', [InfoController::class, 'edit'])->name('edit.info');
+        Route::post('info/update/{id}', [InfoController::class, 'update'])->name('update.info');
+        Route::get('info/delete/{id}', [InfoController::class, 'delete'])->name('delete.info');
+        Route::view('info/create', 'admin.pages.info.create')->name('create.info');
     });
 
 
@@ -134,13 +142,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::post('komentar/update/{id}', [KomentarController::class, 'update'])->name('update.komentar');
     Route::get('/komentar/delete/{id}', [KomentarController::class, 'delete'])->name('delete.komentar');
 
-    //Info
-    Route::get('info', [InfoController::class, 'index'])->name('list.info');
-    Route::post('info/store', [InfoController::class, 'store'])->name('add.info');
-    Route::get('info/edit/{id}', [InfoController::class, 'edit'])->name('edit.info');
-    Route::post('info/update/{id}', [InfoController::class, 'update'])->name('update.info');
-    Route::get('info/delete/{id}', [InfoController::class, 'delete'])->name('delete.info');
-    Route::view('info/create', 'admin.pages.info.create')->name('create.info');
+
 
     //KritikSaran
     Route::get('kritik-saran', [KritikSaranController::class, 'index'])->name('list.kritikSaran');

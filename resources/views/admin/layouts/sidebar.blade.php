@@ -76,10 +76,12 @@
                 <a class="nav-link"  href="{{route('editProfile.user', ['id' =>  Auth::user()->id_users])}}"><i class="fas fa-address-card"></i><span>Edit Profile</span></a>
             </li>
             <hr>
+            @if(auth()->user()->role == 'admin')
             <li class="menu-header">info</li>
             <li class="">
                 <a class="nav-link" href="{{route('list.info')}}"><i class="fas fa-sitemap"></i><span>Informasi</span></a>
             </li>
+            @endif
             {{-- <li class="menu-header">Stisla</li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Components</span></a>
