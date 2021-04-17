@@ -21,8 +21,10 @@
                             href="{{route('list.artikel')}}">Artikel</a></li>
                     <li class={{ request()->is('admin/komentar') ? 'active' : '' }}><a class="nav-link"
                             href="{{route('list.komentar')}}">Komentar</a></li>
+                            @if(auth()->user()->role == 'admin')
                     <li class={{ request()->is('admin/kategori') ? 'active' : '' }}><a class="nav-link"
                             href="{{route('list.kategori')}}">Kategori</a></li>
+                            @endif
                 </ul>
             </li>
             <li class="{{ request()->is('admin/pengurus') ? 'active' : '' }}">
