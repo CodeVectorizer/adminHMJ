@@ -52,7 +52,9 @@
                 <div class="form-group">
                     <label>Role</label>
                     <select class="form-control @error('role') is-invalid @enderror" name="role" value="{{ $data->role }}">
-
+                        @if($data->role == $data->role)
+                        <option value="{{$data->role}}" selected>{{ucfirst($data->role)}}</option>
+                      @endif
                         <option value="admin">Admin</option>
                         <option value="user">User</option>
                         <option value="departemen">Departemen</option>
