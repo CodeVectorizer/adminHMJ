@@ -31,8 +31,7 @@ class ArtikelController extends Controller
 
     public function edit($id)
     {
-        $data = Artikel::find($id);
-        if (!$data) return view('error-404');
+        $data = Artikel::find($id);        if (!$data) return view('error-404');
         $kategori = Kategori::all();
         return view('admin.pages.artikel.edit', compact('data', 'kategori'));
     }
@@ -74,14 +73,14 @@ class ArtikelController extends Controller
     }
     public function update(Request $request, $id)
     {
+
         $this->validate($request, [
-            'penulis' => 'required',
+
             'judul' => 'required',
             'tanggal_penulisan' => 'required',
             'isi' => 'required',
             'id_kategori' => 'required'
         ]);
-
 
         $artikel = Artikel::find($id);
         $artikel->penulis = Auth::user()->name;
