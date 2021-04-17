@@ -27,7 +27,7 @@
                           </span>
                         @enderror
                       </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>Penulis</label>
                         <input type="text" class="form-control @error('penulis') is-invalid @enderror" name="penulis" value="{{$data->penulis}}" required>
                         @error('penulis')
@@ -35,7 +35,7 @@
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
-                      </div>
+                      </div> --}}
                       <div class="form-group">
                         <label>Kategori</label>
                         <select class="form-control @error('kategori') is-invalid @enderror" name="id_kategori" >

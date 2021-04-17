@@ -16,7 +16,9 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
+                @if(auth()->user()->role == 'admin')
               <a href="{{route('tambah.pengurus')}}" class="btn btn-primary">Tambah Pengurus</a>
+              @endif
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -37,7 +39,9 @@
                       <th>Angkatan</th>
                       <th>Golongan</th>
                       <th>Status</th>
+                      @if(auth()->user()->role == 'admin')
                       <th>Aksi</th>
+                      @endif
                     </tr>
                   </thead>
                   <tbody>
@@ -57,10 +61,12 @@
                       <td>{{$pengurus->angkatan->angkatan}}</td>
                       <td>{{$pengurus->golongan->golongan}}</td>
                       <td>{{ucwords($pengurus->periode->status)}}</td>
+                      @if(auth()->user()->role == 'admin')
                       <td>
                         <a href="{{route('edit.pengurus', ['id' => $pengurus->id_pengurus])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> </a>
                         <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{ $loop->iteration }}"> <i class="fa fa-trash"></i> </a>
                       </td>
+                      @endif
                     </tr>
                     @endforeach
                   </tbody>

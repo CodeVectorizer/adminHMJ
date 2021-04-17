@@ -41,7 +41,7 @@ class AdminController extends Controller
     ]);
 
     if($request->role == 'admin')$sandi = 'admin12345';
-    if($request->role == 'user')$sandi = 'user12345';
+    else $sandi = 'user12345';
     //store admin
     $admin = new User();
     $admin->name = $request->name;
@@ -157,6 +157,7 @@ class AdminController extends Controller
       //update foto
       if ($request->hasFile('foto')) {
         if (file_exists($admin->foto_user)) {
+            // dd($admin->foto_user);
           unlink($admin->foto_user);
         }
         $image = $request->foto;

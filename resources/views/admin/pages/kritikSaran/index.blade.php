@@ -26,7 +26,9 @@
                       <th>Email</th>
                       <th>Isi Kritik dan Saran</th>
                       <th>Tanggal</th>
+                      @if(auth()->user()->role == 'admin')
                       <th>Hapus</th>
+                      @endif
                     </tr>
                   </thead>
                   <tbody>
@@ -37,9 +39,11 @@
                       <td>{{$kritikSaran->email}}</td>
                       <td>{{$kritikSaran->kritiksaran}}</td>
                       <td>{{date('d M Y', strtotime($kritikSaran->tanggal))}}</td>
+                      @if(auth()->user()->role == 'admin')
                       <td>
                         <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{ $loop->iteration }}"> <i class="fa fa-trash"></i> </a>
                       </td>
+                      @endif
                     </tr>
                     @endforeach
                   </tbody>

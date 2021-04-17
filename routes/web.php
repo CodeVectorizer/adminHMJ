@@ -55,13 +55,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     // Auth Admin
     Route::middleware(['admin'])->group(function () {
-        //Artikels
-        Route::get('artikel', [ArtikelController::class, 'index'])->name('list.artikel');
-        Route::get('artikel/tambah', [ArtikelController::class, 'create'])->name('tambah.artikel');
-        Route::get('artikel/edit/{id}', [ArtikelController::class, 'edit'])->name('edit.artikel');
-        Route::post('artikel/store', [ArtikelController::class, 'store'])->name('add.artikel');
-        Route::post('artikel/update/{id}', [ArtikelController::class, 'update'])->name('update.artikel');
-        Route::get('artikel/delete/{id}', [ArtikelController::class, 'delete'])->name('delete.artikel');
+
 
 
 
@@ -112,6 +106,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::get('/angkatan/delete/{id}', [AngkatanController::class, 'delete'])->name('delete.angkatan');
     });
 
+
+    //Artikels
+    Route::get('artikel', [ArtikelController::class, 'index'])->name('list.artikel');
+    Route::get('artikel/tambah', [ArtikelController::class, 'create'])->name('tambah.artikel');
+    Route::get('artikel/edit/{id}', [ArtikelController::class, 'edit'])->name('edit.artikel');
+    Route::post('artikel/store', [ArtikelController::class, 'store'])->name('add.artikel');
+    Route::post('artikel/update/{id}', [ArtikelController::class, 'update'])->name('update.artikel');
+    Route::get('artikel/delete/{id}', [ArtikelController::class, 'delete'])->name('delete.artikel');
 
     //Form
     Route::get('google-form', [FormController::class, 'index'])->name('list.form');

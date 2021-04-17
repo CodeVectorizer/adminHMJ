@@ -6,7 +6,7 @@
                         class="fas fa-search"></i></a></li>
         </ul>
         <div class="search-element">
-            
+
                 <input id="search" class="form-control typeahead form-control" placeholder="Search" type="search" data-width="250">
                 {{-- <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250"> --}}
                 <button class="btn" onclick="resetSearch()" type="button"><i class="fas fa-search"></i></button>
@@ -17,7 +17,7 @@
                 </div>
                 <div class="search-biro">
 
-                </div>                
+                </div>
                 {{-- <div class="search-header">
                     Result
                 </div>
@@ -194,7 +194,7 @@
         </li> --}}
         <li class="dropdown"><a href="#" data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <img alt="image" src="{{ asset('user/img/user-default.png') }}" class="rounded-circle mr-1">
+                <img alt="image" src="{{ asset(auth()->user()->foto_user) }}" class="rounded-circle mr-1">
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">

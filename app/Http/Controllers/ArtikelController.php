@@ -6,13 +6,19 @@ use App\Models\Artikel;
 use App\Models\Kategori;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class ArtikelController extends Controller
 {
     public function index()
     {
-        $data = Artikel::latest()->get();
+        $user = auth()->user();
+        if($user->role == 'admin'){
+            $data = Artikel::latest()->get();
+        }else{
+            $data = Artikel::latest()->where('penulis',$user->name)->get();
+        }
 
         return view('admin.pages.artikel.index', compact('data'));
     }
@@ -35,7 +41,6 @@ class ArtikelController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request);
         $this->validate($request, [
             'judul' => 'required',
             'tanggal_penulisan' => 'required',
@@ -50,7 +55,7 @@ class ArtikelController extends Controller
         $artikel->judul = $request->judul;
         $artikel->slug = Str::slug($request->judul);
         $artikel->tanggal_penulisan = $request->tanggal_penulisan;
-        $artikel->tanggal_update = $request->tanggal_penulisan;
+        $artikel->tanggal_update = Carbon::now();
         $artikel->isi = $request->isi;
         $artikel->id_kategori = $request->id_kategori;
 
@@ -79,11 +84,11 @@ class ArtikelController extends Controller
 
 
         $artikel = Artikel::find($id);
-        $artikel->penulis = $request->penulis;
+        $artikel->penulis = Auth::user()->name;
         $artikel->judul = $request->judul;
         $artikel->slug = Str::slug($request->judul);
         $artikel->tanggal_penulisan = $request->tanggal_penulisan;
-        $artikel->tanggal_update = $request->tanggal_penulisan;
+        $artikel->tanggal_update = Carbon::now();;
         $artikel->isi = $request->isi;
         $artikel->id_kategori = $request->id_kategori;
 

@@ -55,6 +55,8 @@
 
                       <option value="admin">Admin</option>
                       <option value="user">User</option>
+                      <option value="departemen">Departemen</option>
+                      <option value="biro">Biro</option>
 
                     </select>
                     @error('role')
