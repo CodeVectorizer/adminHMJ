@@ -6,6 +6,7 @@ use App\Models\Form;
 use App\Models\Info;
 use App\Models\Artikel;
 use App\Models\Kategori;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Echo_;
 
@@ -85,9 +86,11 @@ class UserController extends Controller
 
     public function profile()
     {
+      $pengurus = DB::table('tb_pengurus')->leftJoin('tb_periode', 'tb_periode.id_periode', '=', 'tb_pengurus.id_periode')->select('tb_pengurus.nama', 'tb_pengurus.foto')->where('tb_periode.status', '=', 'aktif')->orderBy('id_pengurus', 'asc')->get();
       $info = Info::orderBy('id', 'desc')->limit(1)->get();
       $misi = explode(", " , $info['0']->misi);
-      return view('user.pages.profile', compact('info', 'misi'));
+
+      return view('user.pages.profile', compact('info', 'misi', 'pengurus'));
     }
 
     public function form($slug)

@@ -75,7 +75,7 @@
 
 
 
-
+            @if(count($pengurus) == 45)
             <!-- KAHIM dan WAKAHIM -->
             <div class="row justify-content-center">
                 <div class="col-md-12 py-3">
@@ -84,18 +84,18 @@
                     </h2>
                 </div>
                 <div class="col-md-4 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/alvin.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[0]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Alvin Eko Cahyo</p>
+                        <p class="title-caption">{{$pengurus[0]->nama}}</p>
                         <p class="subtitle-caption">Ketua HMJTI 2021</p>
                     </div>
                 </div>
                 <div class="col-md-4 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/bambang.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[1]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Bambang Suratno</p>
+                        <p class="title-caption">{{$pengurus[1]->nama}}</p>
                         <p class="subtitle-caption">Wakil Ketua HMJTI 2021</p>
                     </div>
                 </div>
@@ -110,26 +110,26 @@
             <!-- SEKRETARIS DAN BEDAHARA -->
             <div class="row">
                 <div class="col-md-4 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/winda.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[2]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class=" caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Winda Budi Lestari</p>
+                        <p class="title-caption">{{$pengurus[2]->nama}}</p>
                         <p class="subtitle-caption">Sekretaris 1</p>
                     </div>
                 </div>
                 <div class="col-md-4 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/mita.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[3]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Mita Wafa Wulandari</p>
+                        <p class="title-caption">{{$pengurus[3]->nama}}</p>
                         <p class="subtitle-caption">Sekretaris 2</p>
                     </div>
                 </div>
                 <div class="col-md-4 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/eka.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[4]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class=" caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Eka Fahrika</p>
+                        <p class="title-caption">{{$pengurus[4]->nama}}</p>
                         <p class="subtitle-caption">Bendahara</p>
                     </div>
                 </div>
@@ -147,53 +147,53 @@
             <!-- DEPT. Administrasi -->
             <div class="row">
                 <div class="col-md-12 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/fina.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[5]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Rofina Aulia</p>
+                        <p class="title-caption">{{$pengurus[5]->nama}}</p>
                         <p class="subtitle-caption">Kadep Administrasi</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 img-caption order-1 order-md-1 mt-3">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/yoga.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[6]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Hermawan Yoga</p>
+                        <p class=" title-caption">{{$pengurus[6]->nama}}</p>
                         <p class="subtitle-caption">CO Biro Kesekretariatan</p>
                     </div>
                 </div>
                 <div class="col-md-6 img-caption order-4 order-md-2 mt-3">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/fahmi.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[7]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Fahmi Ubaidillah</p>
+                        <p class=" title-caption">{{$pengurus[7]->nama}}</p>
                         <p class="subtitle-caption">Co Biro Sarpras</p>
                     </div>
                 </div>
                 <div class="col-md-3 img-caption order-2 order-md-3">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/erlinda.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[8]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Erlinda Kristanti</p>
+                        <p class="title-caption">{{$pengurus[8]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Kesekretariatan</p>
                     </div>
                 </div>
                 <div class="col-md-3 img-caption order-3 order-md-4">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/sinta.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[9]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Shinta Nuriyah</p>
+                        <p class="title-caption">{{$pengurus[9]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Kesekretariatan</p>
                     </div>
                 </div>
                 <div class="col-md-6 img-caption order-5 order-md-5">
                     <div class="col-md-6">
-                        <div class="img-wrapper"><img src="{{asset('user/img/pengurus/ilmi.png') }}" class="foto-pengurus struktur"
+                        <div class="img-wrapper"><img src="{{asset($pengurus[10]->foto) }}" class="foto-pengurus struktur"
                             data-aos="fade-down" alt=""></div>
                         <div class="caption py-1" data-aos="fade-in">
-                            <p class="title-caption">Fikriatul Ilmi</p>
+                            <p class="title-caption">{{$pengurus[10]->nama}}</p>
                             <p class="subtitle-caption">Anggota Biro Sarpras</p>
                         </div>
                     </div>
@@ -210,135 +210,135 @@
             <!-- DEPT. Keilmuan -->
             <div class="row">
                 <div class="col-md-12 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/ageng.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[11]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Ageng Wijaya</p>
+                        <p class="title-caption">{{$pengurus[11]->nama}}</p>
                         <p class="subtitle-caption">Kadep Administrasi</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 img-caption order-sm-1 order-md-1 mt-5">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/fara.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[12]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Kana Farira S</p>
+                        <p class=" title-caption">{{$pengurus[12]->nama}}</p>
                         <p class="subtitle-caption">CO Biro Multimedia</p>
                     </div>
                 </div>
                 <div class="col-md-4 img-caption order-sm-4 order-md-2 mt-5">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/iqbal.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[13]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Iqbal Ikhlasul A.</p>
+                        <p class=" title-caption">{{$pengurus[13]->nama}}.</p>
                         <p class="subtitle-caption">CO Biro Sistem Informasi</p>
                     </div>
                 </div>
                 <div class="col-md-4 img-caption order-sm-7 order-md-3 mt-5">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/rafli.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[14]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Tahajuddin</p>
+                        <p class=" title-caption">{{$pengurus[14]->nama}}</p>
                         <p class="subtitle-caption">Co Biro Gamedev</p>
                     </div>
                 </div>
 
                 <div class="col-md-2 img-caption order-sm-2 order-md-4 ">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/pras.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[15]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Dwi Prasetyo</p>
+                        <p class=" title-caption">{{$pengurus[15]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Multimedia</p>
                     </div>
                 </div>
                 <div class="col-md-2 img-caption order-sm-3 order-md-5 ">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/vivi.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[16]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Vivi Handayani</p>
+                        <p class=" title-caption">{{$pengurus[16]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Multimedia</p>
                     </div>
                 </div>
                 <div class="col-md-2 img-caption order-sm-5 order-md-6 ">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/saifur.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[17]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Ahmad Saifur</p>
+                        <p class=" title-caption">{{$pengurus[17]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Sistem Informasi</p>
                     </div>
                 </div>
                 <div class="col-md-2 img-caption order-sm-6 order-md-7 ">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/lukman.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[18]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Lukman Afandi</p>
+                        <p class=" title-caption">{{$pengurus[18]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Sistem Informasi</p>
                     </div>
                 </div>
                 <div class="col-md-2 img-caption order-sm-8 order-md-8 ">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/dwiki.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[19]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Prasetyo Dwiki</p>
+                        <p class=" title-caption">{{$pengurus[19]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Gamedev</p>
                     </div>
                 </div>
                 <div class="col-md-2 img-caption order-sm-9 order-md-9 ">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/indra.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[20]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Indra Wirawan</p>
+                        <p class=" title-caption">{{$pengurus[20]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Gamedev</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 img-caption order-sm-1 order-md-1 mt-5">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/wahyu.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[21]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Wahyu Musthofa</p>
+                        <p class=" title-caption">{{$pengurus[21]->nama}}</p>
                         <p class="subtitle-caption">Co Biro Hardware</p>
                     </div>
                 </div>
                 <div class="col-md-6 img-caption order-sm-4 order-md-2 mt-5">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/igo.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[22]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Firgo Bahtiar</p>
+                        <p class="title-caption">{{$pengurus[22]->nama}}</p>
                         <p class="subtitle-caption">CO Biro IT Support</p>
                     </div>
                 </div>
                 <div class="col-md-3 img-caption order-sm-2 order-md-3">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/saiful.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[23]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Saiful Bahri</p>
+                        <p class=" title-caption">{{$pengurus[23]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Hardware</p>
                     </div>
                 </div>
                 <div class="col-md-3 img-caption order-sm-3 order-md-4">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/bayu.png')}}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[24]->foto)}}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Bayu Cahya Kurnia</p>
+                        <p class=" title-caption">{{$pengurus[24]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Hardware</p>
                     </div>
                 </div>
                 <div class="col-md-3 img-caption order-sm-5 order-md-5">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/puja.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[25]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Puja Mahesa</p>
+                        <p class=" title-caption">{{$pengurus[25]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro IT Support</p>
                     </div>
                 </div>
                 <div class="col-md-3 img-caption order-sm-6 order-md-6">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/sirojudin.png') }}" class="foto-pengurus struktur"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[26]->foto) }}" class="foto-pengurus struktur"
                         data-aos="fade-down" alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Ahamd Sirojuddin</p>
+                        <p class=" title-caption">{{$pengurus[26]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro IT Support</p>
                     </div>
                 </div>
@@ -352,96 +352,96 @@
             <!-- DEPT. PERHUBUNGAN -->
             <div class="row">
                 <div class="col-md-4 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/sulis.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[27]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Sulistyawati</p>
+                        <p class=" title-caption">{{$pengurus[27]->nama}}</p>
                         <p class="subtitle-caption">Kadep Perhubungan</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/decky.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[28]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Decky Setiawan</p>
+                        <p class=" title-caption">{{$pengurus[28]->nama}}</p>
                         <p class="subtitle-caption">CO Biro Eksternal</p>
                     </div>
                 </div>
                 <div class="col-md-4 img-caption ">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/dayat.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[29]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">M. Hidayatullah</p>
+                        <p class=" title-caption">{{$pengurus[29]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Eksternal</p>
                     </div>
                 </div>
                 <div class="col-md-4 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/tyo.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[30]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Ardyas Setya N.</p>
+                        <p class=" title-caption">{{$pengurus[30]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Eksternal</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-3 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/devi.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[31]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Devi Aryaningtyas</p>
+                        <p class=" title-caption">{{$pengurus[31]->nama}}</p>
                         <p class="subtitle-caption">Biro Internal MIF</p>
                     </div>
                 </div>
                 <div class="col-md-3 img-caption ">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/hasan.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[32]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">M. Hasan</p>
+                        <p class=" title-caption">{{$pengurus[32]->nama}}</p>
                         <p class="subtitle-caption">Biro Internal TIF</p>
                     </div>
                 </div>
                 <div class="col-md-3 img-caption ">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/nabila.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[33]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Tince Nabilah</p>
+                        <p class=" title-caption">{{$pengurus[33]->nama}}</p>
                         <p class="subtitle-caption">Biro Internal TKK</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/didin.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[34]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">M. Hafizhuddin</p>
+                        <p class=" title-caption">{{$pengurus[34]->nama}}</p>
                         <p class="subtitle-caption">Co Biro Kominfo</p>
                     </div>
                 </div>
                 <div class="col-md-4 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/alvioni.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[35]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Alvioni Tineke</p>
+                        <p class=" title-caption">{{$pengurus[35]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Kominfo</p>
                     </div>
                 </div>
                 <div class="col-md-4 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/fafa.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[36]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Haris Faqih</p>
+                        <p class=" title-caption">{{$pengurus[36]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Kominfo</p>
                     </div>
                 </div>
                 <div class="col-md-4 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/nura.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[37]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Nur Afifah</p>
+                        <p class=" title-caption">{{$pengurus[37]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Kominfo</p>
                     </div>
                 </div>
@@ -458,64 +458,65 @@
             <!-- DEPT. KEWIRAUSAHAAN -->
             <div class="row">
                 <div class="col-md-12 img-caption">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/liga.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[38]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Liga Bayu</p>
+                        <p class="title-caption">{{$pengurus[38]->nama}}</p>
                         <p class="subtitle-caption">Kadep Kewirausahaan</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 img-caption order-sm-1 order-md-1">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/adi.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[39]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Adi Wijaya</p>
+                        <p class=" title-caption">{{$pengurus[39]->nama}}</p>
                         <p class="subtitle-caption">CO Biro Kewirausahaan</p>
                     </div>
                 </div>
                 <div class="col-md-6 img-caption order-sm-4 order-md-2">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/radit.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[40]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class=" title-caption">Nanda Raditya</p>
+                        <p class=" title-caption">{{$pengurus[40]->nama}}</p>
                         <p class="subtitle-caption">Co Biro Usaha</p>
                     </div>
                 </div>
                 <div class="col-md-3 img-caption order-sm-2 order-md-3">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/udin.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[41]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">M. Syaifudin</p>
+                        <p class="title-caption">{{$pengurus[41]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Kewirausahaan</p>
                     </div>
                 </div>
                 <div class="col-md-3 img-caption order-sm-3 order-md-4">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/shafa.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[42]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Shafa Thalia</p>
+                        <p class="title-caption">{{$pengurus[42]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Kewirausahaan</p>
                     </div>
                 </div>
                 <div class="col-md-3 img-caption order-sm-5 order-md-5">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/ensas.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[43]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Vigo Ensas</p>
+                        <p class="title-caption">{{$pengurus[43]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Usaha</p>
                     </div>
                 </div>
                 <div class="col-md-3 img-caption order-sm-6 order-md-6">
-                    <div class="img-wrapper"><img src="{{asset('user/img/pengurus/ruary.png') }}" class="foto-pengurus struktur" data-aos="fade-down"
+                    <div class="img-wrapper"><img src="{{asset($pengurus[44]->foto) }}" class="foto-pengurus struktur" data-aos="fade-down"
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
-                        <p class="title-caption">Ruary Vina</p>
+                        <p class="title-caption">{{$pengurus[44]->nama}}</p>
                         <p class="subtitle-caption">Anggota Biro Usaha</p>
                     </div>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </main>
