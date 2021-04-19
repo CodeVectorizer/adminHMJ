@@ -25,7 +25,7 @@
                     <tr>
                       <th>#</th>
                       <th>Nama Jabatan</th>
-                      <th>Periode</th>
+                      {{-- <th>Periode</th> --}}
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -34,7 +34,7 @@
                     <tr>
                       <td>{{$loop->iteration}}</td>
                       <td>{{$jabatan->jabatan}}</td>
-                      <td>{{$jabatan->periode}}</td>
+                      {{-- <td>{{$jabatan->periode}}</td> --}}
                       <td>
                         <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModaledit{{ $loop->iteration }}"> <i class="fa fa-edit"></i> </a>
                         <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{ $loop->iteration }}"> <i class="fa fa-trash"></i> </a>
@@ -72,7 +72,7 @@
               <strong>{{ $message }}</strong>
             </span>
           @enderror
-          <div class="form-group">
+          {{-- <div class="form-group">
             <label>Periode</label>
             <input type="number" class="form-control @error('periode') is-invalid @enderror" name="periode" value="{{ old('periode') }}" required>
           </div>
@@ -80,7 +80,7 @@
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
             </span>
-          @enderror
+          @enderror --}}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

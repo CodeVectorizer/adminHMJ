@@ -15,11 +15,12 @@ class Jabatan extends Model
     public $timestamps = false;
 
     protected $fillable = [
-      'jabatan', 'periode'
+        'jabatan',
+        //   'periode'
     ];
 
     public function pengurus()
     {
-      return $this->hasMany('App\Models\Pengurus');
+        return $this->hasMany('App\Models\Pengurus');
     }
 }
