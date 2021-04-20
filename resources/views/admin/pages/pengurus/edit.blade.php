@@ -161,7 +161,7 @@
                   <input type="file" name="foto" class="form-control">
                 </div>
                 <div class="form-group">
-                  <button type="submit" name="btn" class="btn btn-primary">Tambah</button>
+                  <button type="submit" name="btn" class="btn btn-primary">Update</button>
                 </div>
               </form>
             </div>

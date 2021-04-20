@@ -38,9 +38,10 @@
             </div> --}}
             <div class="col-md-2 footer-link">
                 <h4 class="footer title-section">Link</h4>
-                <a href="https://www.polije.ac.id" class="subtitle-section">Politeknik Negeri Jember</a>
-                <a href="http://jti.polije.ac.id" class="subtitle-section">Jurusan Teknologi Informasi POLIJE</a>
-                <a href="https://www.instagram.com/bempolije" class="subtitle-section">BEM KM POLIJE</a>
+                <a href="https://www.polije.ac.id" class="subtitle-section" target="_blank">Politeknik Negeri Jember</a>
+                <a href="http://jti.polije.ac.id" class="subtitle-section" target="_blank">Jurusan Teknologi Informasi POLIJE</a>
+                <a href="https://www.instagram.com/bempolije" class="subtitle-section" target="_blank">BEM KM POLIJE</a>
+                <a href="#" class="subtitle-section">Badan Semi Otonom HMJTI</a>
             </div>
         </div>
         <div class="row justify-content-between text-center">

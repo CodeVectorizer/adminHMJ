@@ -151,7 +151,7 @@
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
                         <p class="title-caption">{{$pengurus[5]->nama}}</p>
-                        <p class="subtitle-caption">Kadep Administrasi</p>
+                        <p class="subtitle-caption">Kepala Departemen Administrasi</p>
                     </div>
                 </div>
             </div>
@@ -214,7 +214,7 @@
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
                         <p class="title-caption">{{$pengurus[11]->nama}}</p>
-                        <p class="subtitle-caption">Kadep Administrasi</p>
+                        <p class="subtitle-caption">Kepala Departemen Keilmuan</p>
                     </div>
                 </div>
             </div>
@@ -356,7 +356,7 @@
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
                         <p class=" title-caption">{{$pengurus[27]->nama}}</p>
-                        <p class="subtitle-caption">Kadep Perhubungan</p>
+                        <p class="subtitle-caption">Kepala Departemen Perhubungan</p>
                     </div>
                 </div>
             </div>
@@ -462,7 +462,7 @@
                         alt=""></div>
                     <div class="caption py-1" data-aos="fade-in">
                         <p class="title-caption">{{$pengurus[38]->nama}}</p>
-                        <p class="subtitle-caption">Kadep Kewirausahaan</p>
+                        <p class="subtitle-caption">Kepala Departemen Kewirausahaan</p>
                     </div>
                 </div>
             </div>
